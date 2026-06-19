@@ -18,19 +18,20 @@ function Home({ darkMode, setDarkMode }) {
         setDarkMode={setDarkMode}
       />
 
+      {/* HERO */}
       <Hero darkMode={darkMode} />
 
+    
+
+      {/* OTHER SECTIONS */}
       <Services darkMode={darkMode} />
       <Industries darkMode={darkMode} />
       <Products darkMode={darkMode} />
-      <WhyHDCMA darkMode={darkMode}/>
-      <Insights darkMode={darkMode}/>
-      <Careers darkMode={darkMode}/>
-      <Footer darkMode={darkMode}/>
+      <WhyHDCMA darkMode={darkMode} />
+      <Insights darkMode={darkMode} />
+      <Careers darkMode={darkMode} />
+      <Footer darkMode={darkMode} />
     </>
-    
-    
   );
 }
-
 export default Home;

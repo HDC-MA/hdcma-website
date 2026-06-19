@@ -1,10 +1,7 @@
 .industries-section {
   padding: 120px 80px;
-  background: var(--section-bg);
-  transition: all 0.4s ease;
+  background: var(--bg);
 }
-
-/* HEADER */
 
 .industries-header {
   text-align: center;
@@ -16,12 +13,12 @@
   color: #4db8ff;
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
 .industries-header h2 {
   margin-top: 15px;
-  font-size: 52px;
+  font-size: 56px;
   font-weight: 800;
   color: var(--text);
 }
@@ -29,19 +26,17 @@
 .industries-header p {
   margin-top: 20px;
   font-size: 18px;
-  line-height: 1.8;
   color: var(--text-muted);
+  line-height: 1.8;
 }
 
-/* GRID */
-
 .industries-grid {
-  margin-top: 80px;
+  margin-top: 70px;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 32px;
+  gap: 25px;
 }
 
 /* CARD */
@@ -49,177 +44,156 @@
 .industry-card {
   position: relative;
 
-  background: var(--card-bg);
+  height: 520px;
 
-  padding: 40px;
-
-  border-radius: 24px;
-
-  border: 1px solid var(--border);
+  border-radius: 28px;
 
   overflow: hidden;
 
-  min-height: 360px;
-
-  display: flex;
-  flex-direction: column;
-
-  transition: all 0.4s ease;
-
   cursor: pointer;
 
-  box-shadow: var(--shadow-soft);
+  transition: all 0.5s ease;
 }
 
-/* TOP GRADIENT LINE */
+/* IMAGE */
 
-.industry-card::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 4px;
-
-  background: linear-gradient(
-    90deg,
-    #002d72,
-    #005cb9,
-    #4db8ff
-  );
-
-  transform: scaleX(0);
-
-  transform-origin: left;
-
-  transition: all 0.4s ease;
-}
-
-.industry-card:hover::before {
-  transform: scaleX(1);
-}
-
-/* SHINE EFFECT */
-
-.industry-card::after {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  left: -120%;
-
+.industry-card img {
   width: 100%;
   height: 100%;
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.15),
-    transparent
-  );
+  object-fit: cover;
 
-  transition: 0.8s;
+  transition: transform 0.7s ease;
 }
 
-.industry-card:hover::after {
-  left: 120%;
+.industry-card:hover img {
+  transform: scale(1.08);
 }
 
-/* HOVER */
+/* OVERLAY */
 
-.industry-card:hover {
-  transform: translateY(-12px);
+.industry-overlay {
+  position: absolute;
+  inset: 0;
 
-  border-color: rgba(77,184,255,0.25);
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.95),
+      rgba(0,0,0,0.2)
+    );
 
-  box-shadow:
-    0 25px 60px rgba(0,92,185,0.18);
-}
-
-/* ICON */
-
-.industry-icon {
-  width: 92px;
-  height: 92px;
+  padding: 35px;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 24px;
-
-  background: linear-gradient(
-    135deg,
-    rgba(0,92,185,0.08),
-    rgba(77,184,255,0.18)
-  );
-
-  border: 1px solid rgba(77,184,255,0.15);
-
-  color: #005cb9;
-
-  transition: all 0.4s ease;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-.industry-card:hover .industry-icon {
-  background: linear-gradient(
-    135deg,
-    #002d72,
-    #005cb9,
-    #4db8ff
-  );
+/* LABEL */
 
-  color: white;
+.industry-overlay span {
+  color: #4db8ff;
 
-  transform: translateY(-6px) scale(1.08);
+  font-size: 13px;
 
-  box-shadow:
-    0 15px 35px rgba(77,184,255,0.30);
+  letter-spacing: 2px;
+
+  font-weight: 700;
 }
 
 /* TITLE */
 
-.industry-card h3 {
-  margin-top: 28px;
+.industry-overlay h3 {
+  margin-top: 15px;
 
-  font-size: 24px;
+  color: white;
+
+  font-size: 36px;
+
   font-weight: 700;
 
-  color: var(--text);
+  line-height: 1.2;
+
+  transition: 0.4s ease;
+}
+
+/* DETAILS */
+
+.industry-details {
+  max-height: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  transition:
+    max-height .6s ease,
+    opacity .6s ease,
+    transform .6s ease;
+}
+
+.industry-card.active .industry-details {
+  max-height: 250px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+  margin-top: 20px;
 }
 
 /* DESCRIPTION */
 
-.industry-card p {
-  margin-top: 16px;
+.industry-details p {
+  color: rgba(255,255,255,.9);
 
   line-height: 1.8;
 
-  color: var(--text-muted);
-
-  flex-grow: 1;
+  margin-bottom: 20px;
 }
 
-/* LINK */
+/* BUTTON */
 
-.industry-link {
-  margin-top: 24px;
+.industry-details button {
+  border: none;
 
-  color: #005cb9;
+  background:
+    linear-gradient(
+      135deg,
+      #005cb9,
+      #4db8ff
+    );
+
+  color: white;
+
+  padding: 14px 24px;
+
+  border-radius: 12px;
 
   font-weight: 600;
+
+  cursor: pointer;
 
   transition: all 0.3s ease;
 }
 
-.industry-card:hover .industry-link {
-  color: #4db8ff;
+.industry-details button:hover {
+  transform: translateY(-3px);
 
-  transform: translateX(6px);
+  box-shadow:
+    0 12px 30px rgba(77,184,255,.3);
+}
+
+/* ACTIVE */
+
+.industry-card.active {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 25px 60px rgba(0,92,185,.25);
 }
 
 /* DARK MODE */
@@ -228,59 +202,23 @@
   background: #0a1628;
 }
 
-.industries-section.dark .industries-header h2 {
+.industries-section.dark h2 {
   color: white;
 }
 
-.industries-section.dark .industries-header p {
-  color: rgba(255,255,255,0.85);
-}
-
-.industries-section.dark .industry-card {
-  background: rgba(255,255,255,0.05);
-
-  backdrop-filter: blur(16px);
-
-  border: 1px solid rgba(77,184,255,0.15);
-
-  box-shadow: none;
-}
-
-.industries-section.dark .industry-card:hover {
-  box-shadow:
-    0 20px 50px rgba(77,184,255,0.22);
-}
-
-.industries-section.dark .industry-icon {
-  background: rgba(255,255,255,0.05);
-
-  color: #4db8ff;
-
-  border: 1px solid rgba(77,184,255,0.15);
-}
-
-.industries-section.dark .industry-card h3 {
-  color: white;
-}
-
-.industries-section.dark .industry-card p {
-  color: rgba(255,255,255,0.8);
-}
-
-.industries-section.dark .industry-link {
-  color: #4db8ff;
+.industries-section.dark p {
+  color: rgba(255,255,255,.8);
 }
 
 /* RESPONSIVE */
 
-@media (max-width: 992px) {
-
+@media (max-width:1200px) {
   .industries-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
 
   .industries-section {
     padding: 80px 25px;
@@ -295,6 +233,10 @@
   }
 
   .industry-card {
-    min-height: auto;
+    height: 420px;
+  }
+
+  .industry-overlay h3 {
+    font-size: 28px;
   }
 }
