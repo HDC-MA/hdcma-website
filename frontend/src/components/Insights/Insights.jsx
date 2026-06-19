@@ -10,7 +10,7 @@ function Insights({ darkMode }) {
       description:
         "Helping enterprises unlock growth, efficiency and innovation using Generative AI and intelligent automation.",
       image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1400"
+        "https://i.pinimg.com/736x/f4/3e/9c/f43e9c779dbd7566b774d1ff487a66b4.jpg"
     },
     {
       number: "02",
@@ -19,7 +19,7 @@ function Insights({ darkMode }) {
       description:
         "Accelerate modernization with scalable cloud platforms, DevOps and digital transformation.",
       image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1400"
+        "	https://i.pinimg.com/736x/31/b0/63/31b06376e6152ed04478c0792dae577d.jpg"
     },
     {
       number: "03",
@@ -28,7 +28,7 @@ function Insights({ darkMode }) {
       description:
         "Strengthen resilience with advanced security, threat intelligence and governance solutions.",
       image:
-        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1400"
+        "https://i.pinimg.com/1200x/7d/8e/d1/7d8ed1dc59a6cd6fdc0c8f256a897dc1.jpg"
     },
     {
       number: "04",
@@ -37,7 +37,7 @@ function Insights({ darkMode }) {
       description:
         "Enable intelligent business processes through SAP CPI, SAP MM and enterprise integration.",
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400"
+        "https://i.pinimg.com/736x/65/54/c6/6554c65c012e40d7a7fb3bd799f12882.jpg"
     }
   ];
 
