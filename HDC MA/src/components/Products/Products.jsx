@@ -1,82 +1,123 @@
 import "./Products.css";
 
-import {
-  Bot,
-  CloudCog,
-  ShieldCheck,
-  BarChart3
-} from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 function Products({ darkMode }) {
 
   const products = [
     {
-      icon: <Bot size={42} />,
+      image:
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995",
       title: "AI Business Assistant",
-      desc:
-        "Intelligent AI-powered automation platform for enhanced productivity and decision making."
+      description:
+        "Enterprise AI platform enabling automation, chatbots, intelligent workflows and business productivity."
     },
     {
-      icon: <CloudCog size={42} />,
+      image:
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
       title: "Cloud Management Suite",
-      desc:
-        "Centralized cloud monitoring, optimization and infrastructure management."
+      description:
+        "Manage and optimize AWS, Azure and hybrid cloud environments through a unified platform."
     },
     {
-      icon: <ShieldCheck size={42} />,
+      image:
+        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
       title: "Cyber Defense Platform",
-      desc:
-        "Advanced cybersecurity framework protecting enterprise assets and data."
+      description:
+        "Advanced security monitoring, threat detection and enterprise protection solutions."
     },
     {
-      icon: <BarChart3 size={42} />,
-      title: "Business Analytics Dashboard",
-      desc:
-        "Real-time analytics, reporting and business intelligence insights."
+      image:
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+      title: "SAP Integration Hub",
+      description:
+        "SAP CPI, SAP MM and SAP BOM implementation services for enterprise transformation."
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+      title: "Enterprise Analytics Platform",
+      description:
+        "Real-time business intelligence, dashboards and enterprise reporting solutions."
     }
   ];
 
   return (
     <section
-      className={`products-section ${darkMode ? "dark" : ""}`}
+      className={`products-section ${
+        darkMode ? "dark" : ""
+      }`}
     >
 
       <div className="products-header">
-
         <span>PRODUCTS & SOLUTIONS</span>
 
         <h2>
-          Accelerate Growth With Smart Solutions
+          Innovation Built For Modern Enterprises
         </h2>
 
         <p>
-          Innovative platforms and enterprise solutions
-          designed for modern digital organizations.
+          Enterprise-grade platforms helping businesses
+          accelerate growth through AI, Cloud,
+          Cybersecurity and SAP solutions.
         </p>
-
       </div>
 
-      <div className="products-grid">
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        navigation
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false
+        }}
+        className="products-swiper"
+      >
 
         {products.map((product, index) => (
-          <div className="product-card" key={index}>
 
-            <div className="product-icon">
-              {product.icon}
+          <SwiperSlide key={index}>
+
+            <div className="product-slide">
+
+              <div className="product-image">
+
+                <img
+                  src={product.image}
+                  alt={product.title}
+                />
+
+              </div>
+
+              <div className="product-content">
+
+                <span>FEATURED SOLUTION</span>
+
+                <h3>
+                  {product.title}
+                </h3>
+
+                <p>
+                  {product.description}
+                </p>
+
+                <button>
+                  Explore Solution →
+                </button>
+
+              </div>
+
             </div>
 
-            <h3>{product.title}</h3>
+          </SwiperSlide>
 
-            <p>{product.desc}</p>
-
-            <div className="product-link">
-              Learn More →
-            </div>
-
-          </div>
         ))}
 
-      </div>
+      </Swiper>
 
     </section>
   );

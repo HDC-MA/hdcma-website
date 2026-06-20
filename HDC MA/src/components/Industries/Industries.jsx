@@ -1,72 +1,68 @@
+import { useState } from "react";
 import "./Industries.css";
 
-import {
-  HeartPulse,
-  Landmark,
-  GraduationCap,
-  ShoppingCart,
-  Factory,
-  Cpu
-} from "lucide-react";
+import banking from "../../assets/images/banking.jpg";
+import healthcare from "../../assets/images/healthcare.jpg";
+import retail from "../../assets/images/retail.jpg";
+import manufacturing from "../../assets/images/manufacturing.jpg";
+import education from "../../assets/images/education.jpg";
+import technology from "../../assets/images/technology.jpg";
+
+const industries = [
+  {
+    title: "Banking & Finance",
+    image: banking,
+    description:
+      "Accelerating digital banking through AI-powered platforms, fraud detection and cloud modernization."
+  },
+  {
+    title: "Healthcare",
+    image: healthcare,
+    description:
+      "Transforming healthcare with intelligent diagnostics, telemedicine and patient engagement platforms."
+  },
+  {
+    title: "Retail & Commerce",
+    image: retail,
+    description:
+      "Creating personalized customer experiences through AI, analytics and digital commerce."
+  },
+  {
+    title: "Manufacturing",
+    image: manufacturing,
+    description:
+      "Industry 4.0 solutions including predictive maintenance and smart factory automation."
+  },
+  {
+    title: "Education",
+    image: education,
+    description:
+      "Empowering institutions with digital learning platforms and AI-enabled education."
+  },
+  {
+    title: "Technology",
+    image: technology,
+    description:
+      "Building scalable software products, SaaS platforms and cloud-native applications."
+  }
+];
 
 function Industries({ darkMode }) {
-
-  const industries = [
-    {
-      icon: <HeartPulse size={42} />,
-      title: "Healthcare",
-      description:
-        "Modern healthcare solutions enabling better patient care and digital transformation."
-    },
-    {
-      icon: <Landmark size={42} />,
-      title: "Financial Services",
-      description:
-        "Secure fintech platforms, digital banking and intelligent financial services."
-    },
-    {
-      icon: <GraduationCap size={42} />,
-      title: "Education",
-      description:
-        "Digital learning ecosystems and modern educational technology solutions."
-    },
-    {
-      icon: <ShoppingCart size={42} />,
-      title: "Retail & E-Commerce",
-      description:
-        "Delivering seamless customer experiences and scalable commerce platforms."
-    },
-    {
-      icon: <Factory size={42} />,
-      title: "Manufacturing",
-      description:
-        "Industry 4.0 solutions, smart automation and connected manufacturing."
-    },
-    {
-      icon: <Cpu size={42} />,
-      title: "Technology",
-      description:
-        "Driving innovation through AI, cloud, software engineering and digital services."
-    }
-  ];
+  const [hovered, setHovered] = useState(null);
 
   return (
     <section
-      className={`industries-section ${
-        darkMode ? "dark" : ""
-      }`}
+      className={`industries-section ${darkMode ? "dark" : ""}`}
     >
       <div className="industries-header">
 
-        <span>INDUSTRIES WE SERVE</span>
+        <span>INDUSTRIES</span>
 
-        <h2>
-          Delivering Innovation Across Industries
-        </h2>
+        <h2>Industries We Transform</h2>
 
         <p>
-          Helping organizations transform digitally
-          through innovative technology solutions.
+          Delivering innovative technology solutions
+          across diverse industries worldwide.
         </p>
 
       </div>
@@ -74,18 +70,35 @@ function Industries({ darkMode }) {
       <div className="industries-grid">
 
         {industries.map((industry, index) => (
-          <div className="industry-card" key={index}>
+          <div
+            key={index}
+            className={`industry-card ${
+              hovered === index ? "active" : ""
+            }`}
+            onMouseEnter={() => setHovered(index)}
+            onMouseLeave={() => setHovered(null)}
+          >
+            <img
+              src={industry.image}
+              alt={industry.title}
+            />
 
-            <div className="industry-icon">
-              {industry.icon}
-            </div>
+            <div className="industry-overlay">
 
-            <h3>{industry.title}</h3>
+              <span>INDUSTRY</span>
 
-            <p>{industry.description}</p>
+              <h3>{industry.title}</h3>
 
-            <div className="industry-link">
-              Learn More →
+              <div className="industry-details">
+
+                <p>{industry.description}</p>
+
+                <button>
+                  Explore Industry →
+                </button>
+
+              </div>
+
             </div>
 
           </div>
