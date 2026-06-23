@@ -1,11 +1,10 @@
-/* =========================
+/* ===================================
    SERVICES SECTION
-========================= */
+=================================== */
 
 .services-section {
   padding: 120px 80px;
   background: var(--bg);
-  transition: all 0.4s ease;
 }
 
 .services-header {
@@ -22,23 +21,14 @@
 
 .services-header h2 {
   margin-top: 15px;
-  font-size: 58px;
+  font-size: 56px;
   font-weight: 800;
   color: var(--text);
-  line-height: 1.2;
 }
 
-.services-header p {
-  max-width: 750px;
-  margin: 20px auto 0;
-  color: var(--text-muted);
-  line-height: 1.8;
-  font-size: 17px;
-}
-
-/* =========================
+/* ===================================
    LAYOUT
-========================= */
+=================================== */
 
 .services-wrapper {
   display: grid;
@@ -47,37 +37,63 @@
   align-items: start;
 }
 
-/* =========================
-   LEFT SIDE
-========================= */
+/* ===================================
+   LEFT PANEL
+=================================== */
 
 .services-left {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
+
+  height: 650px;
+
+  overflow-y: auto;
+
+  padding-right: 12px;
 }
 
+/* Scrollbar */
+
+.services-left::-webkit-scrollbar {
+  width: 8px;
+}
+
+.services-left::-webkit-scrollbar-track {
+  background: #eef4fb;
+  border-radius: 20px;
+}
+
+.services-left::-webkit-scrollbar-thumb {
+  background: #005cb9;
+  border-radius: 20px;
+}
+
+/* ===================================
+   SERVICE ITEM
+=================================== */
+
 .service-item {
-  background: #ffffff;
+  min-height: 100px;
 
-  border: 1px solid rgba(77, 184, 255, 0.12);
+  padding: 20px 25px;
 
-  border-radius: 22px;
+  border-radius: 20px;
 
-  padding: 22px 28px;
+  background: white;
 
-  min-height: 105px;
+  border: 1px solid rgba(77,184,255,.10);
 
   cursor: pointer;
 
-  transition: all 0.35s ease;
+  transition: all .35s ease;
 }
 
 .service-item:hover {
-  transform: translateX(10px);
+  transform: translateX(8px);
 
   box-shadow:
-    0 10px 25px rgba(0, 92, 185, 0.08);
+    0 10px 25px rgba(0,92,185,.08);
 }
 
 .service-item.active {
@@ -87,51 +103,49 @@
     linear-gradient(
       90deg,
       rgba(77,184,255,.12),
-      rgba(77,184,255,.03)
+      transparent
     );
 
-  transform: translateX(10px);
-
   box-shadow:
-    0 15px 30px rgba(77,184,255,.12);
+    0 12px 25px rgba(77,184,255,.12);
 }
 
 .service-number {
   color: #4db8ff;
-
   font-size: 13px;
-
   font-weight: 700;
-
-  letter-spacing: 1px;
 }
 
 .service-item h3 {
-  margin-top: 10px;
+  margin-top: 8px;
 
-  font-size: 24px;
+  font-size: 22px;
 
   font-weight: 700;
 
-  color: #0b2e6d;
+  color: #002d72;
 
   line-height: 1.4;
 }
 
-/* =========================
+/* ===================================
    RIGHT PANEL
-========================= */
+=================================== */
 
 .service-details {
   position: relative;
 
   overflow: hidden;
 
-  min-height: 460px;
+  height: 650px;
 
-  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  border-radius: 30px;
+  padding: 50px;
+
+  border-radius: 32px;
 
   background:
     linear-gradient(
@@ -143,26 +157,19 @@
 
   color: white;
 
-  border:
-    1px solid rgba(255,255,255,.15);
-
   box-shadow:
     0 20px 60px rgba(0,92,185,.25);
-
-  backdrop-filter: blur(18px);
-
-  animation: fadeSlide .4s ease;
 }
 
-/* Premium Glow */
+/* Glow */
 
 .service-details::before {
   content: "";
 
   position: absolute;
 
-  top: -100px;
-  right: -100px;
+  top: -120px;
+  right: -120px;
 
   width: 280px;
   height: 280px;
@@ -172,8 +179,12 @@
   background:
     rgba(255,255,255,.08);
 
-  filter: blur(50px);
+  filter: blur(60px);
 }
+
+/* ===================================
+   ICON
+=================================== */
 
 .detail-icon {
   width: 90px;
@@ -183,39 +194,33 @@
   align-items: center;
   justify-content: center;
 
-  border-radius: 24px;
+  border-radius: 22px;
 
   background:
     rgba(255,255,255,.12);
 
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
 
-  color: white;
-
-  transition: 0.4s ease;
+  margin-bottom: 25px;
 }
 
-.service-details:hover .detail-icon {
-  transform:
-    rotate(-5deg)
-    scale(1.08);
-}
+/* ===================================
+   CONTENT
+=================================== */
 
 .service-details h3 {
-  margin-top: 28px;
-
-  font-size: 42px;
+  font-size: 44px;
 
   font-weight: 800;
 
   color: white;
 
+  margin-bottom: 18px;
+
   line-height: 1.2;
 }
 
 .service-details p {
-  margin-top: 18px;
-
   font-size: 17px;
 
   line-height: 1.9;
@@ -226,9 +231,9 @@
   max-width: 700px;
 }
 
-/* =========================
+/* ===================================
    FEATURES
-========================= */
+=================================== */
 
 .feature-grid {
   margin-top: 35px;
@@ -247,19 +252,19 @@
 
   gap: 10px;
 
-  color: white;
-
   font-size: 16px;
 
-  font-weight: 500;
+  color: white;
 }
 
-/* =========================
+/* ===================================
    BUTTON
-========================= */
+=================================== */
 
 .explore-btn {
   margin-top: 35px;
+
+  width: fit-content;
 
   padding: 16px 34px;
 
@@ -273,40 +278,21 @@
 
   font-weight: 700;
 
-  font-size: 15px;
-
   cursor: pointer;
 
-  transition: .3s ease;
+  transition: .35s ease;
 }
 
 .explore-btn:hover {
   transform: translateY(-4px);
 
   box-shadow:
-    0 12px 30px rgba(255,255,255,.25);
+    0 12px 30px rgba(255,255,255,.20);
 }
 
-/* =========================
-   ANIMATION
-========================= */
-
-@keyframes fadeSlide {
-
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================
+/* ===================================
    DARK MODE
-========================= */
+=================================== */
 
 .services-section.dark {
   background: #0a1628;
@@ -314,11 +300,6 @@
 
 .services-section.dark .services-header h2 {
   color: white;
-}
-
-.services-section.dark .services-header p {
-  color:
-    rgba(255,255,255,.8);
 }
 
 .services-section.dark .service-item {
@@ -337,24 +318,19 @@
   background:
     linear-gradient(
       90deg,
-      rgba(77,184,255,.18),
+      rgba(77,184,255,.15),
       transparent
     );
 }
 
-.services-section.dark .service-details {
+.services-section.dark .services-left::-webkit-scrollbar-track {
   background:
-    linear-gradient(
-      135deg,
-      #001c54,
-      #003a8c,
-      #005cb9
-    );
+    rgba(255,255,255,.05);
 }
 
-/* =========================
-   TABLET
-========================= */
+/* ===================================
+   RESPONSIVE
+=================================== */
 
 @media (max-width: 992px) {
 
@@ -362,14 +338,15 @@
     grid-template-columns: 1fr;
   }
 
+  .services-left {
+    height: 450px;
+  }
+
   .service-details {
-    min-height: auto;
+    height: auto;
+    min-height: 500px;
   }
 }
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 768px) {
 
@@ -394,6 +371,6 @@
   }
 
   .service-item h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
 }

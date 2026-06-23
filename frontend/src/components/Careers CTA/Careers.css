@@ -2,481 +2,495 @@
    CAREERS SECTION
 =================================== */
 
-.careers-section {
-  padding: 140px 80px;
-  background: var(--section-bg);
-  position: relative;
-  overflow: hidden;
+.careers-section{
+  padding:120px 80px;
+  background:var(--bg);
+  overflow:hidden;
+  position:relative;
 }
 
-/* Animated Background */
+.careers-container{
+  max-width:1400px;
+  margin:auto;
 
-.careers-section::before {
-  content: "";
+  display:grid;
+  grid-template-columns:1fr 1fr;
 
-  position: absolute;
-
-  width: 700px;
-  height: 700px;
-
-  top: -250px;
-  right: -250px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(77,184,255,0.18),
-      transparent 70%
-    );
-
-  animation: glowMove 10s ease-in-out infinite;
-}
-
-.careers-section::after {
-  content: "";
-
-  position: absolute;
-
-  width: 500px;
-  height: 500px;
-
-  bottom: -250px;
-  left: -250px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(0,92,185,0.08),
-      transparent 70%
-    );
+  gap:80px;
+  align-items:center;
 }
 
 /* ===================================
-   LAYOUT
+   LEFT SIDE
 =================================== */
 
-.careers-container {
-  max-width: 1450px;
-  margin: auto;
+.career-tag{
+  display:inline-block;
 
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  color:#4db8ff;
+  font-size:14px;
+  font-weight:700;
 
-  gap: 100px;
-  align-items: center;
+  letter-spacing:3px;
+  margin-bottom:20px;
+}
 
-  position: relative;
-  z-index: 2;
+.careers-left h2{
+  font-size:54px;
+  font-weight:800;
+  line-height:1.15;
+
+  color:var(--text);
+
+  margin-bottom:25px;
+  max-width:650px;
+}
+
+.careers-left p{
+  font-size:17px;
+  line-height:1.9;
+
+  color:var(--text-muted);
+
+  max-width:650px;
 }
 
 /* ===================================
-   LEFT
+   STATS
 =================================== */
 
-.career-tag {
-  color: #4db8ff;
+.career-stats{
+  display:flex;
+  gap:40px;
 
-  font-size: 14px;
-  font-weight: 700;
-
-  letter-spacing: 4px;
+  margin:35px 0;
 }
 
-.careers-left h2 {
-  margin-top: 18px;
+.career-stats h3{
+  color:#4db8ff;
 
-  font-size: 82px;
-  font-weight: 800;
+  font-size:32px;
+  font-weight:800;
 
-  line-height: 1.05;
-
-  color: var(--text);
+  margin-bottom:5px;
 }
 
-.careers-left p {
-  margin-top: 30px;
+.career-stats span{
+  font-size:14px;
 
-  font-size: 20px;
-
-  line-height: 1.9;
-
-  color: var(--text-muted);
-
-  max-width: 760px;
+  color:rgba(255,255,255,.75);
 }
 
 /* ===================================
    BENEFITS
 =================================== */
 
-.career-benefits {
-  margin-top: 50px;
+.career-benefits{
+  margin-top:40px;
 
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
 
-  gap: 22px;
+  gap:18px;
 }
 
-.benefit-card {
-  background: var(--card-bg);
+.benefit-card{
+  display:flex;
+  align-items:center;
 
-  border: 1px solid var(--border);
+  gap:15px;
 
-  border-radius: 24px;
+  padding:18px 20px;
 
-  padding: 26px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 18px;
-
-  box-shadow: var(--shadow-soft);
-
-  transition: .4s ease;
-}
-
-.benefit-card:hover {
-  transform:
-    translateY(-10px)
-    scale(1.02);
-
-  border-color: #4db8ff;
-
-  box-shadow:
-    0 20px 50px rgba(77,184,255,.18);
-}
-
-.benefit-icon {
-  width: 68px;
-  height: 68px;
-
-  border-radius: 18px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius:18px;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(0,92,185,.08),
-      rgba(77,184,255,.18)
-    );
+  rgba(255,255,255,.05);
 
-  color: #4db8ff;
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(10px);
+
+  transition:.35s ease;
 }
 
-.benefit-card span {
-  font-size: 22px;
-  font-weight: 600;
+.benefit-card:hover{
+  transform:translateY(-5px);
+
+  box-shadow:
+  0 15px 30px rgba(77,184,255,.15);
+}
+
+.benefit-icon{
+  width:50px;
+  height:50px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:14px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #005cb9,
+    #4db8ff
+  );
+
+  color:white;
+}
+
+.benefit-card span{
+  font-size:17px;
+  font-weight:600;
+
+  color:var(--text);
 }
 
 /* ===================================
    BUTTON
 =================================== */
 
-.career-btn {
-  margin-top: 45px;
+.career-btn{
+  margin-top:40px;
 
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+  padding:16px 34px;
 
-  padding: 18px 38px;
+  border:none;
 
-  border: none;
+  border-radius:14px;
 
-  border-radius: 14px;
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+
+  cursor:pointer;
+
+  color:white;
+
+  font-size:15px;
+  font-weight:600;
 
   background:
-    linear-gradient(
-      135deg,
-      #002d72,
-      #005cb9,
-      #4db8ff
-    );
+  linear-gradient(
+    135deg,
+    #002d72,
+    #005cb9,
+    #4db8ff
+  );
 
-  color: white;
-
-  font-size: 16px;
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition: .35s ease;
+  transition:.35s ease;
 }
 
-.career-btn:hover {
-  transform:
-    translateY(-5px)
-    scale(1.02);
+.career-btn:hover{
+  transform:translateY(-4px);
 
   box-shadow:
-    0 25px 60px rgba(77,184,255,.25);
+  0 15px 35px rgba(77,184,255,.25);
 }
 
 /* ===================================
    RIGHT SIDE
 =================================== */
 
-.careers-right {
-  display: flex;
-  justify-content: center;
+.careers-right{
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-.career-showcase {
-  position: relative;
+.career-showcase{
+  position:relative;
 
-  width: 650px;
-  height: 550px;
+  width:100%;
+  max-width:600px;
+
+  height:500px;
 }
 
-/* Main Premium Card */
+/* subtle ambient glow behind the showcase */
+.career-showcase::before{
+  content:"";
+  position:absolute;
+  inset: -60px -40px -40px -40px;
+  background: radial-gradient(circle at 60% 40%, rgba(77,184,255,0.16), rgba(13,110,253,0.03) 45%, transparent 60%);
+  filter: blur(40px);
+  z-index:1;
+  pointer-events:none;
+}
 
-.main-card {
-  position: absolute;
+/* ===================================
+   MAIN CARD
+=================================== */
 
-  top: 50%;
-  left: 50%;
+.main-card{
+  position:absolute;
 
-  transform: translate(-50%, -50%);
+  top:50%;
+  left:50%;
 
-  width: 340px;
-  height: 250px;
+  transform:translate(-50%,-50%);
 
-  border-radius: 34px;
+  width:360px;
+
+  padding:30px 32px;
+
+  border-radius:24px;
 
   background:
-    linear-gradient(
-      135deg,
-      #002d72,
-      #005cb9,
-      #4db8ff
-    );
+  linear-gradient(
+    135deg,
+    #003a8c,
+    #005cb9,
+    #0d6efd
+  );
 
-  color: white;
-
-  text-align: center;
-
-  padding: 40px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  color:white;
 
   box-shadow:
-    0 35px 90px rgba(0,92,185,.25);
+    0 35px 80px rgba(3,36,92,.35),
+    0 12px 30px rgba(77,184,255,.08) inset;
 
-  animation:
-    floatMain 6s ease-in-out infinite,
-    glowPulse 5s ease-in-out infinite;
+  z-index:6;
+
+  animation: floatCard 6s ease-in-out infinite;
+  transition: transform .35s ease, box-shadow .35s ease;
 }
 
-.main-card h3 {
-  font-size: 42px;
-  font-weight: 800;
-
-  margin-bottom: 18px;
+.main-card::before{
+  content:"";
+  position:absolute;
+  inset:6px;
+  border-radius:20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
+  pointer-events:none;
+  z-index:-1;
 }
 
-.main-card p {
-  line-height: 1.9;
-  color: rgba(255,255,255,.95);
+.main-card h3{
+  font-size:20px;
+  font-weight:800;
+
+  margin-bottom:15px;
 }
 
-/* Floating Cards */
+.main-card p{
+  font-size:15px;
+  line-height:1.8;
+
+  color:rgba(255,255,255,.92);
+}
+
+/* floating card labels (small blue labels positioned around the showcase) */
+.float-label{
+  position:absolute;
+  color:#3aa0ff;
+  font-weight:700;
+  font-size:14px;
+  z-index:2;
+  white-space:nowrap;
+  transition:transform .35s ease, opacity .35s ease;
+}
+
+/* ===================================
+   TECH STACK
+=================================== */
+
+.tech-stack{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+
+.tech-stack span{
+  padding:8px 14px;
+
+  border-radius:30px;
+
+  background:
+    rgba(255,255,255,.12);
+
+  border:
+    1px solid rgba(255,255,255,.15);
+
+  font-size:13px;
+  font-weight:600;
+}
+
+/* ===================================
+   FLOATING CARDS
+=================================== */
 
 .small-card{
   position:absolute;
 
-  padding:18px 28px;
+  padding:14px 20px;
 
-  border-radius:20px;
+  border-radius:16px;
 
-  background:white;
+  background:
+    rgba(255,255,255,.05);
 
-  color:#002d72;
+  backdrop-filter:blur(12px);
 
-  border:1px solid rgba(0,92,185,.12);
+  border:
+    1px solid rgba(255,255,255,.08);
 
-  box-shadow:
-  0 15px 40px rgba(0,92,185,.10);
+  color:#4db8ff;
 
-  font-weight:700;
+  font-size:15px;
+  font-weight:600;
 
-  transition:.4s ease;
+  white-space:nowrap;
+}
+
+.small-card{
+  z-index:5;
+  transform-origin:center;
+  transition:transform .35s ease, box-shadow .35s ease;
+  min-width:140px;
+  text-align:center;
 }
 
 .small-card:hover{
-  transform:
-  translateY(-8px)
-  scale(1.05);
-
-  border-color:#4db8ff;
-
-  box-shadow:
-  0 20px 50px rgba(77,184,255,.20);
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 20px 45px rgba(3,36,92,.18);
 }
 
-.card-top {
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-}
+/* Better positions — pushed further out to avoid overlap */
+.card-top{ left:220px; top:20px; transform:translateX(18px) }
+.card-right{ right:-60px; top:140px; transform:translateX(24px) }
+.card-bottom{ right:140px; bottom:20px; transform:translateY(12px) }
+.card-left{ left:-20px; bottom:130px; transform:translateX(-12px) }
 
-.card-right {
-  top: 50%;
-  right: -60px;
-}
-
-.card-bottom {
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-}
+/* Slightly reduce label size so they don't crowd the main card */
+.small-card{ font-size:14px; padding:12px 16px }
 /* ===================================
    DARK MODE
 =================================== */
 
-.careers-section.dark {
-  background: #081426;
+.careers-section.dark{
+  background:#0a1628;
 }
 
-.careers-section.dark .benefit-card,
-.careers-section.dark .small-card{
-  background:rgba(255,255,255,.08);
-
+.careers-section.dark h2{
   color:white;
-
-  border:1px solid rgba(77,184,255,.20);
-
-  backdrop-filter:blur(18px);
-
-  box-shadow:
-  0 15px 40px rgba(77,184,255,.12);
 }
 
-.careers-section.dark .benefit-card span,
-.careers-section.dark .small-card {
-  color: white;
+.careers-section.dark p{
+  color:rgba(255,255,255,.8);
+}
+
+.careers-section.dark .benefit-card{
+  background:
+  rgba(255,255,255,.05);
+
+  border:
+  1px solid rgba(255,255,255,.08);
+}
+
+.careers-section.dark .benefit-card span{
+  color:white;
 }
 
 /* ===================================
-   ANIMATIONS
+   ANIMATION
 =================================== */
 
-@keyframes floatMain {
+@keyframes floatCard{
 
-  0%,100% {
-    transform: translate(-50%, -50%);
-  }
-
-  50% {
-    transform: translate(-50%, -55%);
-  }
-}
-
-@keyframes glowPulse {
-
-  0%,100% {
-    box-shadow:
-      0 35px 90px rgba(0,92,185,.25);
-  }
-
-  50% {
-    box-shadow:
-      0 45px 110px rgba(77,184,255,.35);
-  }
-}
-
-@keyframes glowMove {
-
-  0%,100% {
-    transform: translate(0,0);
-  }
-
-  50% {
-    transform: translate(-40px,40px);
-  }
-}
-
-@keyframes float1 {
-
-  0%,100% {
+  0%,100%{
     transform:
-      translateX(-50%)
-      translateY(0);
+    translate(-50%,-50%);
   }
 
-  50% {
+  50%{
     transform:
-      translateX(-50%)
-      translateY(-18px);
-  }
-}
-
-@keyframes float2 {
-
-  0%,100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes float3 {
-
-  0%,100% {
-    transform:
-      translateX(-50%)
-      translateY(0);
-  }
-
-  50% {
-    transform:
-      translateX(-50%)
-      translateY(-18px);
+    translate(-50%,-54%);
   }
 }
 
 /* ===================================
-   RESPONSIVE
+   TABLET
 =================================== */
 
-@media (max-width: 992px){
+@media(max-width:992px){
 
   .careers-container{
     grid-template-columns:1fr;
   }
 
-  .careers-right{
-    display:none;
+  .careers-left{
+    text-align:center;
   }
 
-  .careers-left h2{
-    font-size:56px;
+  .careers-left p{
+    margin:auto;
+  }
+
+  .career-stats{
+    justify-content:center;
+  }
+
+  .career-btn{
+    margin-left:auto;
+    margin-right:auto;
   }
 }
 
-@media (max-width:768px){
+/* ===================================
+   MOBILE
+=================================== */
+
+@media(max-width:768px){
 
   .careers-section{
-    padding:90px 25px;
+    padding:80px 25px;
+  }
+
+  .careers-left h2{
+    font-size:38px;
   }
 
   .career-benefits{
     grid-template-columns:1fr;
   }
 
-  .careers-left h2{
-    font-size:42px;
+  .career-stats{
+    flex-wrap:wrap;
+    gap:25px;
+    justify-content:center;
+  }
+
+  .career-showcase{
+    height:auto;
+  }
+
+  .main-card{
+    position:relative;
+
+    width:100%;
+
+    left:auto;
+    top:auto;
+
+    transform:none;
+
+    animation:none;
+  }
+
+  .small-card{
+    position:relative;
+
+    margin-top:15px;
+
+    left:auto;
+    right:auto;
+    top:auto;
+    bottom:auto;
   }
 }

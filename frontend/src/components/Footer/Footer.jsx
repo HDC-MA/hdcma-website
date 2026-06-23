@@ -85,7 +85,7 @@ function Footer({ darkMode }) {
 
             <li>
               <FaEnvelope />
-              careers@horizondigitalcore.com
+              info@horizondigitalcore.com
             </li>
 
             <li>

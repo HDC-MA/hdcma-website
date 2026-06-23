@@ -14,15 +14,17 @@ function WhyHDCMA({ darkMode }) {
           <span>WHY HDCMA</span>
 
           <h2>
-            Why Leading Businesses
-            Choose HDCMA
+            Building Modern Digital
+            Experiences With MERN,
+            AI & Enterprise Technology
           </h2>
 
           <p>
-            We help organizations accelerate
-            digital transformation through AI,
-            Cloud, Cybersecurity, SAP and
-            Enterprise Technology Solutions.
+            HDCMA helps businesses accelerate
+            growth through MERN Stack Development,
+            AI-powered applications, Cloud
+            Engineering, SAP Solutions and
+            Enterprise Digital Transformation.
           </p>
 
           <button>
@@ -42,29 +44,58 @@ function WhyHDCMA({ darkMode }) {
 
             <div className="stat-box">
               <h3>20+</h3>
-              <span>Clients Served</span>
+              <span>Business Clients</span>
             </div>
 
             <div className="stat-box">
               <h3>10+</h3>
-              <span>Industries</span>
+              <span>Industries Served</span>
             </div>
 
             <div className="stat-box">
               <h3>24/7</h3>
-              <span>Support</span>
+              <span>Technical Support</span>
             </div>
 
           </div>
 
-          <div className="why-points">
+          <div className="capabilities-grid">
 
-            <div>✓ AI-First Innovation</div>
-            <div>✓ Enterprise Expertise</div>
-            <div>✓ SAP Specialists</div>
-            <div>✓ Cloud Native Solutions</div>
-            <div>✓ Security By Design</div>
-            <div>✓ Long-Term Partnerships</div>
+            <div className="capability-card">
+              <h4>MERN Stack</h4>
+
+              <p>
+                React.js, Node.js,
+                Express.js & MongoDB
+              </p>
+            </div>
+
+            <div className="capability-card">
+              <h4>AI Solutions</h4>
+
+              <p>
+                Chatbots, Automation,
+                Machine Learning
+              </p>
+            </div>
+
+            <div className="capability-card">
+              <h4>Cloud & DevOps</h4>
+
+              <p>
+                AWS, Azure,
+                CI/CD & Deployment
+              </p>
+            </div>
+
+            <div className="capability-card">
+              <h4>SAP Services</h4>
+
+              <p>
+                SAP CPI, SAP MM,
+                SAP BOM Solutions
+              </p>
+            </div>
 
           </div>
 

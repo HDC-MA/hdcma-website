@@ -13,25 +13,27 @@ function Careers({ darkMode }) {
   const benefits = [
     {
       icon: <Rocket size={26} />,
-      title: "Career Growth"
+      title: "Real Client Projects"
     },
     {
       icon: <GraduationCap size={26} />,
-      title: "Learning Programs"
+      title: "MERN Stack Learning"
     },
     {
       icon: <BrainCircuit size={26} />,
-      title: "Innovation Culture"
+      title: "AI & Innovation"
     },
     {
       icon: <Globe size={26} />,
-      title: "Global Exposure"
+      title: "Cloud & SAP Exposure"
     }
   ];
 
   return (
     <section
-      className={`careers-section ${darkMode ? "dark" : ""}`}
+      className={`careers-section ${
+        darkMode ? "dark" : ""
+      }`}
     >
       <div className="careers-container">
 
@@ -44,16 +46,19 @@ function Careers({ darkMode }) {
           </span>
 
           <h2>
-            Build The Future
+            Build Modern MERN,
+            <br />
+            AI & Cloud Solutions
             <br />
             With HDCMA
           </h2>
 
           <p>
-            Join our team of innovators, engineers,
-            designers and technology experts shaping
-            the future of AI, Cloud, Cybersecurity,
-            and Digital Transformation.
+            Join HDCMA and work on real-world
+            MERN Stack applications, AI-powered
+            platforms, Cloud solutions, SAP
+            integrations and enterprise digital
+            transformation projects.
           </p>
 
           <div className="career-benefits">
@@ -87,25 +92,47 @@ function Careers({ darkMode }) {
           <div className="career-showcase">
 
             <div className="showcase-card main-card">
-              <h3>AI Driven Innovation</h3>
+
+              <h3>
+                MERN Stack Development
+              </h3>
 
               <p>
-                Building next-generation digital
-                solutions powered by AI, Cloud and
-                Cybersecurity.
+                Build scalable enterprise
+                applications using MongoDB,
+                Express.js, React.js and
+                Node.js while working on
+                modern digital solutions.
               </p>
+
+              <div className="tech-stack">
+
+                <span>MongoDB</span>
+
+                <span>Express.js</span>
+
+                <span>React.js</span>
+
+                <span>Node.js</span>
+
+              </div>
+
             </div>
 
             <div className="showcase-card small-card card-top">
-              Global Projects
+              React.js Projects
             </div>
 
             <div className="showcase-card small-card card-right">
-              Career Growth
+              AI Integration
             </div>
 
             <div className="showcase-card small-card card-bottom">
-              Learning Culture
+              Cloud Deployment
+            </div>
+
+            <div className="showcase-card small-card card-left">
+              SAP Solutions
             </div>
 
           </div>

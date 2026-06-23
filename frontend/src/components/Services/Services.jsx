@@ -6,77 +6,24 @@ import {
   ShieldCheck,
   Database,
   BriefcaseBusiness,
-  CheckCircle2
+  CheckCircle2,
 } from "lucide-react";
 
 import "./Services.css";
 
 function Services({ darkMode }) {
-
   const services = [
     {
       icon: <LaptopMinimal size={40} />,
       title: "Custom Software Development",
       description:
-        "We build scalable, secure and high-performance software solutions tailored to your business objectives and customer needs.",
+        "Build scalable web, mobile and enterprise applications with AI integration.",
       features: [
         "Web Applications",
         "Mobile Applications",
         "Enterprise Software",
-        "AI Integration"
-      ]
-    },
-
-    {
-      icon: <Bot size={40} />,
-      title: "AI & Machine Learning",
-      description:
-        "Transform business operations through intelligent automation and AI-powered innovation.",
-      features: [
-        "Generative AI",
-        "Machine Learning",
-        "Chatbots",
-        "Predictive Analytics"
-      ]
-    },
-
-    {
-      icon: <Cloud size={40} />,
-      title: "Cloud Services",
-      description:
-        "Accelerate cloud adoption through migration, modernization and optimization.",
-      features: [
-        "AWS",
-        "Azure",
-        "DevOps",
-        "Cloud Security"
-      ]
-    },
-
-    {
-      icon: <ShieldCheck size={40} />,
-      title: "Cybersecurity Services",
-      description:
-        "Protect digital assets through enterprise-grade security and compliance solutions.",
-      features: [
-        "Threat Detection",
-        "Risk Assessment",
-        "Compliance",
-        "SOC Services"
-      ]
-    },
-
-    {
-      icon: <Database size={40} />,
-      title: "SAP Solutions",
-      description:
-        "Enterprise SAP implementation and integration expertise.",
-      features: [
-        "SAP CPI",
-        "SAP MM",
-        "SAP BOM",
-        "SAP Integration"
-      ]
+        "AI Integration",
+      ],
     },
 
     {
@@ -88,9 +35,126 @@ function Services({ darkMode }) {
         "UI/UX Design",
         "Platform Engineering",
         "SaaS Products",
-        "Product Strategy"
-      ]
-    }
+        "Product Strategy",
+      ],
+    },
+
+    {
+      icon: <Bot size={40} />,
+      title: "AI & Machine Learning Solutions",
+      description:
+        "Transform business operations through intelligent automation.",
+      features: [
+        "Generative AI",
+        "Machine Learning",
+        "Chatbots",
+        "Predictive Analytics",
+      ],
+    },
+
+    {
+      icon: <LaptopMinimal size={40} />,
+      title: "Digital Marketing Services",
+      description:
+        "Drive growth through modern digital marketing solutions.",
+      features: [
+        "SEO",
+        "Social Media Marketing",
+        "Performance Marketing",
+        "Content Marketing",
+      ],
+    },
+
+    {
+      icon: <ShieldCheck size={40} />,
+      title: "Cybersecurity Services",
+      description:
+        "Protect digital assets through enterprise-grade security.",
+      features: [
+        "Threat Detection",
+        "Risk Assessment",
+        "Compliance",
+        "SOC Services",
+      ],
+    },
+
+    {
+      icon: <BriefcaseBusiness size={40} />,
+      title: "IT Consulting & Managed Services",
+      description:
+        "Technology consulting and managed IT operations.",
+      features: [
+        "IT Strategy",
+        "Infrastructure",
+        "Managed Services",
+        "Technical Support",
+      ],
+    },
+
+    {
+      icon: <Cloud size={40} />,
+      title: "Cloud Services",
+      description:
+        "Accelerate cloud adoption and modernization.",
+      features: [
+        "AWS",
+        "Azure",
+        "DevOps",
+        "Cloud Security",
+      ],
+    },
+
+    {
+      icon: <Database size={40} />,
+      title: "Business & Enterprise Solutions",
+      description:
+        "Enterprise applications and business automation solutions.",
+      features: [
+        "ERP Solutions",
+        "CRM Systems",
+        "Automation",
+        "Business Intelligence",
+      ],
+    },
+
+    {
+      icon: <BriefcaseBusiness size={40} />,
+      title: "Staffing & Training Services",
+      description:
+        "Skilled workforce and corporate training programs.",
+      features: [
+        "Technical Staffing",
+        "Corporate Training",
+        "Upskilling",
+        "Workforce Solutions",
+      ],
+    },
+
+    {
+      icon: <LaptopMinimal size={40} />,
+      title: "SaaS Products",
+      description:
+        "Build and scale cloud-native SaaS applications.",
+      features: [
+        "Subscription Platforms",
+        "Cloud Products",
+        "Multi-Tenant Apps",
+        "Product Scaling",
+      ],
+    },
+
+    {
+      icon: <Database size={40} />,
+      title: "SAP Solutions",
+      description:
+        "Enterprise SAP implementation and integration expertise.",
+      features: [
+        "SAP CPI",
+        "SAP MM",
+        "SAP BOM",
+        "SAP Integration",
+      ],
+    },
   ];
 
   const [active, setActive] = useState(0);
@@ -101,23 +165,18 @@ function Services({ darkMode }) {
         darkMode ? "dark" : ""
       }`}
     >
-
       <div className="services-header">
-
         <span>OUR SERVICES</span>
 
         <h2>
-          End-to-End Technology Solutions
+          End-to-End Technology
+          Solutions
         </h2>
-
       </div>
 
       <div className="services-wrapper">
-
         <div className="services-left">
-
           {services.map((service, index) => (
-
             <div
               key={index}
               className={`service-item ${
@@ -129,23 +188,19 @@ function Services({ darkMode }) {
                 setActive(index)
               }
             >
-
               <span className="service-number">
-                0{index + 1}
+                {String(index + 1).padStart(
+                  2,
+                  "0"
+                )}
               </span>
 
-              <h3>
-                {service.title}
-              </h3>
-
+              <h3>{service.title}</h3>
             </div>
-
           ))}
-
         </div>
 
         <div className="service-details">
-
           <div className="detail-icon">
             {services[active].icon}
           </div>
@@ -159,29 +214,28 @@ function Services({ darkMode }) {
           </p>
 
           <div className="feature-grid">
-
-            {services[active].features.map(
+            {services[
+              active
+            ].features.map(
               (feature, index) => (
                 <div
                   key={index}
                   className="feature-item"
                 >
-                  <CheckCircle2 size={18} />
+                  <CheckCircle2
+                    size={18}
+                  />
                   {feature}
                 </div>
               )
             )}
-
           </div>
 
           <button className="explore-btn">
             Explore Service →
           </button>
-
         </div>
-
       </div>
-
     </section>
   );
 }
