@@ -246,6 +246,81 @@
   font-size: 15px;
 }
 
+.technology-header {
+  margin-top: 30px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(77,184,255,.12);
+}
+
+.technology-header h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #002d72;
+}
+
+.technology-header p {
+  margin: 10px 0 0;
+  color: #5f6c7b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.technology-grid {
+  margin-top: 20px;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  gap: 18px;
+}
+
+.tech-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 20px;
+
+  border-radius: 22px;
+
+  background: rgba(255,255,255,.95);
+
+  border: 1px solid rgba(77,184,255,.16);
+
+  transition: all .35s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 15px 35px rgba(77,184,255,.15);
+}
+
+.tech-card img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.tech-card span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #002d72;
+}
+
+.why-section.dark .tech-card {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(77,184,255,.15);
+}
+
+.why-section.dark .tech-card span {
+  color: white;
+}
+
 /* ===================================
    DARK MODE
 =================================== */

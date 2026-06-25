@@ -6,6 +6,8 @@ import {
   ShieldCheck,
   Database,
   BriefcaseBusiness,
+  Users,
+  BarChart3,
   CheckCircle2,
 } from "lucide-react";
 
@@ -13,6 +15,19 @@ import "./Services.css";
 
 function Services({ darkMode }) {
   const services = [
+    {
+      icon: <Bot size={40} />,
+      title: "AI & Machine Learning Solutions",
+      description:
+        "Transform business operations with Generative AI, intelligent automation and predictive analytics.",
+      features: [
+        "Generative AI",
+        "Machine Learning",
+        "Chatbots",
+        "Predictive Analytics",
+      ],
+    },
+
     {
       icon: <LaptopMinimal size={40} />,
       title: "Custom Software Development",
@@ -30,38 +45,38 @@ function Services({ darkMode }) {
       icon: <BriefcaseBusiness size={40} />,
       title: "Digital Product Engineering",
       description:
-        "Design and build innovative SaaS products and digital platforms.",
+        "Design and develop modern SaaS products and enterprise digital platforms.",
       features: [
-        "UI/UX Design",
+        "UI / UX Design",
         "Platform Engineering",
-        "SaaS Products",
+        "SaaS Development",
         "Product Strategy",
       ],
     },
 
     {
-      icon: <Bot size={40} />,
-      title: "AI & Machine Learning Solutions",
+      icon: <BriefcaseBusiness size={40} />,
+      title: "IT Consulting & Managed Services",
       description:
-        "Transform business operations through intelligent automation.",
+        "Strategic consulting and managed IT services that accelerate digital transformation.",
       features: [
-        "Generative AI",
-        "Machine Learning",
-        "Chatbots",
-        "Predictive Analytics",
+        "IT Strategy",
+        "Infrastructure",
+        "Managed Services",
+        "24×7 Support",
       ],
     },
 
     {
-      icon: <LaptopMinimal size={40} />,
-      title: "Digital Marketing Services",
+      icon: <Database size={40} />,
+      title: "Business & Enterprise Solutions",
       description:
-        "Drive growth through modern digital marketing solutions.",
+        "Enterprise software, ERP, CRM and workflow automation solutions.",
       features: [
-        "SEO",
-        "Social Media Marketing",
-        "Performance Marketing",
-        "Content Marketing",
+        "ERP Solutions",
+        "CRM Systems",
+        "Business Automation",
+        "Business Intelligence",
       ],
     },
 
@@ -69,7 +84,7 @@ function Services({ darkMode }) {
       icon: <ShieldCheck size={40} />,
       title: "Cybersecurity Services",
       description:
-        "Protect digital assets through enterprise-grade security.",
+        "Protect digital assets with enterprise-grade cybersecurity and compliance.",
       features: [
         "Threat Detection",
         "Risk Assessment",
@@ -79,23 +94,10 @@ function Services({ darkMode }) {
     },
 
     {
-      icon: <BriefcaseBusiness size={40} />,
-      title: "IT Consulting & Managed Services",
-      description:
-        "Technology consulting and managed IT operations.",
-      features: [
-        "IT Strategy",
-        "Infrastructure",
-        "Managed Services",
-        "Technical Support",
-      ],
-    },
-
-    {
       icon: <Cloud size={40} />,
       title: "Cloud Services",
       description:
-        "Accelerate cloud adoption and modernization.",
+        "Cloud migration, DevOps, modernization and infrastructure management.",
       features: [
         "AWS",
         "Azure",
@@ -105,23 +107,23 @@ function Services({ darkMode }) {
     },
 
     {
-      icon: <Database size={40} />,
-      title: "Business & Enterprise Solutions",
+      icon: <BarChart3 size={40} />,
+      title: "Digital Marketing Services",
       description:
-        "Enterprise applications and business automation solutions.",
+        "Performance-driven marketing solutions to accelerate business growth.",
       features: [
-        "ERP Solutions",
-        "CRM Systems",
-        "Automation",
-        "Business Intelligence",
+        "SEO",
+        "Social Media",
+        "Performance Marketing",
+        "Content Marketing",
       ],
     },
 
     {
-      icon: <BriefcaseBusiness size={40} />,
+      icon: <Users size={40} />,
       title: "Staffing & Training Services",
       description:
-        "Skilled workforce and corporate training programs.",
+        "Technical staffing, recruitment and corporate learning solutions.",
       features: [
         "Technical Staffing",
         "Corporate Training",
@@ -134,7 +136,7 @@ function Services({ darkMode }) {
       icon: <LaptopMinimal size={40} />,
       title: "SaaS Products",
       description:
-        "Build and scale cloud-native SaaS applications.",
+        "Develop secure cloud-native SaaS products for modern enterprises.",
       features: [
         "Subscription Platforms",
         "Cloud Products",
@@ -147,7 +149,7 @@ function Services({ darkMode }) {
       icon: <Database size={40} />,
       title: "SAP Solutions",
       description:
-        "Enterprise SAP implementation and integration expertise.",
+        "Complete SAP implementation, integration and enterprise consulting services.",
       features: [
         "SAP CPI",
         "SAP MM",
@@ -170,29 +172,31 @@ function Services({ darkMode }) {
 
         <h2>
           End-to-End Technology
+          <br />
           Solutions
         </h2>
+
+        <p>
+          Empowering businesses with AI, Cloud,
+          Enterprise Software, SAP and Digital
+          Engineering services.
+        </p>
       </div>
 
       <div className="services-wrapper">
+        {/* LEFT SIDE */}
+
         <div className="services-left">
           {services.map((service, index) => (
             <div
               key={index}
               className={`service-item ${
-                active === index
-                  ? "active"
-                  : ""
+                active === index ? "active" : ""
               }`}
-              onClick={() =>
-                setActive(index)
-              }
+              onClick={() => setActive(index)}
             >
               <span className="service-number">
-                {String(index + 1).padStart(
-                  2,
-                  "0"
-                )}
+                {String(index + 1).padStart(2, "0")}
               </span>
 
               <h3>{service.title}</h3>
@@ -200,32 +204,26 @@ function Services({ darkMode }) {
           ))}
         </div>
 
+        {/* RIGHT SIDE */}
+
         <div className="service-details">
           <div className="detail-icon">
             {services[active].icon}
           </div>
 
-          <h3>
-            {services[active].title}
-          </h3>
+          <h3>{services[active].title}</h3>
 
-          <p>
-            {services[active].description}
-          </p>
+          <p>{services[active].description}</p>
 
           <div className="feature-grid">
-            {services[
-              active
-            ].features.map(
+            {services[active].features.map(
               (feature, index) => (
                 <div
                   key={index}
                   className="feature-item"
                 >
-                  <CheckCircle2
-                    size={18}
-                  />
-                  {feature}
+                  <CheckCircle2 size={18} />
+                  <span>{feature}</span>
                 </div>
               )
             )}

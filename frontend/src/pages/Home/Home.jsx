@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar/Navbar";
 import Hero from "../../components/Hero/Hero";
+import TrustedTechnologies from "../../components/TrustedTechnologies/TrustedTechnologies";
 import Services from "../../components/Services/Services";
 import Industries from "../../components/Industries/Industries";
 import Products from "../../components/Products/Products";
@@ -21,7 +22,8 @@ function Home({ darkMode, setDarkMode }) {
       {/* HERO */}
       <Hero darkMode={darkMode} />
 
-    
+     {/* TRUSTED TECHNOLOGIES */}
+      <TrustedTechnologies darkMode={darkMode} />
 
       {/* OTHER SECTIONS */}
       <Services darkMode={darkMode} />
