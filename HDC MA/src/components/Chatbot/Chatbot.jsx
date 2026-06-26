@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useDragControls } from "framer-motion";
 import { MessageCircle, X, Send, Bot, User } from "lucide-react";
 import "./Chatbot.css";
 
@@ -31,6 +31,7 @@ const Chatbot = ({ darkMode }) => {
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const dragControls = useDragControls();
   const messagesEndRef = useRef(null);
 
   // Auto-scroll to bottom of chat
@@ -86,7 +87,13 @@ const Chatbot = ({ darkMode }) => {
   };
 
   return (
-    <div className={`chatbot-wrapper ${darkMode ? "dark" : ""}`}>
+    <motion.div
+      drag
+      dragControls={dragControls}
+      dragListener={false}
+      dragMomentum={false}
+      className={`chatbot-wrapper ${darkMode ? "dark" : ""}`}
+    >
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -97,7 +104,11 @@ const Chatbot = ({ darkMode }) => {
             className="chatbot-window"
           >
             {/* Header */}
-            <div className="chatbot-header">
+            <div
+              className="chatbot-header"
+              style={{ cursor: "grab" }}
+              onPointerDown={(e) => dragControls.start(e)}
+            >
               <div className="chatbot-header-info">
                 <div className="chatbot-avatar">
                   <Bot size={20} />
@@ -156,11 +167,13 @@ const Chatbot = ({ darkMode }) => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={toggleChat}
+        onPointerDown={(e) => dragControls.start(e)}
+        style={{ cursor: "grab" }}
         className={`chatbot-toggle-btn ${isOpen ? 'active' : ''}`}
       >
         {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
       </motion.button>
-    </div>
+    </motion.div>
   );
 };
 
