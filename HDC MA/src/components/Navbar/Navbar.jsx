@@ -47,7 +47,7 @@ function Navbar({ darkMode, setDarkMode }) {
         <li><Link to="/products" style={{ textDecoration: 'none', color: 'inherit' }}>Products</Link></li>
         <li><Link to="/insights" style={{ textDecoration: 'none', color: 'inherit' }}>Insights</Link></li>
         <li><Link to="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About Us</Link></li>
-        <li>Careers</li>
+        <li><Link to="/careers" style={{ textDecoration: 'none', color: 'inherit' }}>Careers</Link></li>
 
       </ul>
 

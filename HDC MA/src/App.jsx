@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import InsightsPage from "./pages/Insights/Insights";
 import ProductsPage from "./pages/Products/Products";
 import About from "./pages/About/About";
+import Careers from "./pages/Careers/Careers";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { client } from "./lib/appwrite";
@@ -36,6 +37,7 @@ function App() {
         <Route path="/insights" element={<InsightsPage darkMode={darkMode} />} />
         <Route path="/products" element={<ProductsPage darkMode={darkMode} />} />
         <Route path="/about" element={<About darkMode={darkMode} />} />
+        <Route path="/careers" element={<Careers darkMode={darkMode} setDarkMode={setDarkMode} />} />
       </Routes>
       <Footer darkMode={darkMode} />
     </div>
