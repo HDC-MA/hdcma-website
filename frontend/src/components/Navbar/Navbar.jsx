@@ -1,5 +1,6 @@
 import "./Navbar.css";
 import { FaMoon, FaSun, FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom"; 
 
 import darkLogo from "../../assets/logos/dark theme (1).svg";
 import lightLogo from "../../assets/logos/light theme.svg";
@@ -40,13 +41,13 @@ function Navbar({ darkMode, setDarkMode }) {
 
       <ul className="nav-links">
 
-        <li>Home</li>
+        <li><Link to="/">Home</Link></li>
         <li>Services</li>
         <li>Industries</li>
         <li>Products</li>
         <li>Insights</li>
         <li>About Us</li>
-        <li>Careers</li>
+        <li><Link to="/careers">Careers</Link></li>
 
       </ul>
 
