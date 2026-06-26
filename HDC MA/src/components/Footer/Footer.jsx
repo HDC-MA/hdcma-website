@@ -16,7 +16,7 @@ import lightLogo from "../../assets/logos/light theme.svg";
 
 function Footer({ darkMode }) {
   return (
-    <footer className={`footer ${darkMode ? "dark" : "light"}`}>
+    <footer id="footer" className={`footer ${darkMode ? "dark" : "light"}`}>
 
       <div className="footer-container">
 

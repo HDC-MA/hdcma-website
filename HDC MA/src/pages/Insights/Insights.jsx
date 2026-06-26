@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 import "./Insights.css";
@@ -45,9 +46,9 @@ function InsightsPage({ darkMode }) {
             </div>
             <h2>{featuredInsight.title}</h2>
             <p>{featuredInsight.excerpt}</p>
-            <div className="read-more-btn">
+            <Link to={`/insights/${featuredInsight.id}`} className="read-more-btn" style={{ textDecoration: 'none' }}>
               Read full story <ArrowRight size={18} />
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -83,9 +84,9 @@ function InsightsPage({ darkMode }) {
               </div>
               <h3>{insight.title}</h3>
               <p>{insight.excerpt}</p>
-              <div className="read-more-btn" style={{ fontSize: "0.95rem" }}>
+              <Link to={`/insights/${insight.id}`} className="read-more-btn" style={{ fontSize: "0.95rem", textDecoration: 'none' }}>
                 Read more <ArrowRight size={16} />
-              </div>
+              </Link>
             </div>
           </div>
         ))}

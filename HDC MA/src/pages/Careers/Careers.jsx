@@ -1,5 +1,3 @@
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import { useEffect } from 'react';
 import './Careers.css';
 import heroBgLight from "../../assets/hero-bg-light.png"
@@ -103,9 +101,7 @@ function Career({ darkMode, setDarkMode }) {
   ];
 
   return (
-    <>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <div className={`career-page ${darkMode ? 'dark' : 'light'}`}>
+    <div className={`career-page ${darkMode ? 'dark' : 'light'}`}>
 
         {/* ── HERO — staggered entrance via CSS animation ── */}
         <section className="career-hero" style={{ backgroundImage: `url(${heroBg})` }}>
@@ -247,10 +243,7 @@ function Career({ darkMode, setDarkMode }) {
             careers@horizondigitalcore.com
           </a>
         </section>
-
       </div>
-      <Footer darkMode={darkMode} />
-    </>
   );
 }
 

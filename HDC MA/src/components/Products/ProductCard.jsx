@@ -36,12 +36,7 @@ function ProductCard({ product, index }) {
               </div>
             </div>
 
-            <div className="product-actions">
-              <button className="btn-primary">
-                Request a Demo <ArrowRight size={18} />
-              </button>
-              <button className="btn-secondary">Learn More</button>
-            </div>
+
           </div>
           
           <div className="flagship-visual">
@@ -86,11 +81,7 @@ function ProductCard({ product, index }) {
           </div>
         </div>
 
-        <div className="product-actions">
-          <button className="btn-outline">
-            Explore {name} <ArrowRight size={16} />
-          </button>
-        </div>
+
       </div>
     </div>
   );

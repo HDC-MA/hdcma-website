@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import InsightsPage from "./pages/Insights/Insights";
+import InsightDetail from "./pages/InsightDetail/InsightDetail";
 import ProductsPage from "./pages/Products/Products";
 import About from "./pages/About/About";
 import Careers from "./pages/Careers/Careers";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import Chatbot from "./components/Chatbot/Chatbot";
 import { client } from "./lib/appwrite";
 
 function App() {
@@ -17,17 +19,25 @@ function App() {
     client.ping().then(() => console.log("Appwrite pinged successfully!")).catch(console.error);
   }, []);
 
-  const { pathname } = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
-    // Wrap in setTimeout to ensure it runs after DOM updates
-    // and browser's native scroll restoration
-    setTimeout(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }, 0);
-  }, [pathname]);
+    if (location.hash) {
+      setTimeout(() => {
+        const id = location.hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }, 0);
+    }
+  }, [location.pathname, location.hash]);
 
   return (
     <div className={darkMode ? "dark-theme" : ""}>
@@ -35,11 +45,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home darkMode={darkMode} setDarkMode={setDarkMode} />} />
         <Route path="/insights" element={<InsightsPage darkMode={darkMode} />} />
+        <Route path="/insights/:id" element={<InsightDetail darkMode={darkMode} />} />
         <Route path="/products" element={<ProductsPage darkMode={darkMode} />} />
         <Route path="/about" element={<About darkMode={darkMode} />} />
         <Route path="/careers" element={<Careers darkMode={darkMode} setDarkMode={setDarkMode} />} />
       </Routes>
       <Footer darkMode={darkMode} />
+      <Chatbot darkMode={darkMode} />
     </div>
   );
 }

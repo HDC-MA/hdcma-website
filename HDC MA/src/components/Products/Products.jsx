@@ -1,56 +1,16 @@
 import "./Products.css";
-
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
+import { productsData } from "./productsData";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
 function Products({ darkMode }) {
-
-  const products = [
-    {
-      image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995",
-      title: "AI Business Assistant",
-      description:
-        "Enterprise AI platform enabling automation, chatbots, intelligent workflows and business productivity."
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
-      title: "Cloud Management Suite",
-      description:
-        "Manage and optimize AWS, Azure and hybrid cloud environments through a unified platform."
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
-      title: "Cyber Defense Platform",
-      description:
-        "Advanced security monitoring, threat detection and enterprise protection solutions."
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
-      title: "SAP Integration Hub",
-      description:
-        "SAP CPI, SAP MM and SAP BOM implementation services for enterprise transformation."
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-      title: "Enterprise Analytics Platform",
-      description:
-        "Real-time business intelligence, dashboards and enterprise reporting solutions."
-    }
-  ];
-
   return (
     <section
-      className={`products-section ${
-        darkMode ? "dark" : ""
-      }`}
+      className={`products-section ${darkMode ? "dark" : ""}`}
     >
 
       <div className="products-header">
@@ -78,9 +38,9 @@ function Products({ darkMode }) {
         className="products-swiper"
       >
 
-        {products.map((product, index) => (
+        {productsData.map((product, index) => (
 
-          <SwiperSlide key={index}>
+          <SwiperSlide key={product.id || index}>
 
             <div className="product-slide">
 
@@ -88,26 +48,28 @@ function Products({ darkMode }) {
 
                 <img
                   src={product.image}
-                  alt={product.title}
+                  alt={product.name}
                 />
 
               </div>
 
               <div className="product-content">
 
-                <span>FEATURED SOLUTION</span>
+                <span>{product.category.toUpperCase()}</span>
 
                 <h3>
-                  {product.title}
+                  {product.name}
                 </h3>
 
                 <p>
                   {product.description}
                 </p>
 
-                <button>
-                  Explore Solution →
-                </button>
+                <Link to="/products" style={{ textDecoration: "none" }}>
+                  <button>
+                    Explore Solution →
+                  </button>
+                </Link>
 
               </div>
 

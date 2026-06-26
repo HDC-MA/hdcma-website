@@ -1,5 +1,6 @@
 import "./Careers.css";
 
+import { Link } from "react-router-dom";
 import {
   Rocket,
   GraduationCap,
@@ -78,10 +79,10 @@ function Careers({ darkMode }) {
 
           </div>
 
-          <button className="career-btn">
+          <Link to="/careers" className="career-btn" style={{ textDecoration: 'none' }}>
             Explore Careers
             <ArrowRight size={18} />
-          </button>
+          </Link>
 
         </div>
 
