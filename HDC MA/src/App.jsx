@@ -6,6 +6,8 @@ import InsightDetail from "./pages/InsightDetail/InsightDetail";
 import ProductsPage from "./pages/Products/Products";
 import About from "./pages/About/About";
 import Careers from "./pages/Careers/Careers";
+import Services from "./pages/Services/Services";
+import ServiceDetail from "./pages/Services/ServiceDetail";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Chatbot from "./components/Chatbot/Chatbot";
@@ -49,6 +51,8 @@ function App() {
         <Route path="/products" element={<ProductsPage darkMode={darkMode} />} />
         <Route path="/about" element={<About darkMode={darkMode} />} />
         <Route path="/careers" element={<Careers darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        <Route path="/services" element={<Services darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        <Route path="/services/:serviceSlug" element={<ServiceDetail darkMode={darkMode} setDarkMode={setDarkMode} />} />
       </Routes>
       <Footer darkMode={darkMode} />
       <Chatbot darkMode={darkMode} />

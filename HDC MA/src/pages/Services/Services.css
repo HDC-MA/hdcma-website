@@ -1,0 +1,238 @@
+/* Ensure the page flows below the absolute/fixed Navbar */
+.services-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-top: 100px; /* Offset for navbar */
+}
+
+/* ========================================
+   GLOWS & OVERLAYS
+======================================== */
+
+.services-page.light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(245,247,250,0.9) 100%);
+  z-index: -1;
+}
+
+.services-page.dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(4,15,35,0.95) 0%, rgba(10,22,40,0.95) 100%);
+  z-index: -1;
+}
+
+.services-glow {
+  position: absolute;
+  top: 5%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: #005cb9;
+  filter: blur(150px);
+  opacity: 0.15;
+  animation: float 10s ease-in-out infinite alternate;
+  z-index: -2;
+}
+
+.services-glow-secondary {
+  position: absolute;
+  top: 40%;
+  right: -5%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: #4db8ff;
+  filter: blur(150px);
+  opacity: 0.15;
+  animation: float 8s ease-in-out infinite alternate-reverse;
+  z-index: -2;
+}
+
+.services-page.dark .services-glow {
+  opacity: 0.25;
+  background: #4db8ff;
+}
+
+@keyframes float {
+  from { transform: translateY(0) scale(1); }
+  to { transform: translateY(30px) scale(1.1); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.services-hero {
+  text-align: center;
+  padding: 40px 2rem 20px;
+  position: relative;
+  z-index: 5;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.services-hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+  color: var(--text-muted);
+}
+
+/* ========================================
+   GRID & CARDS
+======================================== */
+
+.services-grid-container {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Glassmorphic styling matching Hero's stat-cards */
+.service-card {
+  position: relative;
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: .4s;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.services-page.light .service-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 92, 185, 0.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+}
+
+.services-page.dark .service-card {
+  background: linear-gradient(145deg, rgba(18, 35, 63, 0.95), rgba(12, 28, 50, 0.95));
+  border: 1px solid rgba(77, 184, 255, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+.services-page.light .service-card:hover {
+  box-shadow: 0 20px 50px rgba(0, 92, 185, 0.15);
+}
+
+.services-page.dark .service-card:hover {
+  box-shadow: 0 20px 50px rgba(77, 184, 255, 0.25);
+}
+
+.service-card-accent {
+  height: 6px;
+  background: var(--card-color);
+  width: 100%;
+}
+
+.service-card-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-card-title {
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.service-card-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.service-card-link {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--card-color);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-card-link {
+  transform: translateX(6px);
+}
+
+/* ========================================
+   CTA BANNER
+======================================== */
+
+.services-cta-banner {
+  width: 100%;
+  text-align: center;
+  padding: 6rem 2rem;
+  position: relative;
+  z-index: 5;
+  border-top: 1px solid var(--border);
+}
+
+.services-page.dark .services-cta-banner {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.services-page.light .services-cta-banner {
+  background: rgba(0, 92, 185, 0.03);
+}
+
+.services-cta-banner h2 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  margin-bottom: 2.5rem;
+  font-weight: 800;
+}
