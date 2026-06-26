@@ -1,8 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { services } from '../../data/servicesData';
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import './ServiceDetail.css';
 
 const ServiceDetail = ({ darkMode, setDarkMode }) => {
@@ -12,12 +10,10 @@ const ServiceDetail = ({ darkMode, setDarkMode }) => {
   if (!service) {
     return (
       <>
-        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
         <div className={`service-detail-page not-found ${darkMode ? "dark" : "light"}`}>
           <h2>Service not found</h2>
           <Link to="/services" className="detail-back-link">&larr; Back to Services</Link>
         </div>
-        <Footer darkMode={darkMode} />
       </>
     );
   }
@@ -26,7 +22,6 @@ const ServiceDetail = ({ darkMode, setDarkMode }) => {
 
   return (
     <>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       
       <div className={`service-detail-page ${darkMode ? "dark" : "light"}`}>
         <div className="services-glow" style={{ background: service.color }}></div>
@@ -142,7 +137,6 @@ const ServiceDetail = ({ darkMode, setDarkMode }) => {
         </section>
       </div>
 
-      <Footer darkMode={darkMode} />
     </>
   );
 };

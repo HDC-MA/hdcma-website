@@ -1,14 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { services } from '../../data/servicesData';
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import './Services.css';
 
 const Services = ({ darkMode, setDarkMode }) => {
   return (
     <>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       
       <div className={`services-page ${darkMode ? "dark" : "light"}`}>
         <div className="services-glow"></div>
@@ -59,7 +56,6 @@ const Services = ({ darkMode, setDarkMode }) => {
         </section>
       </div>
 
-      <Footer darkMode={darkMode} />
     </>
   );
 };
