@@ -5,6 +5,7 @@ import {
   FaInstagram,
   FaFacebookF,
   FaYoutube,
+  FaTwitter,
   FaEnvelope,
   FaPhoneAlt,
   FaMapMarkerAlt
@@ -85,7 +86,7 @@ function Footer({ darkMode }) {
 
             <li>
               <FaEnvelope />
-              careers@horizondigitalcore.com
+              info@horizondigitalcore.com
             </li>
 
             <li>
@@ -114,19 +115,22 @@ function Footer({ darkMode }) {
 
         <div className="social-icons">
 
-          <a href="#">
+          <a href="https://www.linkedin.com/company/horizon-digital-core-management-associates/">
             <FaLinkedinIn />
           </a>
 
-          <a href="#">
+          <a href="https://www.instagram.com/horizondigitalcore/">
             <FaInstagram />
           </a>
+          <a href ="https://x.com/HDCMA_Official">
+            <FaTwitter />
+          </a>
 
-          <a href="#">
+          <a href="https://www.facebook.com/horizondigitalcore/">
             <FaFacebookF />
           </a>
 
-          <a href="#">
+          <a href="https://www.youtube.com/@HorizonDigitalCore">
             <FaYoutube />
           </a>
 

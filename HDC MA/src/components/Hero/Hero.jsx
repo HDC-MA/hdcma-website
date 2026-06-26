@@ -19,19 +19,20 @@ function Hero({ darkMode }) {
         </span>
 
        <h1>
-  Building Modern Digital
+Transforming Businesses
   <br />
-  Solutions With
+  Through AI, Cloud &
   <span className="hero-highlight">
-    {" "}MERN, AI & Cloud
+    {" "}
+Digital Engineering
   </span>
 </h1>
         <p>
     <p>
-  HDCMA delivers end-to-end MERN Stack development,
-  AI-powered applications, cloud solutions, cybersecurity,
-  and digital transformation services to help businesses
-  innovate, scale, and succeed in the digital era.
+  HDCMA helps organizations accelerate growth through
+AI-powered solutions, Cloud Engineering, Cybersecurity,
+SAP Integration and Digital Engineering services that
+drive innovation and business transformation.
 </p>
         </p>
 

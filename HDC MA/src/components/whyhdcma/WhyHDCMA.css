@@ -1,26 +1,38 @@
+/* ===================================
+   WHY HDCMA SECTION
+=================================== */
+
 .why-section {
   padding: 120px 80px;
+
   background: var(--bg);
+
   transition: all 0.4s ease;
 }
 
 .why-container {
   max-width: 1400px;
+
   margin: auto;
 
   display: grid;
+
   grid-template-columns: 1fr 1fr;
 
-  gap: 80px;
+  gap: 70px;
+
   align-items: center;
 }
 
-/* LEFT */
+/* ===================================
+   LEFT SIDE
+=================================== */
 
 .why-left span {
   color: #4db8ff;
 
   font-size: 14px;
+
   font-weight: 700;
 
   letter-spacing: 3px;
@@ -29,10 +41,11 @@
 .why-left h2 {
   margin-top: 20px;
 
-  font-size: 64px;
+  font-size: 58px;
+
   font-weight: 800;
 
-  line-height: 1.1;
+  line-height: 1.2;
 
   color: var(--text);
 }
@@ -40,46 +53,63 @@
 .why-left p {
   margin-top: 25px;
 
-  font-size: 18px;
+  font-size: 17px;
 
   line-height: 1.9;
 
   color: var(--text-muted);
+
+  max-width: 600px;
 }
 
 .why-left button {
   margin-top: 35px;
 
-  padding: 18px 34px;
+  padding: 16px 34px;
 
   border: none;
 
-  border-radius: 12px;
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
 
   background:
     linear-gradient(
       135deg,
+      #002d72,
       #005cb9,
       #4db8ff
     );
 
-  color: white;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: all .3s ease;
+  transition: all .35s ease;
 }
 
 .why-left button:hover {
   transform: translateY(-4px);
 
   box-shadow:
-    0 15px 35px rgba(77,184,255,.25);
+    0 12px 30px rgba(77,184,255,.30);
 }
 
-/* RIGHT */
+/* ===================================
+   RIGHT SIDE
+=================================== */
+
+.why-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ===================================
+   STATS
+=================================== */
 
 .stats-grid {
   display: grid;
@@ -87,73 +117,225 @@
   grid-template-columns:
     repeat(2,1fr);
 
-  gap: 25px;
+  gap: 20px;
 }
 
 .stat-box {
-  padding: 35px;
+  padding: 28px;
 
   border-radius: 24px;
 
-  background: var(--card-bg);
+  background: white;
 
   border:
-    1px solid rgba(77,184,255,.12);
+    1px solid rgba(77,184,255,.10);
 
-  transition: all .3s ease;
+  transition: all .35s ease;
 }
 
 .stat-box:hover {
-  transform: translateY(-8px);
+  transform:
+    translateY(-6px);
 
   box-shadow:
-    0 15px 35px rgba(77,184,255,.12);
+    0 15px 35px rgba(77,184,255,.15);
 }
 
 .stat-box h3 {
-  font-size: 48px;
+  font-size: 42px;
 
-  color: #4db8ff;
+  font-weight: 800;
 
-  margin-bottom: 10px;
+  color: #005cb9;
 }
 
 .stat-box span {
-  color: var(--text);
-  font-weight: 600;
+  display: block;
+
+  margin-top: 10px;
+
+  color: #5f6c7b;
+
+  font-size: 15px;
 }
 
-.why-points {
-  margin-top: 40px;
+/* ===================================
+   CAPABILITIES
+=================================== */
 
+.capabilities-grid {
   display: grid;
 
   grid-template-columns:
     repeat(2,1fr);
 
+  gap: 20px;
+}
+
+.capability-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 24px;
+
+  border-radius: 24px;
+
+  background:
+    rgba(255,255,255,.75);
+
+  backdrop-filter: blur(12px);
+
+  border:
+    1px solid rgba(77,184,255,.12);
+
+  transition: all .35s ease;
+}
+
+.capability-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #002d72,
+      #005cb9,
+      #4db8ff
+    );
+
+  transform: scaleX(0);
+
+  transition: .4s;
+}
+
+.capability-card:hover::before {
+  transform: scaleX(1);
+}
+
+.capability-card:hover {
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 15px 35px rgba(77,184,255,.15);
+}
+
+.capability-card h4 {
+  font-size: 22px;
+
+  font-weight: 700;
+
+  margin-bottom: 12px;
+
+  color: #005cb9;
+}
+
+.capability-card p {
+  color: #5f6c7b;
+
+  line-height: 1.8;
+
+  font-size: 15px;
+}
+
+.technology-header {
+  margin-top: 30px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(77,184,255,.12);
+}
+
+.technology-header h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #002d72;
+}
+
+.technology-header p {
+  margin: 10px 0 0;
+  color: #5f6c7b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.technology-grid {
+  margin-top: 20px;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
   gap: 18px;
 }
 
-.why-points div {
-  font-size: 16px;
+.tech-card {
+  display: flex;
 
-  color: var(--text);
+  align-items: center;
 
-  font-weight: 500;
+  gap: 16px;
+
+  padding: 20px;
+
+  border-radius: 22px;
+
+  background: rgba(255,255,255,.95);
+
+  border: 1px solid rgba(77,184,255,.16);
+
+  transition: all .35s ease;
 }
 
-/* DARK MODE */
+.tech-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 15px 35px rgba(77,184,255,.15);
+}
+
+.tech-card img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.tech-card span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #002d72;
+}
+
+.why-section.dark .tech-card {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(77,184,255,.15);
+}
+
+.why-section.dark .tech-card span {
+  color: white;
+}
+
+/* ===================================
+   DARK MODE
+=================================== */
 
 .why-section.dark {
   background: #0a1628;
 }
 
-.why-section.dark h2 {
+.why-section.dark .why-left h2 {
   color: white;
 }
 
-.why-section.dark p {
-  color: rgba(255,255,255,.8);
+.why-section.dark .why-left p {
+  color:
+    rgba(255,255,255,.8);
 }
 
 .why-section.dark .stat-box {
@@ -161,37 +343,100 @@
     rgba(255,255,255,.05);
 
   border:
-    1px solid rgba(77,184,255,.15);
+    1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(12px);
 }
 
-.why-section.dark .stat-box span,
-.why-section.dark .why-points div {
-  color: white;
+.why-section.dark .stat-box span {
+  color:
+    rgba(255,255,255,.8);
 }
 
-/* RESPONSIVE */
+.why-section.dark .capability-card {
+  background:
+    rgba(255,255,255,.05);
 
-@media(max-width:992px){
+  border:
+    1px solid rgba(255,255,255,.08);
 
-  .why-container{
-    grid-template-columns:1fr;
+  backdrop-filter: blur(14px);
+}
+
+.why-section.dark .capability-card h4 {
+  color: #4db8ff;
+}
+
+.why-section.dark .capability-card p {
+  color:
+    rgba(255,255,255,.8);
+}
+
+/* ===================================
+   ANIMATION
+=================================== */
+
+.stat-box,
+.capability-card {
+  animation:
+    fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(30px);
   }
 
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
 }
 
-@media(max-width:768px){
+/* ===================================
+   TABLET
+=================================== */
 
-  .why-section{
-    padding:80px 25px;
+@media (max-width: 992px) {
+
+  .why-container {
+    grid-template-columns: 1fr;
   }
 
-  .why-left h2{
-    font-size:40px;
+  .why-left {
+    text-align: center;
+  }
+
+  .why-left p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 768px) {
+
+  .why-section {
+    padding: 80px 25px;
+  }
+
+  .why-left h2 {
+    font-size: 38px;
   }
 
   .stats-grid,
-  .why-points{
-    grid-template-columns:1fr;
+  .capabilities-grid {
+    grid-template-columns: 1fr;
   }
 
+  .stat-box h3 {
+    font-size: 34px;
+  }
 }

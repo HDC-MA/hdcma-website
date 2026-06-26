@@ -44,7 +44,7 @@
 .industry-card {
   position: relative;
 
-  height: 520px;
+  height: 490px;
 
   border-radius: 28px;
 
@@ -233,7 +233,7 @@
   }
 
   .industry-card {
-    height: 420px;
+    height: 400px;
   }
 
   .industry-overlay h3 {
