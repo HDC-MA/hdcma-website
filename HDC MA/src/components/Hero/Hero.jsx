@@ -1,6 +1,7 @@
 import "./Hero.css";
 import heroImage from "../../assets/images/hero.png";
 import ThreeCanvas from "../ThreeCanvas/ThreeCanvas";
+import { Link } from "react-router-dom";
 
 function Hero({ darkMode }) {
   return (
@@ -38,13 +39,13 @@ drive innovation and business transformation.
 
         <div className="hero-buttons">
 
-          <button className="primary-btn">
+          <Link to="/services" className="primary-btn">
             Explore Services
-          </button>
+          </Link>
 
-          <button className="secondary-btn">
+          <Link to="/contact" className="secondary-btn">
             Contact Us
-          </button>
+          </Link>
 
         </div>
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { services } from '../../data/servicesData';
 import './ServicesDropdown.css';
 
-const ServicesDropdown = () => {
+const ServicesDropdown = ({ onClose }) => {
   return (
     <div className="services-mega-panel">
       <div className="mega-container">
@@ -14,7 +14,7 @@ const ServicesDropdown = () => {
           <p className="mega-description">
             Transforming businesses with intelligent, scalable, and secure technology solutions tailored for modern enterprises.
           </p>
-          <Link to="/services" className="mega-learn-more">
+          <Link to="/services" className="mega-learn-more" onClick={onClose}>
             Learn More &rarr;
           </Link>
         </div>
@@ -22,19 +22,13 @@ const ServicesDropdown = () => {
         {/* COL 2 - CENTER */}
         <div className="mega-col mega-col-center">
           <ul className="mega-services-list">
-            {services.map((service) => {
-              const Icon = service.icon;
-              return (
+            {services.map((service) => (
                 <li key={service.slug}>
-                  <Link to={`/services/${service.slug}`} className="mega-service-link" style={{ '--accent-color': service.color }}>
-                    <span className="mega-dropdown-icon">
-                      <Icon size={18} color="#002D72" strokeWidth={2} />
-                    </span>
+                  <Link to={`/services/${service.slug}`} className="mega-service-link" style={{ '--accent-color': service.color }} onClick={onClose}>
                     <span className="mega-dropdown-label">{service.title}</span>
                   </Link>
                 </li>
-              );
-            })}
+            ))}
           </ul>
         </div>
 
@@ -50,7 +44,7 @@ const ServicesDropdown = () => {
             </ul>
             <div className="mega-contact-box">
               <p>Ready to discuss your next project?</p>
-              <Link to="/contact" className="mega-contact-btn">Contact Us</Link>
+              <Link to="/contact" className="mega-contact-btn" onClick={onClose}>Contact Us</Link>
             </div>
           </div>
         </div>

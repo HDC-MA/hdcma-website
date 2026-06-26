@@ -69,7 +69,7 @@ function Navbar({ darkMode, setDarkMode }) {
           onClick={() => window.innerWidth < 768 && setIsServicesOpen(!isServicesOpen)}
         >
           <span className="nav-link" style={{ cursor: "pointer" }}>Services</span>
-          {isServicesOpen && <ServicesDropdown />}
+          {isServicesOpen && <ServicesDropdown onClose={() => setIsServicesOpen(false)} />}
         </li>
         <li>Industries</li>
         <li><Link to="/products" style={{ textDecoration: 'none', color: 'inherit' }}>Products</Link></li>
