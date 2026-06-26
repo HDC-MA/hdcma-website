@@ -225,7 +225,7 @@ export const services = [
       "Permanent Placement & Executive Search",
       "Contract-to-Hire Solutions",
       "Technical Upskilling Programs",
-      "Corporate Training (Cloud, AI, DevOps)",
+      "Corporate Training",
       "Bootcamp & Certification Prep"
     ],
     techStack: ["LinkedIn Recruiter", "Greenhouse", "Workday", "Coursera for Business", "Pluralsight", "Udemy Business"],

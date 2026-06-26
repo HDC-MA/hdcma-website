@@ -705,7 +705,8 @@
 
 .service-detail-page.dark .industry-pill {
   background: rgba(0,0,0,0.2);
-  --pill-color: #4db8ff;
+  color: #4db8ff !important;
+  border-color: #4db8ff !important;
 }
 
 .industry-pill:hover {
