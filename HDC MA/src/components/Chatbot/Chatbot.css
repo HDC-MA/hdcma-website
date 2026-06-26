@@ -233,7 +233,7 @@
 }
 
 .dark .chatbot-input-area input {
-  background: var(--surface, #0f172a);
+  background: var(--surface, #ffffff);
   border-color: var(--border, #334155);
   color: white;
 }
