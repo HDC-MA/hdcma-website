@@ -11,17 +11,86 @@ const INITIAL_MESSAGE = {
 };
 
 const BOT_RESPONSES = [
-  { keywords: ["pricing", "cost", "price", "quote"], text: "Our pricing scales with your enterprise needs. We'd love to give you a custom quote. Please reach out to our sales team!" },
-  { keywords: ["services", "what do you do", "offerings", "expertise"], text: "We are a team of technologists, designers, and strategists dedicated to empowering businesses with innovative software, AI, and cloud solutions." },
-  { keywords: ["products", "solutions", "software"], text: "Our flagship product is PCAP (People Collaboration Alliance Platform). We also offer AgriLink for smart agriculture, SPPS for educational analytics, AIVA voice assistant, and an Attendance Automation Platform." },
-  { keywords: ["pcap", "collaboration"], text: "PCAP (People Collaboration Alliance Platform) is our AI-powered ecosystem designed to help organizations manage partnerships, map expertise, and improve team productivity." },
-  { keywords: ["agrilink", "agriculture", "farming"], text: "AgriLink is our smart agriculture platform that leverages machine learning for crop yield prediction and disease detection." },
-  { keywords: ["mission", "goal", "vision"], text: "Our mission is to accelerate global innovation by providing enterprise-grade, scalable, and intelligent technology solutions." },
-  { keywords: ["stats", "experience", "clients", "projects"], text: "We've been building for over 5 years! In that time, our team of 35 members has delivered 120+ projects for 50+ happy clients." },
-  { keywords: ["values", "core", "culture"], text: "Our core values are Innovation First, Enterprise Trust, Agile Execution, and Client Partnership." },
-  { keywords: ["insights", "blog", "articles", "serverless", "containers"], text: "We frequently publish insights on modern engineering! For example, did you know 78% of modern teams use hybrid architectures instead of choosing between serverless and containers?" },
-  { keywords: ["hello", "hi", "hey", "greetings"], text: "Hello! How can I assist you with your digital transformation journey today?" },
-  { keywords: ["contact", "support", "help", "talk"], text: "You can reach our team to request a personalized demo or discuss custom deployment at support@hdcma.com." }
+  {
+    keywords: ["hello", "hi", "hey", "greetings", "anyone there"],
+    text: "Hello! Welcome to HDCMA. I'm your virtual assistant. How can I help you today? You can ask me about our services, products, industries we serve, open career roles, or how to contact us."
+  },
+  {
+    keywords: ["pricing", "cost", "price", "quote", "charge", "rate"],
+    text: "Our pricing varies based on the scope and complexity of your enterprise project. We offer customized quotes for our clients. Please reach out to our team at support@hdcma.com or info@horizondigitalcore.com to get a detailed proposal!"
+  },
+  {
+    keywords: ["who are you", "what is hdcma", "about hdcma", "hdc ma", "company", "what does hdcma stand for"],
+    text: "Horizon Digital Core Management Associates (HDC MA) is a full-service IT company delivering enterprise-grade software, AI products, cloud infrastructure, and digital solutions for businesses worldwide. We have 5+ years of building experience, a team of 35+ experts, and have completed over 120 projects for 50+ happy clients!"
+  },
+  {
+    keywords: ["ceo", "founder", "leadership", "management"],
+    text: "Our Chief Executive Officer & Founder is Placeholder Name, who has over 15 years of experience in enterprise software and artificial intelligence, leading digital transformations for Fortune 500 companies."
+  },
+  {
+    keywords: ["mission", "goal", "vision"],
+    text: "Our mission is to accelerate global innovation by providing enterprise-grade, scalable, and intelligent technology solutions. We believe in creating a forward-looking digital ecosystem where complex problems are solved with elegant, efficient engineering."
+  },
+  {
+    keywords: ["values", "core value", "culture"],
+    text: "Our core values are:\n1. Innovation First: Pushing boundaries with emerging tech.\n2. Enterprise Trust: Built-in security, scalability, and reliability.\n3. Agile Execution: Rapid value delivery without compromising on quality.\n4. Client Partnership: Strategic, long-term relationships for mutual success."
+  },
+  {
+    keywords: ["services", "what do you do", "offerings", "expertise", "capabilities"],
+    text: "We offer end-to-end technology solutions including:\n- AI & Machine Learning: Generative AI, predictive analytics, custom models, and chatbots.\n- Custom Software Development: Full-stack web & mobile apps.\n- Cybersecurity: Vulnerability assessment, threat monitoring, data security.\n- Cloud & DevOps: Infrastructure setup, container orchestration, CI/CD pipelines.\n- Digital Marketing: SEO, social media, growth strategy.\n- SAP Solutions: Implementation, CPI/MM/BOM integrations."
+  },
+  {
+    keywords: ["sap", "cpi", "mm", "bom"],
+    text: "We offer comprehensive SAP implementation, integration, and consulting services, specializing in SAP CPI (Cloud Platform Integration), SAP MM (Materials Management), SAP BOM (Bill of Materials), and custom enterprise integration flows."
+  },
+  {
+    keywords: ["cyber", "security", "soc", "vulnerability"],
+    text: "Our cybersecurity services protect client systems and data through advanced threat monitoring, vulnerability assessments, incident response, SIEM tools, and SOC analysts."
+  },
+  {
+    keywords: ["cloud", "devops", "aws", "gcp", "azure", "kubernetes", "docker"],
+    text: "We provide cloud engineering and DevOps services on AWS, Google Cloud, and Azure. This includes infrastructure provisioning, Docker containers, Kubernetes orchestration, CI/CD automation, and hybrid-cloud deployments."
+  },
+  {
+    keywords: ["products", "solutions", "software products"],
+    text: "We have built several robust software solutions:\n- PCAP (Flagship): AI-powered collaboration platform.\n- AgriLink: Smart agriculture platform.\n- Student Performance Prediction System (SPPS): Educational analytics.\n- AI Voice Assistant (AIVA): Conversational NLP helper.\n- Attendance Automation Platform: Streamlined workflow utility."
+  },
+  {
+    keywords: ["pcap", "collaboration", "people graph"],
+    text: "PCAP (People Collaboration Alliance Platform) is our flagship AI-powered collaboration ecosystem. It helps organizations manage partnerships, map expertise, facilitate knowledge sharing, and improve team productivity. It is built using React, Node.js, PostgreSQL, and proprietary AI APIs."
+  },
+  {
+    keywords: ["agrilink", "agriculture", "farming", "crop", "disease"],
+    text: "AgriLink is our smart agriculture platform that leverages machine learning and computer vision to predict crop yield and detect plant diseases. It is powered by Python, Random Forest, XGBoost, CNNs, and OpenCV."
+  },
+  {
+    keywords: ["spps", "student", "education", "prediction", "school", "college"],
+    text: "Our Student Performance Prediction System (SPPS) is an educational analytics platform. It uses machine learning to identify student performance trends, risk levels, and academic outcomes so teachers can provide early intervention. Built with Python and Scikit-Learn."
+  },
+  {
+    keywords: ["aiva", "voice", "assistant", "speech", "nlp"],
+    text: "AIVA (AI Voice Assistant) is a conversational AI solution that understands voice commands, performs speech recognition, and processes natural language to retrieve information or execute automated tasks."
+  },
+  {
+    keywords: ["attendance", "notification", "fast2sms", "twilio", "automation", "workflow"],
+    text: "Our Attendance Automation Platform is a workflow product that automates tracking, reporting, and alerts (via Twilio and Fast2SMS) for educational institutions and businesses. It is built using n8n and Google Sheets."
+  },
+  {
+    keywords: ["industries", "verticals", "sectors", "who do you work with"],
+    text: "We serve a variety of industries:\n- Banking & Finance (FinTech, security, compliance)\n- Healthcare (telemedicine, predictive analytics, patient data)\n- Retail & E-commerce (inventory management, e-stores, recommendations)\n- Manufacturing (Smart Factories, Industry 4.0, predictive maintenance)\n- Education (learning systems, predictive analytics)\n- Technology (SaaS platforms, cloud native development)"
+  },
+  {
+    keywords: ["careers", "job", "internship", "hiring", "apply", "work with you", "resume"],
+    text: "We are growing! Here are our open roles:\n- Internships: Full Stack Developer, Java Full Stack Developer, UI/UX Designer, Cyber Security Analyst, SOC Analyst, AI/ML.\n- Full-time: Talent Acquisition Associate, Digital Marketing Executive, Business Development Associate.\nTo apply, send your resume to careers@horizondigitalcore.com! Our process has 5 steps: Apply -> Screening -> Skills Assessment -> Culture Fit -> Offer."
+  },
+  {
+    keywords: ["contact", "email", "phone", "support", "address", "location", "social", "linkedin"],
+    text: "You can reach us at:\n- General Info: info@horizondigitalcore.com\n- Support & Sales: support@hdcma.com\n- Careers: careers@horizondigitalcore.com\n- Socials: Follow us on LinkedIn, Instagram (@horizondigitalcore), Twitter/X (@HDCMA_Official), Facebook, or YouTube!"
+  },
+  {
+    keywords: ["serverless", "containers", "hybrid"],
+    text: "In 2026, 78% of modern engineering teams use hybrid architectures. At HDCMA, we use serverless functions for webhook handling and MVP rapid deployments, but run our core ML engines and heavy data workloads on managed container services for cost-efficiency."
+  }
 ];
 
 const DEFAULT_RESPONSE = "That's an interesting question! I'm just a prototype right now, but a real human from our team would be happy to discuss this with you.";
