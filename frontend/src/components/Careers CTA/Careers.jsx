@@ -31,6 +31,7 @@ function Careers({ darkMode }) {
 
   return (
     <section
+      id="careers"
       className={`careers-section ${darkMode ? "dark" : ""}`}
     >
       <div className="careers-container">

@@ -3,6 +3,7 @@ import "./WhyHDCMA.css";
 function WhyHDCMA({ darkMode }) {
   return (
     <section
+      id="why-hdcma"
       className={`why-section ${
         darkMode ? "dark" : ""
       }`}

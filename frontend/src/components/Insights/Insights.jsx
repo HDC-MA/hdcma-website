@@ -45,6 +45,7 @@ function Insights({ darkMode }) {
 
   return (
     <section
+      id="insights"
       className={`insights-section ${darkMode ? "dark" : ""}`}
     >
       <div className="insights-header">
