@@ -286,6 +286,107 @@
 }
 
 /* ====================================
+   MEGA DROPDOWN
+==================================== */
+
+.nav-item-dropdown {
+  position: relative;
+}
+
+.nav-item-dropdown > span {
+  display: inline-block;
+  padding-bottom: 8px;
+  margin-bottom: -8px;
+}
+
+.mega-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  width: 680px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 45, 114, 0.12);
+  box-shadow: var(--shadow-glow);
+  border-radius: 20px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              visibility 0.35s;
+  z-index: 9999;
+}
+
+.dark-navbar .mega-dropdown {
+  background: #0B1426;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.nav-item-dropdown:hover .mega-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.mega-dropdown-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dropdown-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background: rgba(0, 92, 185, 0.06);
+  transform: translateX(6px);
+}
+
+.dark-navbar .dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-item-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.dropdown-item:hover .dropdown-item-title {
+  color: var(--royal);
+}
+
+.dark-navbar .dropdown-item:hover .dropdown-item-title {
+  color: var(--sky);
+}
+
+.dropdown-item-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.dark-navbar .dropdown-item-sub {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ====================================
    RESPONSIVE
 ==================================== */
 
