@@ -62,7 +62,15 @@ function Navbar({ darkMode, setDarkMode }) {
       <ul className="nav-links">
 
         <li><Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Home</Link></li>
-        <li>Services</li>
+        <li 
+          className="services-mega-wrapper"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={() => window.innerWidth < 768 && setIsServicesOpen(!isServicesOpen)}
+        >
+          <span className="nav-link" style={{ cursor: "pointer" }}>Services</span>
+          {isServicesOpen && <ServicesDropdown />}
+        </li>
         <li className="nav-item-dropdown">
           <span style={{ cursor: 'pointer' }}>Industries</span>
           <div className="mega-dropdown">
@@ -96,16 +104,6 @@ function Navbar({ darkMode, setDarkMode }) {
             </div>
           </div>
         </li>
-        <li 
-          className="services-mega-wrapper"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          onClick={() => window.innerWidth < 768 && setIsServicesOpen(!isServicesOpen)}
-        >
-          <span className="nav-link" style={{ cursor: "pointer" }}>Services</span>
-          {isServicesOpen && <ServicesDropdown />}
-        </li>
-        <li>Industries</li>
         <li><Link to="/products" style={{ textDecoration: 'none', color: 'inherit' }}>Products</Link></li>
         <li><Link to="/insights" style={{ textDecoration: 'none', color: 'inherit' }}>Insights</Link></li>
         <li><Link to="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About Us</Link></li>
