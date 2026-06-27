@@ -5,6 +5,7 @@ import {
   FaInstagram,
   FaFacebookF,
   FaYoutube,
+  FaWhatsapp,
   FaTwitter,
   FaEnvelope,
   FaPhoneAlt,
@@ -89,10 +90,7 @@ function Footer({ darkMode }) {
               info@horizondigitalcore.com
             </li>
 
-            <li>
-              <FaPhoneAlt />
-              +91 XXXXX XXXXX
-            </li>
+          
 
             <li>
               <FaMapMarkerAlt />
@@ -121,6 +119,9 @@ function Footer({ darkMode }) {
 
           <a href="https://www.instagram.com/horizondigitalcore/">
             <FaInstagram />
+          </a>
+          <a href="https://wa.me/919160897498">
+            <FaWhatsapp/>
           </a>
           <a href ="https://x.com/HDCMA_Official">
             <FaTwitter />

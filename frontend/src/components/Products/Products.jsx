@@ -10,50 +10,94 @@ function Products({ darkMode }) {
 
   const products = [
     {
-      image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995",
-      title: "AI Business Assistant",
+      image: "https://i.pinimg.com/736x/57/39/24/573924928ce5ae44c3bcd4524dc31515.jpg",
+      badge: "FLAGSHIP PRODUCT",
+      title: "PCAP (People Collaboration Alliance Platform)",
+      category: "AI Collaboration Platform",
       description:
-        "Enterprise AI platform enabling automation, chatbots, intelligent workflows and business productivity."
+        "AI-powered ecosystem to manage partnerships, map expertise, collaborate effectively and share organizational knowledge.",
+
+      features: [
+        "Unified People Graph",
+        "Strategic Alliance Management",
+        "AI Task Assistance",
+        "Knowledge Exchange",
+        "Analytics Dashboard"
+      ]
     },
+
     {
-      image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
-      title: "Cloud Management Suite",
+      image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854",
+      badge: "AI SOLUTION",
+      title: "AgriLink",
+      category: "AI-Powered Agriculture",
       description:
-        "Manage and optimize AWS, Azure and hybrid cloud environments through a unified platform."
+        "Smart agriculture platform using Artificial Intelligence, Machine Learning and Computer Vision to improve farming productivity.",
+
+      features: [
+        "Crop Yield Prediction",
+        "Plant Disease Detection",
+        "Farm Intelligence Dashboard",
+        "Agriculture Data Analytics"
+      ]
     },
+
     {
-      image:
-        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
-      title: "Cyber Defense Platform",
+      image: "https://i.pinimg.com/1200x/1d/3a/bb/1d3abb88e53eb0736a9645fb5da01467.jpg",
+      badge: "EDTECH SOLUTION",
+      title: "Student Performance Prediction System",
+      category: "Educational Analytics",
       description:
-        "Advanced security monitoring, threat detection and enterprise protection solutions."
+        "Predictive analytics platform helping institutions identify academic risks and improve student success.",
+
+      features: [
+        "Performance Prediction",
+        "Risk Identification",
+        "Academic Analytics",
+        "Interactive Dashboards"
+      ]
     },
+
     {
-      image:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
-      title: "SAP Integration Hub",
+      image: "https://i.pinimg.com/736x/7f/46/03/7f4603d857fa4d7d46ee928beedde95f.jpg",
+      badge: "AI PRODUCT",
+      title: "AI Voice Assistant",
+      category: "Conversational AI",
       description:
-        "SAP CPI, SAP MM and SAP BOM implementation services for enterprise transformation."
+        "Voice-enabled intelligent assistant capable of understanding natural language and performing business tasks.",
+
+      features: [
+        "Voice Commands",
+        "Speech Recognition",
+        "Natural Language Processing",
+        "AI Responses"
+      ]
     },
+
     {
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-      title: "Enterprise Analytics Platform",
+      image: "https://i.pinimg.com/736x/9f/1b/3c/9f1b3cc7a89f92825b2850ba1f57b33f.jpg",
+      badge: "AUTOMATION PLATFORM",
+      title: "Attendance Automation Platform",
+      category: "Workflow Automation",
       description:
-        "Real-time business intelligence, dashboards and enterprise reporting solutions."
+        "Enterprise attendance automation platform integrating N8N workflows, notifications and reporting.",
+
+      features: [
+        "Attendance Tracking",
+        "Workflow Automation",
+        "Twilio Notifications",
+        "Reporting Dashboard"
+      ]
     }
   ];
 
   return (
     <section
-      className={`products-section ${
-        darkMode ? "dark" : ""
-      }`}
+      className={`products-section ${darkMode ? "dark" : ""}`}
     >
 
       <div className="products-header">
+
         <span>PRODUCTS & SOLUTIONS</span>
 
         <h2>
@@ -61,10 +105,10 @@ function Products({ darkMode }) {
         </h2>
 
         <p>
-          Enterprise-grade platforms helping businesses
-          accelerate growth through AI, Cloud,
-          Cybersecurity and SAP solutions.
+          Enterprise-grade platforms helping businesses accelerate growth
+          through AI, Cloud, Cybersecurity and SAP solutions.
         </p>
+
       </div>
 
       <Swiper
@@ -73,7 +117,7 @@ function Products({ darkMode }) {
         loop={true}
         autoplay={{
           delay: 5000,
-          disableOnInteraction: false
+          disableOnInteraction: false,
         }}
         className="products-swiper"
       >
@@ -95,17 +139,40 @@ function Products({ darkMode }) {
 
               <div className="product-content">
 
-                <span>FEATURED SOLUTION</span>
+                <span className="product-badge">
+                  {product.badge}
+                </span>
 
-                <h3>
-                  {product.title}
-                </h3>
+                <h3>{product.title}</h3>
 
-                <p>
-                  {product.description}
-                </p>
+                <h5 className="product-category">
+                  {product.category}
+                </h5>
 
-                <button>
+                <p>{product.description}</p>
+
+                <div className="product-features">
+
+                  <h4>Key Features</h4>
+
+                  <div className="feature-grid">
+
+                    {product.features.map((feature, i) => (
+
+                      <span
+                        key={i}
+                        className="feature-chip"
+                      >
+                        ✓ {feature}
+                      </span>
+
+                    ))}
+
+                  </div>
+
+                </div>
+
+                <button className="product-btn">
                   Explore Solution →
                 </button>
 

@@ -246,18 +246,6 @@
   font-size: 15px;
 }
 
-.technology-header {
-  margin-top: 30px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid rgba(77,184,255,.12);
-}
-
-.technology-header h3 {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 800;
-  color: #002d72;
-}
 
 .technology-header p {
   margin: 10px 0 0;

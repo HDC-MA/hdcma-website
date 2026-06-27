@@ -10,6 +10,7 @@ import Insights from "../../components/Insights/Insights";
 import Careers from "../../components/Careers CTA/Careers";
 import Footer from "../../components/Footer/Footer";
 import Experience from "../../components/Experience/Experience";
+import ContactCTA from "../../components/ContactCTA/ContactCTA";
 
 function Home({ darkMode, setDarkMode }) {
   return (
@@ -34,6 +35,7 @@ function Home({ darkMode, setDarkMode }) {
       <CaseStudies darkMode={darkMode}/>
       <Insights darkMode={darkMode} />
       <Careers darkMode={darkMode} />
+      <ContactCTA darkMode={darkMode}/>
       <Footer darkMode={darkMode} />
     </>
   );
