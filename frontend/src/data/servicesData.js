@@ -21,7 +21,20 @@ export const services = [
       "AI Strategy & Proof of Concept"
     ],
     industries: ["Healthcare", "Finance", "Retail", "Manufacturing"],
-    cta: "Start Your AI Journey"
+    cta: "Start Your AI Journey",
+    technologies: [
+      { name: "Python", image: "https://i.pinimg.com/736x/b6/a9/c7/b6a9c7fcfd84ae83641186e75312ade8.jpg" },
+      { name: "OpenAI", image: "https://i.pinimg.com/vwebp/1200x/e2/8d/e6/e28de644cf5db33db1d2447bc13aacd3.webp" },
+      { name: "TensorFlow", image: "https://cdn.simpleicons.org/tensorflow/FF6F00" },
+      { name: "PyTorch", image: "https://cdn.simpleicons.org/pytorch/EE4C2C" },
+      { name: "NumPy", image: "https://cdn.simpleicons.org/numpy/013243" },
+      { name: "Pandas", image: "https://cdn.simpleicons.org/pandas/150458" },
+      { name: "Scikit-Learn", image: "https://cdn.simpleicons.org/scikitlearn/F7931E" },
+      { name: "Hugging Face", image: "https://cdn.simpleicons.org/huggingface/FFD21E" },
+      { name: "OpenCV", image: "https://cdn.simpleicons.org/opencv/5C3EE8" },
+      { name: "Keras", image: "https://cdn.simpleicons.org/keras/D00000" },
+      { name: "Jupyter", image: "https://cdn.simpleicons.org/jupyter/F37626" }
+    ]
   },
   {
     slug: "custom-software-development",
@@ -43,7 +56,17 @@ export const services = [
       "DevOps CI/CD Integration"
     ],
     industries: ["Startups", "Enterprise", "Government", "Logistics"],
-    cta: "Build Something Custom"
+    cta: "Build Something Custom",
+    technologies: [
+      { name: "React.js", image: "https://i.pinimg.com/736x/82/40/ac/8240ac872c818d2a39ef20d819fdbf0d.jpg" },
+      { name: "Node.js", image: "https://i.pinimg.com/736x/f0/a7/aa/f0a7aa555f3deb6b34bd38c65eb421a5.jpg" },
+      { name: "Express.js", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7XIT0HJck-o0LeS0EQ7vFy_YHiSgLcPgWJje9aXSPBA&s=10" },
+      { name: "MongoDB", image: "https://cdn.simpleicons.org/mongodb/47A248" },
+      { name: "MySQL", image: "https://i.pinimg.com/736x/09/7b/34/097b349ab1d78c15744c3a89ff457939.jpg" },
+      { name: "PostgreSQL", image: "https://i.pinimg.com/736x/dd/bd/aa/ddbdaa71dd2e6bd36ca4f9ff5acc2195.jpg" },
+      { name: "Docker", image: "https://i.pinimg.com/736x/0f/f6/50/0ff65021d914a1ce433917b7f5dc49c6.jpg" },
+      { name: "Git", image: "https://i.pinimg.com/1200x/f1/73/57/f173571d07814e6c135dbaea80043d2b.jpg" }
+    ]
   },
   {
     slug: "digital-product-engineering",
@@ -153,7 +176,16 @@ export const services = [
       "Cloud Security & Governance"
     ],
     industries: ["SaaS", "FinTech", "Media", "Enterprise"],
-    cta: "Move to the Cloud"
+    cta: "Move to the Cloud",
+    technologies: [
+      { name: "AWS", image: "https://i.pinimg.com/736x/b6/39/d4/b639d4c554693195bc86709557dcf611.jpg" },
+      { name: "Microsoft Azure", image: "https://i.pinimg.com/1200x/24/03/eb/2403ebf6c1ad61954880517dd5ef718d.jpg" },
+      { name: "Google Cloud", image: "https://cdn.simpleicons.org/googlecloud/4285F4" },
+      { name: "Docker", image: "https://i.pinimg.com/736x/0f/f6/50/0ff65021d914a1ce433917b7f5dc49c6.jpg" },
+      { name: "Kubernetes", image: "https://cdn.simpleicons.org/kubernetes/326CE5" },
+      { name: "Linux", image: "https://i.pinimg.com/vwebp/736x/c7/b8/11/c7b8113247fecd83bd9b5ed5bd3f34d5.webp" },
+      { name: "Git", image: "https://i.pinimg.com/1200x/f1/73/57/f173571d07814e6c135dbaea80043d2b.jpg" }
+    ]
   },
   {
     slug: "digital-marketing-services",

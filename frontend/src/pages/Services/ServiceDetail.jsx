@@ -64,6 +64,33 @@ const ServiceDetail = ({ darkMode, setDarkMode }) => {
           </div>
         </section>
 
+        {service.technologies && (
+          <section className="service-tech-section">
+            <div className="container header-container">
+              <h2>Technologies & Tools</h2>
+              <p className="section-subtitle">
+                We leverage industry-leading tools and frameworks to deliver scalable, state-of-the-art solutions.
+              </p>
+            </div>
+            <div className="service-tech-slider">
+              <div className="service-tech-track">
+                {[...service.technologies, ...service.technologies].map((tech, index) => (
+                  <div className="service-tech-card" key={index}>
+                    <div className="service-tech-icon">
+                      <img
+                        src={tech.image}
+                        alt={tech.name}
+                        loading="lazy"
+                      />
+                    </div>
+                    <span>{tech.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {service.keyModules && (
           <section className="key-modules-section">
             <div className="container">

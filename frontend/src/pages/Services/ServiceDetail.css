@@ -397,3 +397,203 @@
   color: var(--text);
   text-decoration: underline;
 }
+
+/* =======================================
+   SERVICE DETAIL TECHNOLOGIES
+======================================= */
+.service-tech-section {
+  padding: 6rem 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+  background: var(--section-bg);
+}
+
+.service-tech-section .header-container {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.service-tech-section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.service-tech-section .section-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* =======================================
+   SLIDER & TRACK
+======================================= */
+.service-tech-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* Fade gradients on the edges of the slider */
+.service-tech-slider::before,
+.service-tech-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.service-tech-slider::before {
+  left: 0;
+}
+
+.service-tech-slider::after {
+  right: 0;
+}
+
+.service-detail-page.light .service-tech-slider::before {
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+.service-detail-page.light .service-tech-slider::after {
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.service-detail-page.dark .service-tech-slider::before {
+  background: linear-gradient(to right, rgba(10, 22, 40, 1), rgba(10, 22, 40, 0));
+}
+.service-detail-page.dark .service-tech-slider::after {
+  background: linear-gradient(to left, rgba(10, 22, 40, 1), rgba(10, 22, 40, 0));
+}
+
+.service-tech-track {
+  display: flex;
+  width: max-content;
+  animation: scrollServiceTech 35s linear infinite;
+}
+
+.service-tech-slider:hover .service-tech-track {
+  animation-play-state: paused;
+}
+
+/* =======================================
+   CARD
+======================================= */
+.service-tech-card {
+  min-width: 180px;
+  height: 90px;
+  margin: 0 15px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  transition: all 0.35s ease;
+  padding: 0 24px;
+}
+
+.service-detail-page.light .service-tech-card {
+  background: white;
+  border: 1px solid rgba(0, 92, 185, 0.12);
+  box-shadow: 0 8px 25px rgba(0, 92, 185, 0.05);
+}
+
+.service-detail-page.dark .service-tech-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.service-tech-card:hover {
+  transform: translateY(-6px);
+}
+
+.service-detail-page.light .service-tech-card:hover {
+  box-shadow: 0 18px 35px rgba(0, 92, 185, 0.12);
+  border-color: var(--accent-color);
+}
+
+.service-detail-page.dark .service-tech-card:hover {
+  box-shadow: 0 18px 35px rgba(77, 184, 255, 0.18);
+  border-color: #4db8ff;
+}
+
+.service-tech-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px;
+}
+
+.service-tech-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.service-tech-card span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #002d72;
+}
+
+.service-detail-page.dark .service-tech-card span {
+  color: white;
+}
+
+/* =======================================
+   ANIMATION
+======================================= */
+@keyframes scrollServiceTech {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* =======================================
+   RESPONSIVE
+======================================= */
+@media (max-width: 768px) {
+  .service-tech-section {
+    padding: 4rem 0;
+  }
+
+  .service-tech-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .service-tech-card {
+    min-width: 150px;
+    height: 75px;
+    margin: 0 10px;
+    gap: 10px;
+    padding: 0 16px;
+  }
+
+  .service-tech-icon {
+    width: 35px;
+    height: 35px;
+    padding: 4px;
+  }
+
+  .service-tech-card span {
+    font-size: 14px;
+  }
+}
