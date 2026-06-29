@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 import {
   FaLinkedinIn,
@@ -52,11 +53,11 @@ function Footer({ darkMode }) {
           <h3>Services</h3>
 
           <ul>
-            <li>Custom Software Development</li>
-            <li>AI & Machine Learning</li>
-            <li>Cloud Services</li>
-            <li>Cybersecurity</li>
-            <li>Digital Marketing</li>
+            <li><Link to="/services/custom-software-development" style={{ textDecoration: 'none', color: 'inherit' }}>Custom Software Development</Link></li>
+            <li><Link to="/services/ai-machine-learning" style={{ textDecoration: 'none', color: 'inherit' }}>AI & Machine Learning</Link></li>
+            <li><Link to="/services/cloud-services" style={{ textDecoration: 'none', color: 'inherit' }}>Cloud Services</Link></li>
+            <li><Link to="/services/cybersecurity-services" style={{ textDecoration: 'none', color: 'inherit' }}>Cybersecurity</Link></li>
+            <li><Link to="/services" style={{ textDecoration: 'none', color: 'inherit' }}>All Services</Link></li>
           </ul>
 
         </div>
@@ -68,11 +69,11 @@ function Footer({ darkMode }) {
           <h3>Company</h3>
 
           <ul>
-            <li>About Us</li>
-            <li>Careers</li>
-            <li>Industries</li>
-            <li>Insights</li>
-            <li>Contact Us</li>
+            <li><Link to="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About Us</Link></li>
+            <li><Link to="/careers" style={{ textDecoration: 'none', color: 'inherit' }}>Careers</Link></li>
+            <li><Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Home</Link></li>
+            <li><Link to="/insights" style={{ textDecoration: 'none', color: 'inherit' }}>Insights</Link></li>
+            <li><Link to="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>Contact Us</Link></li>
           </ul>
 
         </div>

@@ -120,7 +120,7 @@ function Navbar({ darkMode, setDarkMode }) {
           {darkMode ? <FaSun /> : <FaMoon />}
         </button>
 
-        <Link to="/#footer" style={{ textDecoration: 'none' }}>
+        <Link to="/contact" style={{ textDecoration: 'none' }}>
           <button className="contact-btn">
             Contact Us
           </button>
