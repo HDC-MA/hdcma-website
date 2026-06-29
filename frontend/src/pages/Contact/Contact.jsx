@@ -9,10 +9,11 @@ import {
   Building
 } from "lucide-react";
 import {
-  FaLinkedin,
+  FaLinkedinIn,
   FaInstagram,
+  FaWhatsapp,
   FaTwitter,
-  FaFacebook,
+  FaFacebookF,
   FaYoutube
 } from "react-icons/fa";
 import "./Contact.css";
@@ -133,19 +134,22 @@ const Contact = ({ darkMode }) => {
             <div className="social-links-card glass-card">
               <h3>Follow Our Core Channels</h3>
               <div className="social-grid">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-btn linkedin-btn">
-                  <FaLinkedin size={20} />
+                <a href="https://www.linkedin.com/company/horizon-digital-core-management-associates/" target="_blank" rel="noopener noreferrer" className="social-btn linkedin-btn" aria-label="LinkedIn">
+                  <FaLinkedinIn size={20} />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-btn instagram-btn">
+                <a href="https://www.instagram.com/horizondigitalcore/" target="_blank" rel="noopener noreferrer" className="social-btn instagram-btn" aria-label="Instagram">
                   <FaInstagram size={20} />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-btn twitter-btn">
+                <a href="https://wa.me/919160897498" target="_blank" rel="noopener noreferrer" className="social-btn whatsapp-btn" aria-label="WhatsApp">
+                  <FaWhatsapp size={20} />
+                </a>
+                <a href="https://x.com/HDCMA_Official" target="_blank" rel="noopener noreferrer" className="social-btn twitter-btn" aria-label="Twitter">
                   <FaTwitter size={20} />
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-btn facebook-btn">
-                  <FaFacebook size={20} />
+                <a href="https://www.facebook.com/horizondigitalcore/" target="_blank" rel="noopener noreferrer" className="social-btn facebook-btn" aria-label="Facebook">
+                  <FaFacebookF size={20} />
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-btn youtube-btn">
+                <a href="https://www.youtube.com/@HorizonDigitalCore" target="_blank" rel="noopener noreferrer" className="social-btn youtube-btn" aria-label="YouTube">
                   <FaYoutube size={20} />
                 </a>
               </div>
