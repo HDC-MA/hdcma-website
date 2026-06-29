@@ -355,6 +355,7 @@
 .departments-grid.revealed .department-card:nth-child(5) { opacity: 1; transform: scale(1) translateY(0); transition-delay: 0.40s; }
 .departments-grid.revealed .department-card:nth-child(6) { opacity: 1; transform: scale(1) translateY(0); transition-delay: 0.50s; }
 .departments-grid.revealed .department-card:nth-child(7) { opacity: 1; transform: scale(1) translateY(0); transition-delay: 0.60s; }
+.departments-grid.revealed .department-card:nth-child(8) { opacity: 1; transform: scale(1) translateY(0); transition-delay: 0.70s; }
 
 .career-page.light .department-card {
   background: #F0F6FF;

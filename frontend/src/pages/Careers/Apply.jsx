@@ -75,41 +75,58 @@ function Apply({ darkMode, setDarkMode }) {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const uploadToCloudinary = async (file) => {
+    const data = new FormData();
+    data.append('file', file);
+    data.append('upload_preset', 'hdcma_resumes');
+    data.append('cloud_name', 'vwfaldev');
+
+    const res = await fetch(
+      'https://api.cloudinary.com/v1_1/vwfaldev/raw/upload',
+      { method: 'POST', body: data }
+    );
+    const result = await res.json();
+    return result.secure_url;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
     setLoading(true);
 
-    const templateParams = {
-      to_name: 'HDC MA Team',
-      from_name: formData.fullName,
-      from_email: formData.email,
-      phone: formData.phone,
-      location: formData.location,
-      role: role,
-      linkedin: formData.linkedin || 'Not provided',
-      experience: formData.experience,
-      source: formData.source || 'Not provided',
-      cover_letter: formData.coverLetter || 'Not provided',
-      resume_name: resumeFile ? resumeFile.name : 'Not provided',
-    };
+    try {
+      const resumeLink = await uploadToCloudinary(resumeFile);
 
-    emailjs.send(
-      'service_l5r6uou',
-      'template_e0w5gi9',
-      templateParams,
-      '0RqOypxqmxrajRDHy'
-    )
-    .then(() => {
+      const templateParams = {
+        to_name: 'HDC MA Team',
+        from_name: formData.fullName,
+        from_email: formData.email,
+        phone: formData.phone,
+        location: formData.location,
+        role: role,
+        linkedin: formData.linkedin || 'Not provided',
+        experience: formData.experience,
+        source: formData.source || 'Not provided',
+        cover_letter: formData.coverLetter || 'Not provided',
+        resume_link: resumeLink,
+      };
+
+      await emailjs.send(
+        'service_l5r6uou',
+        'template_e0w5gi9',
+        templateParams,
+        '0RqOypxqmxrajRDHy'
+      );
+
       setLoading(false);
       setSubmitted(true);
-    })
-    .catch((error) => {
+
+    } catch (error) {
       setLoading(false);
-      console.error('EmailJS error:', error);
+      console.error('Error:', error);
       alert('Something went wrong. Please try again.');
-    });
+    }
   };
 
   if (submitted) {
@@ -283,7 +300,7 @@ function Apply({ darkMode, setDarkMode }) {
           </div>
 
           <button type="submit" className="submit-btn" disabled={loading}>
-            {loading ? 'Submitting...' : 'Submit Application'}
+            {loading ? 'Uploading & Submitting...' : 'Submit Application'}
           </button>
 
         </form>

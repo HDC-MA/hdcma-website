@@ -93,8 +93,8 @@ function Careers({ darkMode, setDarkMode }) {
     { icon: <FiCpu />, name: 'AI / ML Products', description: 'AI-powered product development' },
     { icon: <FiTrendingUp />, name: 'Digital Marketing', description: 'SEO, social media & growth' },
     { icon: <FiBriefcase />, name: 'Business Solutions', description: 'ERP & CRM implementations' },
-    { icon: <FiAward />, name: 'Staffing & Training', description: 'Hiring & upskilling talent' },
     { icon: <FiStar />, name: 'IT Consulting & Advisory', description: 'Strategic tech guidance & advisory' },
+    { icon: <FiAward />, name: 'Staffing & Training', description: 'Hiring & upskilling talent' },
   ];
 
   const techStack = [
