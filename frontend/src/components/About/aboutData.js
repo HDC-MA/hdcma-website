@@ -1,6 +1,7 @@
 // TODO: Update all placeholder values in this file with real content.
 
 import { Rocket, Heart, Zap, Shield } from "lucide-react";
+import ceoPradeep from "../../assets/images/ceo-pradeep.jpg";
 
 export const heroData = {
   headline: "Building the Future of Digital Transformation",
@@ -12,15 +13,13 @@ export const missionData = {
   description: "To accelerate global innovation by providing enterprise-grade, scalable, and intelligent technology solutions. We believe in creating a forward-looking digital ecosystem where complex problems are solved with elegant, efficient engineering.",
 };
 
-// TODO: Replace Placeholder Name, Title, Bio, and Image with real CEO details.
 export const leadershipData = [
   {
     id: 1,
-    name: "Placeholder Name",
+    name: "Pradeep Kumar Majji",
     title: "Chief Executive Officer & Founder",
     bio: "With over 15 years of experience in enterprise software and artificial intelligence, our founder has driven digital transformation for Fortune 500 companies globally. They believe in fostering a culture of continuous learning and relentless innovation.",
-    // Using ui-avatars as a placeholder image as requested
-    image: "https://ui-avatars.com/api/?name=Placeholder+Name&size=300&background=002D72&color=fff",
+    image: ceoPradeep,
   }
 ];
 

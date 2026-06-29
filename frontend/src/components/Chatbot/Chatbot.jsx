@@ -25,7 +25,7 @@ const BOT_RESPONSES = [
   },
   {
     keywords: ["ceo", "founder", "leadership", "management"],
-    text: "Our Chief Executive Officer & Founder is Placeholder Name, who has over 15 years of experience in enterprise software and artificial intelligence, leading digital transformations for Fortune 500 companies."
+    text: "Our Chief Executive Officer & Founder is Pradeep Kumar Majji, who has over 15 years of experience in enterprise software and artificial intelligence, leading digital transformations for Fortune 500 companies."
   },
   {
     keywords: ["mission", "goal", "vision"],

@@ -6,6 +6,7 @@ import "./About.css";
 import techImg from "../../assets/images/technology.jpg";
 import manufacturingImg from "../../assets/images/manufacturing.jpg";
 import healthcareImg from "../../assets/images/healthcare.jpg";
+import ceoPradeep from "../../assets/images/ceo-pradeep.jpg";
 
 function About() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -106,8 +107,8 @@ function About() {
             <div className="founder-visual">
               <div className="founder-image-wrapper">
                 <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600&h=600" 
-                  alt="Marcus Vance, Founder and Chief Systems Architect" 
+                  src={ceoPradeep} 
+                  alt="Pradeep Kumar Majji, Founder and CEO" 
                 />
               </div>
             </div>
@@ -116,7 +117,7 @@ function About() {
               <h2>Founder's Message</h2>
               <div className="founder-message-body">
                 <p>
-                  When I founded HDCMA over a decade ago, my goal was to solve a foundational issue that plagued the enterprise technology landscape: the lack of true structural resilience in critical systems. We set out to prove that with rigorous engineering, zero-downtime operations and sub-millisecond reliability could become standard business expectations rather than unattainable goals.
+                  When I founded HDCMA, my goal was to solve a foundational issue that plagued the enterprise technology landscape: the lack of true structural resilience in critical systems. We set out to prove that with rigorous engineering, zero-downtime operations and sub-millisecond reliability could become standard business expectations rather than unattainable goals.
                 </p>
                 <p>
                   Over the years, our journey has taken us from securing defense telemetry grids to designing the core data architectures for central banks and global healthcare systems. Every line of code we write and every architecture blueprint we design is guided by a commitment to absolute precision, deep security, and enduring value.
@@ -127,8 +128,8 @@ function About() {
               </div>
               <div className="founder-meta">
                 <div className="founder-info">
-                  <span className="founder-name">Marcus Vance</span>
-                  <span className="founder-title">Founder & Chief Systems Architect</span>
+                  <span className="founder-name">Pradeep Kumar Majji</span>
+                  <span className="founder-title">Founder & CEO</span>
                 </div>
                 <div className="founder-signature-wrapper">
                   <svg width="160" height="60" viewBox="0 0 160 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="founder-signature">
