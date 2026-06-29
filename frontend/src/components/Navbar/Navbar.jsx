@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import "./Navbar.css";
-import { FaMoon, FaSun, FaSearch } from "react-icons/fa";
+import { FaMoon, FaSun, FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import darkLogo from "../../assets/logos/dark theme (1).svg";
@@ -11,6 +11,7 @@ import IndustriesDropdown from "../IndustriesDropdown/IndustriesDropdown";
 function Navbar({ darkMode, setDarkMode }) {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const timeoutRef = useRef(null);
   const indTimeoutRef = useRef(null);
 
@@ -77,31 +78,45 @@ function Navbar({ darkMode, setDarkMode }) {
 
       {/* CENTER NAVIGATION */}
 
-      <ul className="nav-links">
+      <ul className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>
 
-        <li><Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Home</Link></li>
+        <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>Home</Link></li>
         <li 
           className="services-mega-wrapper"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          onClick={() => window.innerWidth < 768 && setIsServicesOpen(!isServicesOpen)}
+          onClick={() => {
+            if (window.innerWidth < 768) {
+              setIsServicesOpen(!isServicesOpen);
+            }
+          }}
         >
           <span className="nav-link" style={{ cursor: "pointer" }}>Services</span>
-          {isServicesOpen && <ServicesDropdown onClose={() => setIsServicesOpen(false)} />}
+          {isServicesOpen && <ServicesDropdown onClose={() => {
+            setIsServicesOpen(false);
+            setIsMobileMenuOpen(false);
+          }} />}
         </li>
         <li 
           className="services-mega-wrapper"
           onMouseEnter={handleIndustriesMouseEnter}
           onMouseLeave={handleIndustriesMouseLeave}
-          onClick={() => window.innerWidth < 768 && setIsIndustriesOpen(!isIndustriesOpen)}
+          onClick={() => {
+            if (window.innerWidth < 768) {
+              setIsIndustriesOpen(!isIndustriesOpen);
+            }
+          }}
         >
           <span className="nav-link" style={{ cursor: "pointer" }}>Industries</span>
-          {isIndustriesOpen && <IndustriesDropdown onClose={() => setIsIndustriesOpen(false)} />}
+          {isIndustriesOpen && <IndustriesDropdown onClose={() => {
+            setIsIndustriesOpen(false);
+            setIsMobileMenuOpen(false);
+          }} />}
         </li>
-        <li><Link to="/products" style={{ textDecoration: 'none', color: 'inherit' }}>Products</Link></li>
-        <li><Link to="/insights" style={{ textDecoration: 'none', color: 'inherit' }}>Insights</Link></li>
-        <li><Link to="/about" style={{ textDecoration: 'none', color: 'inherit' }}>About Us</Link></li>
-        <li><Link to="/careers" style={{ textDecoration: 'none', color: 'inherit' }}>Careers</Link></li>
+        <li><Link to="/products" onClick={() => setIsMobileMenuOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>Products</Link></li>
+        <li><Link to="/insights" onClick={() => setIsMobileMenuOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>Insights</Link></li>
+        <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>About Us</Link></li>
+        <li><Link to="/careers" onClick={() => setIsMobileMenuOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>Careers</Link></li>
 
       </ul>
 
@@ -120,11 +135,20 @@ function Navbar({ darkMode, setDarkMode }) {
           {darkMode ? <FaSun /> : <FaMoon />}
         </button>
 
-        <Link to="/contact" style={{ textDecoration: 'none' }}>
+        <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} style={{ textDecoration: 'none' }}>
           <button className="contact-btn">
             Contact Us
           </button>
         </Link>
+
+        {/* Mobile Menu Toggle Button */}
+        <button 
+          className="icon-btn menu-toggle" 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle navigation menu"
+        >
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
 
       </div>
 

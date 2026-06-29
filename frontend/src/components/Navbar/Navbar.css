@@ -278,13 +278,60 @@
 }
 
 /* ====================================
+   MOBILE TOGGLE BUTTON
+==================================== */
+.menu-toggle {
+  display: none;
+}
+
+/* ====================================
    RESPONSIVE
 ==================================== */
 
 @media (max-width: 992px) {
+  .menu-toggle {
+    display: flex;
+  }
 
   .nav-links {
     display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 30px 40px;
+    gap: 24px;
+    z-index: 998;
+    box-shadow: var(--shadow-soft);
+    animation: mobileMenuSlide 0.22s ease-out forwards;
+  }
+
+  .nav-links.active li {
+    font-size: 17px;
+    width: 100%;
+    padding: 4px 0;
+  }
+
+  .nav-links.active li::after {
+    display: none;
+  }
+
+  @keyframes mobileMenuSlide {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .navbar {
@@ -309,7 +356,6 @@
 }
 
 @media (max-width: 768px) {
-
   .contact-btn {
     display: none;
   }
