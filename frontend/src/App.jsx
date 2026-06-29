@@ -13,6 +13,14 @@ import Footer from "./components/Footer/Footer";
 import Chatbot from "./components/Chatbot/Chatbot";
 import { client } from "./lib/appwrite";
 
+// Industry pages
+import BankingPage from "./pages/Industries/BankingPage";
+import EducationPage from "./pages/Industries/EducationPage";
+import HealthcarePage from "./pages/Industries/HealthcarePage";
+import ManufacturingPage from "./pages/Industries/ManufacturingPage";
+import RetailPage from "./pages/Industries/RetailPage";
+import TechnologyPage from "./pages/Industries/TechnologyPage";
+
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -51,6 +59,14 @@ function App() {
         <Route path="/products" element={<ProductsPage darkMode={darkMode} />} />
         <Route path="/about" element={<About darkMode={darkMode} />} />
         <Route path="/careers" element={<Careers darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        
+        {/* Industry Routes */}
+        <Route path="/industries/banking" element={<BankingPage />} />
+        <Route path="/industries/education" element={<EducationPage />} />
+        <Route path="/industries/healthcare" element={<HealthcarePage />} />
+        <Route path="/industries/manufacturing" element={<ManufacturingPage />} />
+        <Route path="/industries/retail" element={<RetailPage />} />
+        <Route path="/industries/technology" element={<TechnologyPage />} />
         <Route path="/services" element={<Services darkMode={darkMode} setDarkMode={setDarkMode} />} />
         <Route path="/services/:serviceSlug" element={<ServiceDetail darkMode={darkMode} setDarkMode={setDarkMode} />} />
       </Routes>

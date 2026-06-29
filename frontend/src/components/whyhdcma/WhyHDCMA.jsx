@@ -1,28 +1,7 @@
 import "./WhyHDCMA.css";
-import mongodb from "../../assets/images/mongodb.svg";
-import nodejs from "../../assets/images/nodejs.svg";
-import reactLogo from "../../assets/images/react.svg";
-import express from "../../assets/images/express.svg";
-import aws from "../../assets/images/aws.svg";
-import azure from "../../assets/images/azure.svg";
-import docker from "../../assets/images/docker.svg";
-import sap from "../../assets/images/sap.svg";
-import openai from "../../assets/images/openai.svg";
-import python from "../../assets/images/python.svg";
 
 function WhyHDCMA({ darkMode }) {
-  const technologies = [
-    { title: "MongoDB", image: mongodb },
-    { title: "Express.js", image: express },
-    { title: "React.js", image: reactLogo },
-    { title: "Node.js", image: nodejs },
-    { title: "AWS", image: aws },
-    { title: "Azure", image: azure },
-    { title: "Docker", image: docker },
-    { title: "SAP", image: sap },
-    { title: "OpenAI", image: openai },
-    { title: "Python", image: python },
-  ];
+
 
   return (
     <section
@@ -49,18 +28,6 @@ function WhyHDCMA({ darkMode }) {
             Engineering, SAP Solutions and
             Enterprise Digital Transformation.
           </p>
-
-          <div className="technology-strip">
-            <h3>Trusted Technologies</h3>
-            <div className="technology-grid">
-              {technologies.slice(0, 6).map((tech) => (
-                <div key={tech.title} className="tech-card">
-                  <img src={tech.image} alt={tech.title} />
-                  <span>{tech.title}</span>
-                </div>
-              ))}
-            </div>
-          </div>
 
           <button>
             Partner With HDCMA →
@@ -132,11 +99,6 @@ function WhyHDCMA({ darkMode }) {
               </p>
             </div>
 
-          </div>
-
-          <div className="technology-header">
-            <h3>Trusted Technologies</h3>
-            <p>Enterprise-grade platforms and tools that power modern digital transformation.</p>
           </div>
 
         </div>

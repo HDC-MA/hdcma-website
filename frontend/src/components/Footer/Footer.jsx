@@ -5,6 +5,7 @@ import {
   FaInstagram,
   FaFacebookF,
   FaYoutube,
+  FaWhatsapp,
   FaTwitter,
   FaEnvelope,
   FaPhoneAlt,
@@ -16,7 +17,7 @@ import lightLogo from "../../assets/logos/light theme.svg";
 
 function Footer({ darkMode }) {
   return (
-    <footer id="footer" className={`footer ${darkMode ? "dark" : "light"}`}>
+    <footer className={`footer ${darkMode ? "dark" : "light"}`}>
 
       <div className="footer-container">
 
@@ -89,10 +90,7 @@ function Footer({ darkMode }) {
               info@horizondigitalcore.com
             </li>
 
-            <li>
-              <FaPhoneAlt />
-              +91 XXXXX XXXXX
-            </li>
+          
 
             <li>
               <FaMapMarkerAlt />
@@ -121,6 +119,9 @@ function Footer({ darkMode }) {
 
           <a href="https://www.instagram.com/horizondigitalcore/">
             <FaInstagram />
+          </a>
+          <a href="https://wa.me/919160897498">
+            <FaWhatsapp/>
           </a>
           <a href ="https://x.com/HDCMA_Official">
             <FaTwitter />

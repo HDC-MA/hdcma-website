@@ -6,6 +6,7 @@ import './Services.css';
 const Services = ({ darkMode, setDarkMode }) => {
   return (
     <>
+
       
       <div className={`services-page ${darkMode ? "dark" : "light"}`}>
         <div className="services-glow"></div>
@@ -33,7 +34,7 @@ const Services = ({ darkMode, setDarkMode }) => {
                 >
                   <div className="service-card-accent"></div>
                   <div className="service-card-content">
-                    <div className="service-card-icon" style={{ color: "#002D72" }}>
+                    <div className="service-card-icon" style={{ '--icon-color': service.color }}>
                       <Icon size={48} strokeWidth={1.5} />
                     </div>
                     <h3 className="service-card-title">{service.title}</h3>
@@ -55,7 +56,6 @@ const Services = ({ darkMode, setDarkMode }) => {
           </Link>
         </section>
       </div>
-
     </>
   );
 };

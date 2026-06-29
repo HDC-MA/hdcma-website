@@ -13,13 +13,14 @@ export const services = [
       "We prioritize building ethical, transparent, and highly scalable AI models. Whether you need predictive maintenance systems in manufacturing, real-time fraud detection in finance, or highly personalized customer experiences in retail, our dedicated data science team ensures that every AI deployment is optimized for measurable ROI and long-term business value."
     ],
     capabilities: [
-      "Custom ML Model Development",
-      "Generative AI Integration (LLMs, RAG, Agents)",
-      "NLP & Computer Vision Systems",
-      "MLOps & Model Lifecycle Management",
-      "Data Pipeline Architecture",
-      "AI Strategy & Proof of Concept"
+      "Predictive Analytics & Custom ML Models",
+      "Enterprise Generative AI & LLM Integration",
+      "Advanced Computer Vision & NLP Systems",
+      "Scalable MLOps & Continuous Training",
+      "Intelligent Data Pipelines & Engineering",
+      "AI Strategy & Rapid Prototyping"
     ],
+    techStack: ["Python", "TensorFlow", "PyTorch", "OpenAI API", "AWS SageMaker", "Hugging Face"],
     industries: ["Healthcare", "Finance", "Retail", "Manufacturing"],
     cta: "Start Your AI Journey",
     technologies: [
@@ -55,6 +56,7 @@ export const services = [
       "QA Automation & Testing",
       "DevOps CI/CD Integration"
     ],
+    techStack: ["React", "Node.js", "PostgreSQL", "Docker", "Java Spring", "TypeScript"],
     industries: ["Startups", "Enterprise", "Government", "Logistics"],
     cta: "Build Something Custom",
     technologies: [
@@ -87,6 +89,7 @@ export const services = [
       "Performance Optimization",
       "Product Analytics Integration"
     ],
+    techStack: ["Figma", "React Native", "Next.js", "GraphQL", "AWS", "Firebase"],
     industries: ["SaaS", "FinTech", "EdTech", "HealthTech"],
     cta: "Engineer Your Product"
   },
@@ -109,6 +112,7 @@ export const services = [
       "Vendor Management",
       "Compliance & Audit Support"
     ],
+    techStack: ["ServiceNow", "Datadog", "Jira", "Splunk", "Microsoft Intune", "AWS CloudWatch"],
     industries: ["Healthcare", "Banking", "Education", "Retail"],
     cta: "Get Expert Guidance"
   },
@@ -131,6 +135,7 @@ export const services = [
       "Business Intelligence & Reporting",
       "Multi-tenant Architecture Design"
     ],
+    techStack: ["Java", "C# .NET", "Oracle DB", "MuleSoft", "Salesforce", "Kubernetes"],
     industries: ["Manufacturing", "Finance", "Logistics", "Telecom"],
     cta: "Modernize Your Enterprise"
   },
@@ -140,19 +145,21 @@ export const services = [
     shortDesc: "Protect your digital assets with proactive threat defense and compliance-ready security.",
     icon: ShieldCheck,
     color: "#002D72",
-    overview: "From threat assessment to incident response, our cybersecurity team secures your applications, infrastructure, and data. We help organizations build a security-first culture with ongoing training, audits, and automated defense systems.",
+    overview: "In today’s rapidly evolving digital landscape, cybersecurity is no longer optional—it is a business imperative. Our Cybersecurity Services are designed to help organizations proactively identify vulnerabilities, defend against emerging threats, and build resilient security frameworks that protect critical assets, sensitive data, and business operations.",
     detailedContent: [
-      "In an era of sophisticated digital threats, passive security measures are no longer sufficient. We provide proactive, multi-layered cybersecurity services designed to protect your sensitive data, safeguard your intellectual property, and ensure uninterrupted business continuity in the face of evolving cyber attacks.",
-      "Our security experts conduct rigorous penetration testing, vulnerability assessments, and compliance audits to identify weaknesses before they can be exploited. We help you implement zero-trust architectures, advanced identity management systems, and provide 24/7 Security Operations Center (SOC) support to rapidly neutralize incoming threats."
+      "In today’s rapidly evolving digital landscape, cybersecurity is no longer optional—it is a business imperative. Our Cybersecurity Services are designed to help organizations proactively identify vulnerabilities, defend against emerging threats, and build resilient security frameworks that protect critical assets, sensitive data, and business operations.",
+      "We deliver comprehensive security solutions across vulnerability assessment, penetration testing, threat detection, security monitoring, endpoint protection, governance, risk management, and compliance. By combining industry best practices with advanced technologies and a risk-driven approach, we help businesses minimize exposure, ensure regulatory compliance, and maintain operational continuity.",
+      "Whether you're a startup, enterprise, or public sector organization, our team works closely with you to strengthen your security posture, respond effectively to evolving cyber risks, and enable secure digital transformation with confidence. Our mission is to provide reliable, scalable, and future-ready cybersecurity solutions that safeguard your business today and prepare it for tomorrow’s challenges."
     ],
     capabilities: [
-      "Penetration Testing & Vulnerability Assessment",
-      "Security Architecture Design",
+      "Vulnerability Assessment & Penetration Testing",
+      "Managed Zscaler Services",
       "Identity & Access Management (IAM)",
       "SOC-as-a-Service",
-      "Compliance (ISO 27001, SOC2, GDPR, HIPAA)",
-      "Incident Response & Recovery"
+      "Cloud Security Services",
+      "Governance, Risk & Compliance"
     ],
+    techStack: ["Qualys", "Tenable Nessus", "OpenVAS", "Rapid7 InsightVM", "Tanium", "Splunk Enterprise Security", "IBM QRadar", "Microsoft Sentinel", "Palo Alto Cortex XSOAR", "Seceon", "CrowdStrike Falcon", "Microsoft Defender for Endpoint", "RSA Archer", "ServiceNow", "Claude Code Security"],
     industries: ["Banking", "Healthcare", "Government", "E-Commerce"],
     cta: "Secure Your Business"
   },
@@ -175,6 +182,7 @@ export const services = [
       "Serverless Architecture",
       "Cloud Security & Governance"
     ],
+    techStack: ["AWS", "Microsoft Azure", "Google Cloud", "Terraform", "Kubernetes", "Docker", "Datadog", "Wiz", "Veeam", "Okta"],
     industries: ["SaaS", "FinTech", "Media", "Enterprise"],
     cta: "Move to the Cloud",
     technologies: [
@@ -206,6 +214,7 @@ export const services = [
       "Email Marketing Automation",
       "Analytics & Conversion Rate Optimization"
     ],
+    techStack: ["HubSpot", "Google Analytics 4", "SEMrush", "Salesforce Marketing Cloud", "Ahrefs", "Meta Ads"],
     industries: ["E-Commerce", "SaaS", "Healthcare", "Education"],
     cta: "Grow Your Presence"
   },
@@ -228,6 +237,7 @@ export const services = [
       "KPI Dashboards & Executive Reporting",
       "Outsourced Product Development"
     ],
+    techStack: ["Tableau", "Power BI", "Atlassian Suite", "Asana", "Miro", "Salesforce"],
     industries: ["All Industries"],
     cta: "Transform Your Business"
   },
@@ -247,9 +257,10 @@ export const services = [
       "Permanent Placement & Executive Search",
       "Contract-to-Hire Solutions",
       "Technical Upskilling Programs",
-      "Corporate Training (Cloud, AI, DevOps)",
+      "Corporate Training",
       "Bootcamp & Certification Prep"
     ],
+    techStack: ["LinkedIn Recruiter", "Greenhouse", "Workday", "Coursera for Business", "Pluralsight", "Udemy Business"],
     industries: ["Enterprise", "Startups", "Government", "Education"],
     cta: "Build Your Dream Team"
   },
@@ -272,6 +283,7 @@ export const services = [
       "In-App Analytics & Usage Tracking",
       "SLA-backed Hosting & Support"
     ],
+    techStack: ["Stripe", "AWS", "React", "Node.js", "Redis", "MongoDB"],
     industries: ["HR Tech", "PropTech", "LegalTech", "AgriTech"],
     cta: "Explore Our Products"
   },
@@ -288,26 +300,43 @@ export const services = [
     ],
     keyModules: [
       {
-        title: "SAP CPI (Cloud Platform Integration)",
-        description: "We implement robust, cloud-based integration flows (iPaaS) to seamlessly connect your SAP ecosystem with third-party applications and on-premise systems, ensuring secure and real-time data exchange."
+        title: "SAP FI/CO (Financial Accounting & Controlling)",
+        description: "We streamline your financial management and enterprise reporting, ensuring robust fiscal control, real-time profitability analysis, and regulatory compliance."
       },
       {
         title: "SAP MM (Materials Management)",
-        description: "We optimize your procurement and inventory lifecycles. By configuring SAP MM, we help you streamline purchase requisitions, automate vendor management, and maintain precise real-time tracking of goods movements to reduce supply chain costs."
+        description: "We optimize your procurement and inventory lifecycles. By configuring SAP MM, we help you streamline purchase requisitions, automate vendor management, and maintain precise real-time tracking of goods movements."
       },
       {
-        title: "SAP BOM (Bill of Materials)",
-        description: "We structure your complex manufacturing data by implementing highly detailed, hierarchical Bill of Materials. This ensures perfect alignment between product design, production planning (MRP), and accurate cost accounting."
+        title: "SAP SD (Sales and Distribution)",
+        description: "We manage the complete order-to-cash cycle, optimizing sales processes, pricing, billing, and logistics to enhance customer satisfaction and revenue realization."
+      },
+      {
+        title: "SAP PP (Production Planning)",
+        description: "We integrate your manufacturing processes, from capacity planning and material requirements (MRP) to shop floor execution, ensuring perfect alignment with product design."
+      },
+      {
+        title: "SAP BTP (Business Technology Platform)",
+        description: "We leverage SAP BTP to build, integrate, and extend business applications, utilizing a unified platform for data management, analytics, AI, and continuous innovation."
+      },
+      {
+        title: "SAP Security",
+        description: "We ensure robust protection of your enterprise applications by implementing comprehensive role-based access controls, identity governance, and continuous security compliance."
+      },
+      {
+        title: "SAP CPI (Cloud Platform Integration)",
+        description: "We implement robust, cloud-based integration flows (iPaaS) to seamlessly connect your SAP ecosystem with third-party applications and on-premise systems."
       }
     ],
     capabilities: [
       "SAP S/4HANA Migration & Implementation",
-      "SAP CPI (Cloud Platform Integration)",
-      "SAP MM (Materials Management)",
-      "SAP BOM & Production Planning",
-      "SAP Cloud Platform (BTP) Development",
-      "ABAP & Fiori Customization"
+      "Financial Accounting & Controlling (FI/CO)",
+      "Sales, Distribution & Procurement (SD/MM)",
+      "Production Planning & Execution (PP)",
+      "SAP Cloud Platform (BTP) & CPI Integration",
+      "SAP Security & Governance"
     ],
+    techStack: ["SAP S/4HANA", "SAP FI/CO", "SAP MM", "SAP SD", "SAP PP", "SAP BTP", "SAP Security", "SAP CPI", "SAP Fiori", "ABAP"],
     industries: ["Manufacturing", "Retail", "Logistics", "Energy"],
     cta: "Transform with SAP"
   }
