@@ -100,17 +100,16 @@
    ========================================================================== */
 
 .contact-split {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 48px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
 }
 
-@media (min-width: 1024px) {
-  .contact-split {
-    grid-template-columns: 1.1fr 1.3fr;
-    gap: 60px;
-  }
+.contact-info-column,
+.contact-form-column {
+  width: 100%;
+  max-width: 800px; /* Constrained and centered for clean corporate look */
 }
 
 /* Glassmorphism Card Base */
@@ -152,9 +151,38 @@
 }
 
 .info-items {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 28px;
+  margin-bottom: 36px;
+}
+
+@media (min-width: 600px) {
+  .info-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.social-links-inline {
+  border-top: 1px solid var(--border, #eaeaea);
+  margin-top: 24px;
+  padding-top: 28px;
+}
+
+.social-links-inline h3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--text, #111111);
+}
+
+.dark-theme .social-links-inline {
+  border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .social-links-inline h3 {
+  color: #ffffff;
 }
 
 .info-item {

@@ -127,30 +127,30 @@ const Contact = ({ darkMode }) => {
                 </div>
 
               </div>
-            </div>
 
-            {/* Social Links Card */}
-            <div className="social-links-card glass-card">
-              <h3>Follow Our Core Channels</h3>
-              <div className="social-grid">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-btn linkedin-btn">
-                  <FaLinkedin size={20} />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-btn instagram-btn">
-                  <FaInstagram size={20} />
-                </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-btn twitter-btn">
-                  <FaTwitter size={20} />
-                </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-btn facebook-btn">
-                  <FaFacebook size={20} />
-                </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-btn youtube-btn">
-                  <FaYoutube size={20} />
-                </a>
+              {/* Integrated Social Links */}
+              <div className="social-links-inline">
+                <h3>Follow Our Core Channels</h3>
+                <div className="social-grid">
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-btn linkedin-btn">
+                    <FaLinkedin size={20} />
+                  </a>
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-btn instagram-btn">
+                    <FaInstagram size={20} />
+                  </a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-btn twitter-btn">
+                    <FaTwitter size={20} />
+                  </a>
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-btn facebook-btn">
+                    <FaFacebook size={20} />
+                  </a>
+                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="social-btn youtube-btn">
+                    <FaYoutube size={20} />
+                  </a>
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
 
           {/* RIGHT COLUMN: CONTACT FORM */}
