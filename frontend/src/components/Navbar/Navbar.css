@@ -3,7 +3,7 @@
 ==================================== */
 
 .navbar {
-  height: 75px;
+  height: 100px;
   width: 100%;
 
   position: sticky;
@@ -44,7 +44,7 @@
 }
 
 .logo {
-  height: 60px;
+  height: 90px;
   width: auto;
 
   transition: all 0.4s ease;
@@ -60,7 +60,7 @@
 
 .logo-divider {
   width: 2px;
-  height: 40px;
+  height: 60px;
 
   border-radius: 20px;
 
@@ -80,14 +80,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: -4px;
-  gap: 2px;
+    margin-left: -4px;
 }
 
 .company-info h3 {
   margin: 0;
 
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 800;
 
   letter-spacing: 1px;
@@ -104,13 +103,13 @@
 }
 
 .company-info p {
-  margin-top: 0px;
+  margin-top: 5px;
 
-  font-size: 11px;
+  font-size: 12px;
 
   font-weight: 500;
 
-  line-height: 1.2;
+  line-height: 1.4;
 
   color: #666666;
 }
@@ -140,13 +139,6 @@
   color: var(--text);
 
   transition: all 0.3s ease;
-}
-
-.nav-links li a {
-  color: inherit;
-  text-decoration: none;
-  font-size: inherit;
-  font-weight: inherit;
 }
 
 .nav-links li::after {
@@ -194,8 +186,8 @@
 ==================================== */
 
 .icon-btn {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
 
   border: none;
   border-radius: 50%;
@@ -286,107 +278,6 @@
 }
 
 /* ====================================
-   MEGA DROPDOWN
-==================================== */
-
-.nav-item-dropdown {
-  position: relative;
-}
-
-.nav-item-dropdown > span {
-  display: inline-block;
-  padding-bottom: 8px;
-  margin-bottom: -8px;
-}
-
-.mega-dropdown {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%) translateY(15px);
-  width: 680px;
-  background: #ffffff;
-  border: 1px solid rgba(0, 45, 114, 0.12);
-  box-shadow: var(--shadow-glow);
-  border-radius: 20px;
-  padding: 32px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-              visibility 0.35s;
-  z-index: 9999;
-}
-
-.dark-navbar .mega-dropdown {
-  background: #0B1426;
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-.nav-item-dropdown:hover .mega-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-
-.mega-dropdown-column {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.dropdown-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 12px 20px;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  text-align: left;
-}
-
-.dropdown-item:hover {
-  background: rgba(0, 92, 185, 0.06);
-  transform: translateX(6px);
-}
-
-.dark-navbar .dropdown-item:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.dropdown-item-title {
-  font-family: 'Manrope', sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text);
-  transition: color 0.2s ease;
-}
-
-.dropdown-item:hover .dropdown-item-title {
-  color: var(--royal);
-}
-
-.dark-navbar .dropdown-item:hover .dropdown-item-title {
-  color: var(--sky);
-}
-
-.dropdown-item-sub {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-muted);
-  line-height: 1.4;
-}
-
-.dark-navbar .dropdown-item-sub {
-  color: rgba(255, 255, 255, 0.65);
-}
-
-/* ====================================
    RESPONSIVE
 ==================================== */
 
@@ -405,7 +296,7 @@
   }
 
   .company-info h3 {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .company-info p {
@@ -428,7 +319,7 @@
   }
 
   .logo {
-    height: 60px;
+    height: 65px;
   }
 
   .logo-divider {

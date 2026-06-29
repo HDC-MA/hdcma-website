@@ -246,10 +246,10 @@
   gap: 18px;
 }
 
-.service-details .feature-item {
+.feature-item {
   display: flex;
   align-items: center;
-  margin-bottom: 0;
+
   gap: 10px;
 
   font-size: 16px;
