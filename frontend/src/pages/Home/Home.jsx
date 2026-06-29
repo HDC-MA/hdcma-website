@@ -1,4 +1,3 @@
-import Navbar from "../../components/Navbar/Navbar";
 import Hero from "../../components/Hero/Hero";
 import TrustedTechnologies from "../../components/TrustedTechnologies/TrustedTechnologies";
 import Services from "../../components/Services/Services";
@@ -8,18 +7,12 @@ import WhyHDCMA from "../../components/WhyHDCMA/WhyHDCMA";
 import CaseStudies from "../../components/Case Studies/CaseStudies"
 import Insights from "../../components/Insights/Insights";
 import Careers from "../../components/Careers CTA/Careers";
-import Footer from "../../components/Footer/Footer";
 import Experience from "../../components/Experience/Experience";
 import ContactCTA from "../../components/ContactCTA/ContactCTA";
 
 function Home({ darkMode, setDarkMode }) {
   return (
     <>
-      <Navbar
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-      />
-
       {/* HERO */}
       <Hero darkMode={darkMode} />
 
@@ -36,7 +29,6 @@ function Home({ darkMode, setDarkMode }) {
       <Insights darkMode={darkMode} />
       <Careers darkMode={darkMode} />
       <ContactCTA darkMode={darkMode}/>
-      <Footer darkMode={darkMode} />
     </>
   );
 }
