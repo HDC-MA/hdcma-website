@@ -11,6 +11,7 @@ import ServiceDetail from "./pages/Services/ServiceDetail";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Chatbot from "./components/Chatbot/Chatbot";
+import Contact from "./pages/Contact/Contact";
 import { client } from "./lib/appwrite";
 
 // Industry pages
@@ -59,6 +60,7 @@ function App() {
         <Route path="/products" element={<ProductsPage darkMode={darkMode} />} />
         <Route path="/about" element={<About darkMode={darkMode} />} />
         <Route path="/careers" element={<Careers darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        <Route path="/contact" element={<Contact darkMode={darkMode} />} />
         
         {/* Industry Routes */}
         <Route path="/industries/banking" element={<BankingPage />} />
