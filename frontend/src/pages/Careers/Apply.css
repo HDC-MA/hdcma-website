@@ -106,6 +106,10 @@
 .apply-page.dark .form-group label {
   color: #FFFFFF;
 }
+.apply-page.dark .form-group select option {
+  background: #1a2f4e;
+  color: #FFFFFF;
+}
 
 /* ---------- INPUTS ---------- */
 .form-group input,
