@@ -123,79 +123,79 @@ function Careers({ darkMode, setDarkMode }) {
   ];
 
   const jobs = [
-    {
-      title: 'Cyber Security Analyst Intern',
-      department: 'Cybersecurity',
-      location: 'Remote',
-      type: 'Internship',
-      skills: 'Networking basics, OWASP Top 10, SIEM tools, Linux fundamentals',
-      description: 'As a Cyber Security Analyst Intern at HDC MA, you will work alongside our security team to monitor systems, identify vulnerabilities, and respond to potential threats. You will gain hands-on exposure to SIEM tools, network monitoring, and security best practices while contributing to real client infrastructure. This role is ideal for someone eager to build a career in cybersecurity and learn from experienced professionals in a fast-paced environment.'
-    },
-    {
-      title: 'Full Stack Developer Intern',
-      department: 'Software Development',
-      location: 'Remote',
-      type: 'Internship',
-      skills: 'React.js, Node.js, REST APIs, MongoDB, Git',
-      description: 'Join our development team to design and build modern web applications from the ground up. You will work across the full stack — building React.js interfaces, developing REST APIs with Node.js, and managing data with MongoDB. You will collaborate closely with designers and senior engineers, participate in code reviews, and ship features used by real clients.'
-    },
-    {
-      title: 'Java Full Stack Developer Intern',
-      department: 'Software Development',
-      location: 'Remote',
-      type: 'Internship',
-      skills: 'Java, Spring Boot, React.js, SQL, REST APIs',
-      description: 'This role is perfect for someone looking to strengthen their backend and frontend skills together. You will build scalable backend services using Java and Spring Boot, design relational database schemas with SQL, and connect everything to a React.js frontend. You will be mentored by senior developers and gain experience working on production-grade applications.'
-    },
-    {
-      title: 'UI/UX Designer Intern',
-      department: 'Software Development',
-      location: 'Remote',
-      type: 'Internship',
-      skills: 'Figma, Wireframing, User Research, Prototyping',
-      description: 'As a UI/UX Designer Intern, you will help shape how our products look, feel, and function. You will conduct user research, create wireframes and interactive prototypes in Figma, and work closely with developers to ensure designs translate smoothly into real products. This role offers exposure to the full design process, from concept to final handoff.'
-    },
-    {
-      title: 'SOC Analyst Intern',
-      department: 'Cybersecurity',
-      location: 'Remote',
-      type: 'Internship',
-      skills: 'Threat monitoring, Incident response basics, SIEM tools',
-      description: 'Support our Security Operations Center by monitoring security alerts in real time, investigating suspicious activity, and assisting with incident response. You will learn how to use industry-standard SIEM tools and develop a strong foundation in threat detection, working under the guidance of experienced SOC analysts.'
-    },
-    {
-      title: 'Talent Acquisition Associate',
-      department: 'Staffing & Training',
-      location: 'Remote',
-      type: 'Full-time',
-      skills: 'Sourcing, Screening, Communication, ATS tools',
-      description: 'As a Talent Acquisition Associate, you will drive HDC MA\'s hiring efforts by sourcing candidates, screening applications, and coordinating interviews across departments. You will work closely with hiring managers to understand role requirements and help build a strong, diverse team as the company scales.'
-    },
-    {
-      title: 'Digital Marketing Executive',
-      department: 'Digital Marketing',
-      location: 'Remote',
-      type: 'Full-time',
-      skills: 'SEO, Social Media Marketing, Content Strategy, Analytics',
-      description: 'Take ownership of HDC MA\'s digital presence by planning and executing campaigns across SEO, social media, and content marketing. You will analyze performance metrics, optimize strategies based on data, and play a key role in growing our brand visibility and client acquisition online.'
-    },
-    {
-      title: 'Business Development Associate',
-      department: 'Business Solutions',
-      location: 'Remote',
-      type: 'Full-time',
-      skills: 'Client outreach, Negotiation, CRM tools, Market research',
-      description: 'As a Business Development Associate, you will identify and pursue new business opportunities, build relationships with prospective clients, and support deal negotiations. You will conduct market research to uncover growth opportunities and work closely with leadership to expand HDC MA\'s client base.'
-    },
-    {
-      title: 'AI & ML Intern',
-      department: 'AI / ML Products',
-      location: 'Remote',
-      type: 'Internship',
-      skills: 'Python, TensorFlow basics, Data preprocessing, ML fundamentals',
-      description: 'Get hands-on experience building real AI/ML solutions as part of our AI Products team. You will assist with data preprocessing, experiment with TensorFlow models, and contribute to features that power HDC MA\'s intelligent product offerings. A great opportunity for someone passionate about applied machine learning.'
-    },
-  ];
+  {
+    title: 'Cyber Security Analyst Intern',
+    department: 'Cybersecurity',
+    location: 'Remote',
+    type: 'Internship',
+    skills: 'Networking basics, OWASP Top 10, SIEM tools, Linux fundamentals',
+    description: 'As a Cyber Security Analyst Intern at HDC MA, you will work alongside our security team to monitor systems, identify vulnerabilities, and respond to potential threats. You will gain hands-on exposure to SIEM tools, network monitoring, and security best practices while contributing to real client infrastructure. This role is ideal for someone eager to build a career in cybersecurity and learn from experienced professionals in a fast-paced environment. Open to students or recent graduates with a basic understanding of networking and security concepts — prior hands-on project experience is a plus but not mandatory.'
+  },
+  {
+    title: 'Full Stack Developer Intern',
+    department: 'Software Development',
+    location: 'Remote',
+    type: 'Internship',
+    skills: 'React.js, Node.js, REST APIs, MongoDB, Git',
+    description: 'Join our development team to design and build modern web applications from the ground up. You will work across the full stack — building React.js interfaces, developing REST APIs with Node.js, and managing data with MongoDB. You will collaborate closely with designers and senior engineers, participate in code reviews, and ship features used by real clients. Open to students or recent graduates with foundational knowledge of JavaScript and web development — personal or academic projects in React or Node.js are a strong plus.'
+  },
+  {
+    title: 'Java Full Stack Developer Intern',
+    department: 'Software Development',
+    location: 'Remote',
+    type: 'Internship',
+    skills: 'Java, Spring Boot, React.js, SQL, REST APIs',
+    description: 'This role is perfect for someone looking to strengthen their backend and frontend skills together. You will build scalable backend services using Java and Spring Boot, design relational database schemas with SQL, and connect everything to a React.js frontend. You will be mentored by senior developers and gain experience working on production-grade applications. Open to students or recent graduates with a working knowledge of Java and basic understanding of databases — exposure to Spring Boot or React.js through coursework or projects is preferred.'
+  },
+  {
+    title: 'UI/UX Designer Intern',
+    department: 'Software Development',
+    location: 'Remote',
+    type: 'Internship',
+    skills: 'Figma, Wireframing, User Research, Prototyping',
+    description: 'As a UI/UX Designer Intern, you will help shape how our products look, feel, and function. You will conduct user research, create wireframes and interactive prototypes in Figma, and work closely with developers to ensure designs translate smoothly into real products. This role offers exposure to the full design process, from concept to final handoff. Open to students or recent graduates with a portfolio showcasing design fundamentals — formal design education is helpful but not required.'
+  },
+  {
+    title: 'SOC Analyst Intern',
+    department: 'Cybersecurity',
+    location: 'Remote',
+    type: 'Internship',
+    skills: 'Threat monitoring, Incident response basics, SIEM tools',
+    description: 'Support our Security Operations Center by monitoring security alerts in real time, investigating suspicious activity, and assisting with incident response. You will learn how to use industry-standard SIEM tools and develop a strong foundation in threat detection, working under the guidance of experienced SOC analysts. Open to students or recent graduates with an interest in cybersecurity operations — relevant certifications or coursework are a plus but not required.'
+  },
+  {
+    title: 'Talent Acquisition Associate',
+    department: 'Staffing & Training',
+    location: 'Remote',
+    type: 'Full-time',
+    skills: 'Sourcing, Screening, Communication, ATS tools',
+    description: 'As a Talent Acquisition Associate, you will drive HDC MA\'s hiring efforts by sourcing candidates, screening applications, and coordinating interviews across departments. You will work closely with hiring managers to understand role requirements and help build a strong, diverse team as the company scales. Open to candidates with strong communication skills and an interest in HR or recruitment — prior experience with ATS tools or sourcing platforms is a plus.'
+  },
+  {
+    title: 'Digital Marketing Executive',
+    department: 'Digital Marketing',
+    location: 'Remote',
+    type: 'Full-time',
+    skills: 'SEO, Social Media Marketing, Content Strategy, Analytics',
+    description: 'Take ownership of HDC MA\'s digital presence by planning and executing campaigns across SEO, social media, and content marketing. You will analyze performance metrics, optimize strategies based on data, and play a key role in growing our brand visibility and client acquisition online. Open to candidates with a foundational understanding of digital marketing channels — hands-on experience managing social media or running campaigns is preferred.'
+  },
+  {
+    title: 'Business Development Associate',
+    department: 'Business Solutions',
+    location: 'Remote',
+    type: 'Full-time',
+    skills: 'Client outreach, Negotiation, CRM tools, Market research',
+    description: 'As a Business Development Associate, you will identify and pursue new business opportunities, build relationships with prospective clients, and support deal negotiations. You will conduct market research to uncover growth opportunities and work closely with leadership to expand HDC MA\'s client base. Open to candidates with strong communication and negotiation skills — prior experience in sales, business development, or client-facing roles is a plus.'
+  },
+  {
+    title: 'AI & ML Intern',
+    department: 'AI / ML Products',
+    location: 'Remote',
+    type: 'Internship',
+    skills: 'Python, TensorFlow basics, Data preprocessing, ML fundamentals',
+    description: 'Get hands-on experience building real AI/ML solutions as part of our AI Products team. You will assist with data preprocessing, experiment with TensorFlow models, and contribute to features that power HDC MA\'s intelligent product offerings. A great opportunity for someone passionate about applied machine learning. Open to students or recent graduates with a basic understanding of Python and machine learning concepts — coursework or personal projects in ML are a strong plus.'
+  },
+];
 
   return (
     <div className={`career-page ${darkMode ? 'dark' : 'light'}`}>
