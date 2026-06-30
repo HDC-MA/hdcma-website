@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
-import './Careers.css';
+import './Careers.css'
+import { useNavigate } from "react-router-dom";
+import { useEffect, useRef } from 'react';
 import heroBgLight from "../../assets/hero-bg-light.png"
 import heroBgDark from "../../assets/hero-bg.png"
 import {
@@ -13,10 +14,10 @@ import {
   FiCode, FiLock, FiCloud, FiCpu, FiTrendingUp, FiBriefcase, FiAward
 } from 'react-icons/fi';
 
-function Career({ darkMode, setDarkMode }) {
+function Careers({ darkMode, setDarkMode }) {
+  const navigate = useNavigate();
   const heroBg = darkMode ? heroBgDark : heroBgLight;
 
-  // ── Scroll reveal via IntersectionObserver ──────────────────
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,17 +34,47 @@ function Career({ darkMode, setDarkMode }) {
             }
           } else {
             entry.target.classList.remove('visible');
-            entry.target.style.transition = ' ';
+            entry.target.style.transition = '';
           }
         });
       },
-      { threshold: 0.12 } // trigger when 12% of element is visible
+      { threshold: 0.06, rootMargin: '0px 0px -48px 0px' }
     );
 
-    // Observe every element with class "reveal"
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
     return () => observer.disconnect();
+  }, []);
+
+  const deptsRef = useRef(null);
+  const jobsRef  = useRef(null);
+
+  useEffect(() => {
+    [deptsRef, jobsRef].forEach((ref) => {
+      const container = ref.current;
+      if (!container) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            if (entry.boundingClientRect.top > 0) {
+              container.classList.add('revealed');
+            } else {
+              const cards = container.querySelectorAll('.department-card, .job-card');
+              cards.forEach(c => c.style.transition = 'none');
+              container.classList.add('revealed');
+              requestAnimationFrame(() => requestAnimationFrame(() => {
+                cards.forEach(c => c.style.transition = '');
+              }));
+            }
+          } else {
+            container.classList.remove('revealed');
+          }
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+      );
+
+      observer.observe(container);
+    });
   }, []);
 
   const values = [
@@ -62,6 +93,7 @@ function Career({ darkMode, setDarkMode }) {
     { icon: <FiCpu />, name: 'AI / ML Products', description: 'AI-powered product development' },
     { icon: <FiTrendingUp />, name: 'Digital Marketing', description: 'SEO, social media & growth' },
     { icon: <FiBriefcase />, name: 'Business Solutions', description: 'ERP & CRM implementations' },
+    { icon: <FiStar />, name: 'IT Consulting & Advisory', description: 'Strategic tech guidance & advisory' },
     { icon: <FiAward />, name: 'Staffing & Training', description: 'Hiring & upskilling talent' },
   ];
 
@@ -103,148 +135,142 @@ function Career({ darkMode, setDarkMode }) {
   return (
     <div className={`career-page ${darkMode ? 'dark' : 'light'}`}>
 
-        {/* ── HERO — staggered entrance via CSS animation ── */}
-        <section className="career-hero" style={{ backgroundImage: `url(${heroBg})` }}>
-          <h1>Build the Future of Tech with HDC MA</h1>
-          <p>
-            Empower organizations through intelligent software — built to perform,
-            delivered on time. Join a team shaping the future of enterprise technology.
-          </p>
-          <button
-            className="cta-btn"
-            onClick={() => document.getElementById('open-positions').scrollIntoView({ behavior: 'smooth' })}
-          >
-            View Open Roles
-          </button>
-        </section>
+      <section className="career-hero" style={{ backgroundImage: `url(${heroBg})` }}>
+        <h1>Build the Future of Tech with HDC MA</h1>
+        <p>
+          Empower organizations through intelligent software — built to perform,
+          delivered on time. Join a team shaping the future of enterprise technology.
+        </p>
+        <button
+          className="cta-btn"
+          onClick={() => document.getElementById('open-positions').scrollIntoView({ behavior: 'smooth' })}
+        >
+          View Open Roles
+        </button>
+      </section>
 
-        {/* ── ABOUT — single reveal ── */}
-        <section className="career-about">
-          <p className="reveal">
-            Horizon Digital Core Management Associates (HDC MA) is a full-service
-            IT company delivering enterprise-grade software, AI products, cloud
-            infrastructure, and digital solutions for businesses worldwide. Founded
-            in 2026, we're building a team of people who care about doing great work.
-          </p>
-        </section>
+      <section className="career-about">
+        <p className="reveal">
+          Horizon Digital Core Management Associates (HDC MA) is a full-service
+          IT company delivering enterprise-grade software, AI products, cloud
+          infrastructure, and digital solutions for businesses worldwide. Founded
+          in 2026, we're building a team of people who care about doing great work.
+        </p>
+      </section>
 
-        {/* ── VALUES — staggered grid ── */}
-        <section className="career-section alt-bg">
-          <div className="section-header reveal">
-            <h2>Why Join HDC MA</h2>
-            <p>The values that guide how we work, build, and grow together.</p>
-          </div>
-          <div className="values-grid reveal-group">
-            {values.map((value, index) => (
-              <div className="value-card reveal" key={index}>
+      <section className="career-section alt-bg">
+        <div className="section-header reveal">
+          <h2>Why Join HDC MA</h2>
+          <p>The values that guide how we work, build, and grow together.</p>
+        </div>
+        <div className="values-marquee-wrapper">
+          <div className="values-marquee-track">
+            {[...values, ...values].map((value, index) => (
+              <div className="marquee-card" key={index}>
                 <div className="icon">{value.icon}</div>
                 <h3>{value.title}</h3>
                 <p>{value.description}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ── DEPARTMENTS — staggered grid ── */}
-        <section className="career-section">
-          <div className="section-header reveal">
-            <h2>Teams You Can Join</h2>
-            <p>Explore the areas where you could make an impact.</p>
-          </div>
-          <div className="departments-grid reveal-group">
-            {departments.map((dept, index) => (
-              <div className="department-card reveal" key={index}>
-                <div className="dept-icon">{dept.icon}</div>
-                <h4>{dept.name}</h4>
-                <p>{dept.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+      <section className="career-section">
+        <div className="section-header reveal">
+          <h2>Teams You Can Join</h2>
+          <p>Explore the areas where you could make an impact.</p>
+        </div>
+        <div className="departments-grid" ref={deptsRef}>
+          {departments.map((dept, index) => (
+            <div className="department-card" key={index}>
+              <div className="dept-icon">{dept.icon}</div>
+              <h4>{dept.name}</h4>
+              <p>{dept.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        {/* ── TECH STACK — staggered ── */}
-        <section className="career-section alt-bg">
-          <div className="section-header reveal">
-            <h2>Tech You'll Work With</h2>
-            <p>Modern tools and frameworks across our entire stack.</p>
-          </div>
-          <div className="tech-grid reveal-group">
-            {techStack.map((tech, index) => (
-              <div className="tech-item reveal" key={index}>
-                <div className="tech-icon">{tech.icon}</div>
-                <span>{tech.name}</span>
-              </div>
-            ))}
-          </div>
+      <section className="career-section alt-bg">
+        <div className="section-header reveal">
+          <h2>Tech You'll Work With</h2>
+          <p>Modern tools and frameworks across our entire stack.</p>
+        </div>
+        <div className="tech-grid reveal-group">
+          {techStack.map((tech, index) => (
+            <div className="tech-item reveal" key={index}>
+              <div className="tech-icon">{tech.icon}</div>
+              <span>{tech.name}</span>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        </section>
+      <section className="career-section" id="open-positions">
+        <div className="section-header reveal">
+          <h2>Open Positions</h2>
+          <p>Find a role that matches your skills and interests.</p>
+        </div>
 
-        {/* ── OPEN POSITIONS — staggered ── */}
-        <section className="career-section" id="open-positions">
-          <div className="section-header reveal">
-            <h2>Open Positions</h2>
-            <p>Find a role that matches your skills and interests.</p>
-          </div>
-
-          {jobs.length > 0 ? (
-            <div className="jobs-list reveal-group">
-              {jobs.map((job, index) => (
-                <div className="job-card reveal" key={index}>
-                  <div className="job-info">
-                    <h4>{job.title}</h4>
-                    <div className="job-tags">
-                      <span>{job.department}</span>
-                      <span>{job.location}</span>
-                      <span>{job.type}</span>
-                    </div>
-                    <div className="job-skills">
-                      <strong>Skills:</strong> {job.skills}
-                    </div>
+        {jobs.length > 0 ? (
+          <div className="jobs-list" ref={jobsRef}>
+            {jobs.map((job, index) => (
+              <div className="job-card" key={index}>
+                <div className="job-info">
+                  <h4>{job.title}</h4>
+                  <div className="job-tags">
+                    <span>{job.department}</span>
+                    <span>{job.location}</span>
+                    <span>{job.type}</span>
                   </div>
-                  <button
-                    className="apply-btn"
-                    onClick={() => window.location.href = `mailto:careers@horizondigitalcore.com?subject=Application for ${job.title}`}
-                  >
-                    Apply
-                  </button>
+                  <div className="job-skills">
+                    <strong>Skills:</strong> {job.skills}
+                  </div>
                 </div>
-              ))}
-            </div>
-          ) : (
-            <div className="jobs-empty reveal">
-              <p>We don't have open positions listed right now — but we're growing fast.</p>
-              <button className="cta-btn-outline">Register Your Interest</button>
-            </div>
-          )}
-        </section>
-
-        {/* ── HIRING PROCESS — staggered ── */}
-        <section className="career-section alt-bg">
-          <div className="section-header reveal">
-            <h2>Our Hiring Process</h2>
-            <p>What to expect once you apply.</p>
-          </div>
-          <div className="hiring-steps reveal-group">
-            {hiringSteps.map((step, index) => (
-              <div className="hiring-step reveal" key={index}>
-                <div className="step-circle">{step.step}</div>
-                <h4>{step.title}</h4>
-                <p>{step.description}</p>
+                <button
+                  className="apply-btn"
+                  onClick={() => navigate(`/careers/apply?role=${encodeURIComponent(job.title)}`)}
+                >
+                  Apply
+                </button>
               </div>
             ))}
           </div>
-        </section>
+        ) : (
+          <div className="jobs-empty reveal">
+            <p>We don't have open positions listed right now — but we're growing fast.</p>
+            <button className="cta-btn-outline">Register Your Interest</button>
+          </div>
+        )}
+      </section>
 
-        {/* ── FOOTER CTA ── */}
-        <section className="career-footer-cta">
-          <h2 className="reveal">Don't See Your Role?</h2>
-          <p className="reveal">We're always looking for talented people. Send us your resume.</p>
-          <a href="mailto:careers@horizondigitalcore.com" className="email-link reveal">
-            careers@horizondigitalcore.com
-          </a>
-        </section>
-      </div>
+      <section className="career-section alt-bg">
+        <div className="section-header reveal">
+          <h2>Our Hiring Process</h2>
+          <p>What to expect once you apply.</p>
+        </div>
+        <div className="hiring-steps reveal-group">
+          {hiringSteps.map((step, index) => (
+            <div className="hiring-step reveal" key={index}>
+              <div className="step-circle">{step.step}</div>
+              <h4>{step.title}</h4>
+              <p>{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="career-footer-cta">
+        <h2 className="reveal">Don't See Your Role?</h2>
+        <p className="reveal">We're always looking for talented people. Send us your resume.</p>
+        <a href="mailto:careers@horizondigitalcore.com" className="email-link reveal">
+          careers@horizondigitalcore.com
+        </a>
+      </section>
+
+    </div>
   );
 }
 
-export default Career;
+export default Careers;

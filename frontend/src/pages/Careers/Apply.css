@@ -1,0 +1,281 @@
+/* ============================================================
+   APPLY PAGE — matched to Careers/Home typography & brand colors
+============================================================ */
+
+.apply-page {
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  padding: 60px 24px 100px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.apply-page.light {
+  background: #FFFFFF;
+  color: #002D72;
+}
+
+.apply-page.dark {
+  background: #0A1628;
+  color: #FFFFFF;
+}
+
+.apply-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ---------- BACK LINK ---------- */
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.apply-page.light .back-link {
+  color: #005CB9;
+}
+
+.apply-page.dark .back-link {
+  color: #4DB8FF;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- HEADER ---------- */
+.apply-page h1 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.apply-page.light h1 {
+  color: #002D72;
+}
+
+.apply-page.dark h1 {
+  color: #FFFFFF;
+}
+
+.apply-subtitle {
+  font-size: 16px;
+  margin-bottom: 36px;
+}
+
+.apply-page.light .apply-subtitle {
+  color: #345A8A;
+}
+
+.apply-page.dark .apply-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---------- FORM LAYOUT ---------- */
+.apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.apply-page.light .form-group label {
+  color: #002D72;
+}
+
+.apply-page.dark .form-group label {
+  color: #FFFFFF;
+}
+
+/* ---------- INPUTS ---------- */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.apply-page.light .form-group input,
+.apply-page.light .form-group select,
+.apply-page.light .form-group textarea {
+  background: #F0F6FF;
+  border: 1px solid #D8E8FB;
+  color: #002D72;
+}
+
+.apply-page.dark .form-group input,
+.apply-page.dark .form-group select,
+.apply-page.dark .form-group textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #4DB8FF;
+  box-shadow: 0 0 0 3px rgba(77, 184, 255, 0.2);
+}
+
+.form-group input[readOnly] {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+/* File input */
+.form-group input[type="file"] {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.apply-page.light .form-group input[type="file"] {
+  color: #345A8A;
+}
+
+.apply-page.dark .form-group input[type="file"] {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.file-name {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.apply-page.light .file-name {
+  color: #005CB9;
+}
+
+.apply-page.dark .file-name {
+  color: #4DB8FF;
+}
+
+/* ---------- ERRORS ---------- */
+.field-error {
+  font-size: 13px;
+  color: #E53E3E;
+  font-weight: 600;
+}
+
+/* ---------- WORD COUNTER ---------- */
+.word-counter {
+  font-size: 12px;
+  align-self: flex-end;
+}
+
+.apply-page.light .word-counter {
+  color: #5A7CAE;
+}
+
+.apply-page.dark .word-counter {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- SUBMIT BUTTON ---------- */
+.submit-btn {
+  margin-top: 10px;
+  background: linear-gradient(135deg, #002D72 0%, #005CB9 55%, #4DB8FF 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 16px 34px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: filter 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.submit-btn:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 0 0 4px rgba(77, 184, 255, 0.4), 0 8px 24px rgba(0, 92, 185, 0.5);
+  transform: translateY(-2px);
+}
+
+.submit-btn:active {
+  transform: scale(0.97);
+}
+
+.submit-btn:focus-visible {
+  outline: 3px solid #4DB8FF;
+  outline-offset: 2px;
+}
+
+/* ---------- SUCCESS STATE ---------- */
+.apply-success {
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.apply-success h1 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.apply-success p {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.apply-page.light .apply-success p {
+  color: #345A8A;
+}
+
+.apply-page.dark .apply-success p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.apply-success .back-link {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 640px) {
+  .apply-page {
+    padding: 40px 20px 80px;
+  }
+
+  .apply-page h1 {
+    font-size: 28px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
