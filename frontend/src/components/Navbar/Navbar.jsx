@@ -135,7 +135,7 @@ function Navbar({ darkMode, setDarkMode }) {
           {darkMode ? <FaSun /> : <FaMoon />}
         </button>
 
-        <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} style={{ textDecoration: 'none' }}>
+        <Link to="/#contact" onClick={() => setIsMobileMenuOpen(false)} style={{ textDecoration: 'none' }}>
           <button className="contact-btn">
             Contact Us
           </button>

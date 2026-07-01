@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { services } from '../../data/servicesData';
+import SEO from '../../components/Common/SEO';
 import './ServiceDetail.css';
 
 const getTechIconSlug = (techName) => {
@@ -44,6 +45,11 @@ const ServiceDetail = ({ darkMode, setDarkMode }) => {
 
   return (
     <>
+      <SEO 
+        title={service.title} 
+        description={service.shortDesc} 
+        path={`/services/${serviceSlug}`} 
+      />
       <div className={`service-detail-page ${darkMode ? "dark" : "light"}`} style={{ '--service-color': service.color }}>
         <div className="services-glow" style={{ background: 'var(--service-color)' }}></div>
         <div className="services-glow-secondary" style={{ background: 'var(--service-color)' }}></div>
@@ -57,7 +63,7 @@ const ServiceDetail = ({ darkMode, setDarkMode }) => {
             <h1>{service.title}</h1>
             <p className="detail-hero-overview">{service.shortDesc}</p>
             <div className="detail-hero-actions">
-              <Link to="/contact" className="primary-btn" style={{ 
+              <Link to="/#contact" className="primary-btn" style={{ 
                 background: `linear-gradient(135deg, ${service.color}, ${service.color}dd)`
               }}>
                 {service.cta}
@@ -229,7 +235,7 @@ const ServiceDetail = ({ darkMode, setDarkMode }) => {
 
         <section className="detail-cta-section">
           <h2>Ready to get started?</h2>
-          <Link to="/contact" className="primary-btn" style={{ 
+          <Link to="/#contact" className="primary-btn" style={{ 
             background: `linear-gradient(135deg, ${service.color}, ${service.color}dd)`
           }}>
             {service.cta}

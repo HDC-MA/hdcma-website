@@ -56,7 +56,7 @@ const IndustriesDropdown = ({ onClose }) => {
             </ul>
             <div className="mega-contact-box">
               <p>Ready to discuss your enterprise requirements?</p>
-              <Link to="/contact" className="mega-contact-btn" onClick={onClose}>Consult Our Experts</Link>
+              <Link to="/#contact" className="mega-contact-btn" onClick={onClose}>Consult Our Experts</Link>
             </div>
           </div>
         </div>

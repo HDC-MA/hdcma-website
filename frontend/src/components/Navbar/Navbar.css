@@ -3,7 +3,7 @@
 ==================================== */
 
 .navbar {
-  height: 100px;
+  height: 80px;
   width: 100%;
 
   position: sticky;
@@ -14,7 +14,7 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 60px;
+  padding: 0 40px;
 
   background: var(--glass-bg);
 
@@ -44,7 +44,7 @@
 }
 
 .logo {
-  height: 90px;
+  height: 55px;
   width: auto;
 
   transition: all 0.4s ease;
@@ -60,7 +60,7 @@
 
 .logo-divider {
   width: 2px;
-  height: 60px;
+  height: 40px;
 
   border-radius: 20px;
 
@@ -86,7 +86,7 @@
 .company-info h3 {
   margin: 0;
 
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 800;
 
   letter-spacing: 1px;
@@ -103,9 +103,9 @@
 }
 
 .company-info p {
-  margin-top: 5px;
+  margin-top: 2px;
 
-  font-size: 12px;
+  font-size: 10px;
 
   font-weight: 500;
 
@@ -186,8 +186,8 @@
 ==================================== */
 
 .icon-btn {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
 
   border: none;
   border-radius: 50%;
@@ -198,7 +198,7 @@
   align-items: center;
   justify-content: center;
 
-  font-size: 18px;
+  font-size: 16px;
 
   transition: all 0.35s ease;
 }
@@ -229,15 +229,15 @@
 .contact-btn {
   border: none;
 
-  padding: 14px 28px;
+  padding: 10px 20px;
 
-  border-radius: 12px;
+  border-radius: 10px;
 
   cursor: pointer;
 
   color: white;
 
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
 
   background: linear-gradient(
@@ -301,7 +301,7 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 100px;
+    top: 70px;
     left: 0;
     width: 100%;
     background-color: var(--bg);
@@ -335,23 +335,24 @@
   }
 
   .navbar {
+    height: 70px;
     padding: 0 25px;
   }
 
   .logo {
-    height: 75px;
+    height: 50px;
   }
 
   .company-info h3 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .company-info p {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .logo-divider {
-    height: 45px;
+    height: 35px;
   }
 }
 
@@ -365,11 +366,11 @@
   }
 
   .logo {
-    height: 65px;
+    height: 45px;
   }
 
   .logo-divider {
-    height: 40px;
+    height: 30px;
   }
 }
 /* ====================================

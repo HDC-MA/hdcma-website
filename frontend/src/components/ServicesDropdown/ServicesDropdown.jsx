@@ -44,7 +44,7 @@ const ServicesDropdown = ({ onClose }) => {
             </ul>
             <div className="mega-contact-box">
               <p>Ready to discuss your next project?</p>
-              <Link to="/contact" className="mega-contact-btn" onClick={onClose}>Contact Us</Link>
+              <Link to="/#contact" className="mega-contact-btn" onClick={onClose}>Contact Us</Link>
             </div>
           </div>
         </div>

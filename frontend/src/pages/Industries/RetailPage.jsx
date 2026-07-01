@@ -7,6 +7,7 @@ import {
   RefreshCw
 } from 'lucide-react';
 import './IndustryPage.css';
+import SEO from '../../components/Common/SEO';
 
 export default function RetailPage() {
   const [activeTab, setActiveTab] = useState('modernization');
@@ -17,6 +18,11 @@ export default function RetailPage() {
 
   return (
     <main className="industry-page">
+      <SEO 
+        title="Retail & Consumer Goods Solutions" 
+        description="Discover our high-performance integration and e-commerce database scaling services tailored for the retail and consumer goods sector." 
+        path="/industries/retail" 
+      />
       
       {/* 1. HEADER: Value Proposition */}
       <section className="industry-hero">

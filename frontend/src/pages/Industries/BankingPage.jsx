@@ -7,6 +7,7 @@ import {
   RefreshCw
 } from 'lucide-react';
 import './IndustryPage.css';
+import SEO from '../../components/Common/SEO';
 
 export default function BankingPage() {
   const [activeTab, setActiveTab] = useState('modernization');
@@ -17,6 +18,11 @@ export default function BankingPage() {
 
   return (
     <main className="industry-page">
+      <SEO 
+        title="Banking & Financial Services Solutions" 
+        description="Discover our high-performance integration solutions for Banking and Financial Services. We secure transactions, modernize ledgers, and optimize compliance." 
+        path="/industries/banking" 
+      />
       
       {/* 1. HEADER: Industry-specific value proposition (H1) */}
       <section className="industry-hero">

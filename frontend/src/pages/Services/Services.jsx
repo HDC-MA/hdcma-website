@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { services } from '../../data/servicesData';
+import SEO from '../../components/Common/SEO';
 import './Services.css';
 
 const Services = ({ darkMode, setDarkMode }) => {
   return (
     <>
+      <SEO 
+        title="Our Services" 
+        description="Explore our enterprise technology services: custom software development, AI & machine learning integration, SAP solutions, cloud consulting, and cybersecurity." 
+        path="/services" 
+      />
 
       
       <div className={`services-page ${darkMode ? "dark" : "light"}`}>

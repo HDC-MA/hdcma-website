@@ -7,6 +7,7 @@ import {
   RefreshCw
 } from 'lucide-react';
 import './IndustryPage.css';
+import SEO from '../../components/Common/SEO';
 
 export default function ManufacturingPage() {
   const [activeTab, setActiveTab] = useState('modernization');
@@ -17,6 +18,11 @@ export default function ManufacturingPage() {
 
   return (
     <main className="industry-page">
+      <SEO 
+        title="Automotive & Manufacturing Solutions" 
+        description="Discover our high-integrity digital foundations for manufacturing and IoT. We support OPC-UA translation and edge computing for continuous automation." 
+        path="/industries/manufacturing" 
+      />
       
       {/* 1. HEADER: Value Proposition */}
       <section className="industry-hero">

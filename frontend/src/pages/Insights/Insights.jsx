@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
+import SEO from "../../components/Common/SEO";
 import "./Insights.css";
 import { featuredInsight, insightsData, categories } from "./insightsData";
 
@@ -19,6 +20,11 @@ function InsightsPage({ darkMode }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
+      <SEO 
+        title="Insights & Articles" 
+        description="Read our latest technical insights, articles, engineering case studies, and corporate announcements at HDC MA." 
+        path="/insights" 
+      />
       {/* Hero Section */}
       <section className="insights-page-hero">
         <span className="insights-page-hero-eyebrow">HDCMA Insights</span>

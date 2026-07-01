@@ -7,6 +7,7 @@ import {
   RefreshCw
 } from 'lucide-react';
 import './IndustryPage.css';
+import SEO from '../../components/Common/SEO';
 
 export default function EducationPage() {
   const [activeTab, setActiveTab] = useState('modernization');
@@ -17,6 +18,11 @@ export default function EducationPage() {
 
   return (
     <main className="industry-page">
+      <SEO 
+        title="Education & EdTech Solutions" 
+        description="Learn how we engineer scalable, secure, and FERPA-compliant records databases and learning management systems for the education sector." 
+        path="/industries/education" 
+      />
       
       {/* 1. HEADER: Value Proposition */}
       <section className="industry-hero">

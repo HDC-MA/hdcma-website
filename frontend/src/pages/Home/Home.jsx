@@ -10,10 +10,12 @@ import Insights from "../../components/Insights/Insights";
 import Careers from "../../components/Careers CTA/Careers";
 import Experience from "../../components/Experience/Experience";
 import ContactCTA from "../../components/ContactCTA/ContactCTA";
+import SEO from "../../components/Common/SEO";
 
 function Home({ darkMode, setDarkMode }) {
   return (
     <>
+      <SEO path="/" />
       {/* HERO */}
       <Hero darkMode={darkMode} />
 

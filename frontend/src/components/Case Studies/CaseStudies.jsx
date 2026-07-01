@@ -1,4 +1,5 @@
 import "./CaseStudies.css";
+import { Link } from "react-router-dom";
 
 const caseStudies = [
   {
@@ -65,9 +66,11 @@ function CaseStudies({ darkMode }) {
 
             <p>{item.result}</p>
 
-            <button>
-              View Case Study →
-            </button>
+            <Link to="/insights" style={{ textDecoration: 'none' }}>
+              <button>
+                View Case Study →
+              </button>
+            </Link>
 
           </div>
         ))}

@@ -1,6 +1,7 @@
 import './Careers.css'
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from 'react';
+import SEO from '../../components/Common/SEO';
 import heroBgLight from "../../assets/hero-bg-light.png"
 import heroBgDark from "../../assets/hero-bg.png"
 import {
@@ -199,6 +200,11 @@ function Careers({ darkMode, setDarkMode }) {
 
   return (
     <div className={`career-page ${darkMode ? 'dark' : 'light'}`}>
+      <SEO 
+        title="Careers & Internships" 
+        description="Explore job opportunities, software development internships, cybersecurity positions, and careers at Horizon Digital Core Management Associates (HDC MA)." 
+        path="/careers" 
+      />
 
       <section className="career-hero" style={{ backgroundImage: `url(${heroBg})` }}>
         <h1>Build the Future of Tech with HDC MA</h1>
@@ -317,7 +323,12 @@ function Careers({ darkMode, setDarkMode }) {
         ) : (
           <div className="jobs-empty reveal">
             <p>We don't have open positions listed right now — but we're growing fast.</p>
-            <button className="cta-btn-outline">Register Your Interest</button>
+            <button 
+              className="cta-btn-outline"
+              onClick={() => navigate('/careers/apply')}
+            >
+              Register Your Interest
+            </button>
           </div>
         )}
       </section>

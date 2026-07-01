@@ -7,6 +7,7 @@ import {
   RefreshCw
 } from 'lucide-react';
 import './IndustryPage.css';
+import SEO from '../../components/Common/SEO';
 
 export default function HealthcarePage() {
   const [activeTab, setActiveTab] = useState('modernization');
@@ -17,6 +18,11 @@ export default function HealthcarePage() {
 
   return (
     <main className="industry-page">
+      <SEO 
+        title="Healthcare & Life Sciences Solutions" 
+        description="Discover our secure, compliant, and interoperable healthcare systems integration services, designed for HL7 FHIR and HIPAA compliance." 
+        path="/industries/healthcare" 
+      />
       
       {/* 1. HEADER: Value Proposition */}
       <section className="industry-hero">

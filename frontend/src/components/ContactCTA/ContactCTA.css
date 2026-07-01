@@ -116,13 +116,13 @@
 .contact-card{
   display:flex;
   align-items:center;
-  gap:18px;
-  padding:28px;
-  border-radius:22px;
+  gap:14px;
+  padding:16px 20px;
+  border-radius:16px;
   text-decoration:none;
   background:#fff;
   border:1px solid rgba(77,184,255,.15);
-  box-shadow:0 12px 35px rgba(0,92,185,.08);
+  box-shadow:0 12px 35px rgba(14, 25, 36, 0.08);
   transition:.35s;
 }
 
@@ -132,9 +132,9 @@
 }
 
 .contact-icon{
-  width:72px;
-  height:72px;
-  border-radius:18px;
+  width:48px;
+  height:48px;
+  border-radius:12px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -149,15 +149,15 @@
 .contact-card h4{
   margin:0;
   color:var(--text);
-  font-size:18px;
+  font-size:16px;
   font-weight:700;
 }
 
 .contact-card p{
-  margin-top:6px;
-  font-size:14px;
+  margin-top:4px;
+  font-size:13px;
   color:var(--text-muted);
-  line-height:1.5;
+  line-height:1.4;
 }
 
 /* ==========================

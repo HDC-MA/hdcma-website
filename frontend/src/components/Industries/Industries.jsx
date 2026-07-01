@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Industries.css";
 
 import banking from "../../assets/images/banking.jpg";
@@ -47,6 +48,17 @@ const industries = [
   }
 ];
 
+const getIndustryPath = (title) => {
+  const lower = title.toLowerCase();
+  if (lower.includes("banking") || lower.includes("finance")) return "/industries/banking";
+  if (lower.includes("healthcare")) return "/industries/healthcare";
+  if (lower.includes("retail") || lower.includes("commerce")) return "/industries/retail";
+  if (lower.includes("manufacturing")) return "/industries/manufacturing";
+  if (lower.includes("education")) return "/industries/education";
+  if (lower.includes("technology")) return "/industries/technology";
+  return "/";
+};
+
 function Industries({ darkMode }) {
   const [hovered, setHovered] = useState(null);
 
@@ -93,9 +105,11 @@ function Industries({ darkMode }) {
 
                 <p>{industry.description}</p>
 
-                <button>
-                  Explore Industry →
-                </button>
+                <Link to={getIndustryPath(industry.title)} style={{ textDecoration: 'none' }}>
+                  <button>
+                    Explore Industry →
+                  </button>
+                </Link>
 
               </div>
 

@@ -17,7 +17,7 @@ const BOT_RESPONSES = [
   },
   {
     keywords: ["pricing", "cost", "price", "quote", "charge", "rate"],
-    text: "Our pricing varies based on the scope and complexity of your enterprise project. We offer customized quotes for our clients. Please reach out to our team at support@hdcma.com or info@horizondigitalcore.com to get a detailed proposal!"
+    text: "Our pricing varies based on the scope and complexity of your enterprise project. We offer customized quotes for our clients. Please reach out to our team at support@hdcma.com or support@horizondigitalcore.com to get a detailed proposal!"
   },
   {
     keywords: ["who are you", "what is hdcma", "about hdcma", "hdc ma", "company", "what does hdcma stand for"],
@@ -85,7 +85,7 @@ const BOT_RESPONSES = [
   },
   {
     keywords: ["contact", "email", "phone", "support", "address", "location", "social", "linkedin"],
-    text: "You can reach us at:\n- General Info: info@horizondigitalcore.com\n- Support & Sales: support@hdcma.com\n- Careers: careers@horizondigitalcore.com\n- Socials: Follow us on LinkedIn, Instagram (@horizondigitalcore), Twitter/X (@HDCMA_Official), Facebook, or YouTube!"
+    text: "You can reach us at:\n- General Info: support@horizondigitalcore.com\n- Support & Sales: support@hdcma.com\n- Careers: careers@horizondigitalcore.com\n- Socials: Follow us on LinkedIn, Instagram (@horizondigitalcore), Twitter/X (@HDCMA_Official), Facebook, or YouTube!"
   },
   {
     keywords: ["serverless", "containers", "hybrid"],

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import emailjs from '@emailjs/browser';
+import SEO from "../../components/Common/SEO";
 import "./Apply.css";
 
 function Apply({ darkMode, setDarkMode }) {
@@ -133,6 +134,12 @@ function Apply({ darkMode, setDarkMode }) {
   if (submitted) {
     return (
       <div className={`apply-page ${darkMode ? "dark" : "light"}`}>
+        <SEO 
+          title={`Application Received - ${role}`} 
+          description="Your application has been successfully submitted to HDC MA." 
+          path="/careers/apply" 
+          robots="noindex, nofollow" 
+        />
         <div className="apply-success">
           <h1>Application Received! 🎉</h1>
           <p>
@@ -149,6 +156,11 @@ function Apply({ darkMode, setDarkMode }) {
 
   return (
     <div className={`apply-page ${darkMode ? "dark" : "light"}`}>
+      <SEO 
+        title={`Apply for ${role}`} 
+        description={`Submit your application for the ${role} position at Horizon Digital Core Management Associates.`} 
+        path="/careers/apply" 
+      />
       <div className="apply-container">
         <Link to="/careers" className="back-link">
           ← Back to Open Positions

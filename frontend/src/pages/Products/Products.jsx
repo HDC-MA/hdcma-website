@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import ProductCard from "../../components/Products/ProductCard";
 import { productsData } from "../../components/Products/productsData";
+import SEO from "../../components/Common/SEO";
 import "./Products.css";
 
 function ProductsPage({ darkMode }) {
@@ -17,6 +19,11 @@ function ProductsPage({ darkMode }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
+      <SEO 
+        title="Enterprise Software Products" 
+        description="Explore our industry-leading software solutions: PCAP for ports, AgriLink for supply chains, SPPS for security, AIVA for virtual assistance, and Attendance Automation." 
+        path="/products" 
+      />
       {/* Hero Section */}
       <section className="products-hero">
         <span className="products-eyebrow">Enterprise Solutions</span>
@@ -43,9 +50,11 @@ function ProductsPage({ darkMode }) {
       <section className="products-cta">
         <h2>Ready to explore how our products can work for you?</h2>
         <p>Talk to our team to request a personalized demo or discuss custom deployment options.</p>
-        <button className="btn-primary">
-          Get in Touch <ArrowRight size={18} />
-        </button>
+        <Link to="/#contact" style={{ textDecoration: 'none' }}>
+          <button className="btn-primary">
+            Get in Touch <ArrowRight size={18} />
+          </button>
+        </Link>
       </section>
     </motion.div>
   );

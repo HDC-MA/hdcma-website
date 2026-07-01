@@ -7,6 +7,7 @@ import {
   RefreshCw
 } from 'lucide-react';
 import './IndustryPage.css';
+import SEO from '../../components/Common/SEO';
 
 export default function TechnologyPage() {
   const [activeTab, setActiveTab] = useState('modernization');
@@ -17,6 +18,11 @@ export default function TechnologyPage() {
 
   return (
     <main className="industry-page">
+      <SEO 
+        title="Technology & Platform Engineering Solutions" 
+        description="Learn how we engineer secure cloud systems, integrate distributed ledgers, and establish edge-to-cloud translation layers." 
+        path="/industries/technology" 
+      />
       
       {/* 1. HEADER: Value Proposition */}
       <section className="industry-hero">

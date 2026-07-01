@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Calendar, ArrowLeft, Share2, Bookmark } from "lucide-react";
 import { insightsData, featuredInsight } from "../Insights/insightsData";
+import SEO from "../../components/Common/SEO";
 import "./InsightDetail.css";
 
 function InsightDetail({ darkMode }) {
@@ -56,6 +57,12 @@ function InsightDetail({ darkMode }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
+      <SEO 
+        title={insight.title} 
+        description={insight.excerpt} 
+        path={`/insights/${id}`} 
+        ogImage={insight.image} 
+      />
       <div className="insight-detail-container">
         <Link to="/insights" className="back-link">
           <ArrowLeft size={16} /> Back to Insights

@@ -1,4 +1,5 @@
 import "./WhyHDCMA.css";
+import { Link } from "react-router-dom";
 
 function WhyHDCMA({ darkMode }) {
 
@@ -29,9 +30,11 @@ function WhyHDCMA({ darkMode }) {
             Enterprise Digital Transformation.
           </p>
 
-          <button>
-            Partner With HDCMA →
-          </button>
+          <Link to="/#contact" style={{ textDecoration: 'none' }}>
+            <button>
+              Partner With HDCMA →
+            </button>
+          </Link>
 
         </div>
 

@@ -73,7 +73,7 @@ function Footer({ darkMode }) {
             <li><Link to="/careers" style={{ textDecoration: 'none', color: 'inherit' }}>Careers</Link></li>
             <li><Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>Home</Link></li>
             <li><Link to="/insights" style={{ textDecoration: 'none', color: 'inherit' }}>Insights</Link></li>
-            <li><Link to="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>Contact Us</Link></li>
+            <li><Link to="/#contact" style={{ textDecoration: 'none', color: 'inherit' }}>Contact Us</Link></li>
           </ul>
 
         </div>
@@ -88,7 +88,7 @@ function Footer({ darkMode }) {
 
             <li>
               <FaEnvelope />
-              info@horizondigitalcore.com
+              support@horizondigitalcore.com
             </li>
 
           

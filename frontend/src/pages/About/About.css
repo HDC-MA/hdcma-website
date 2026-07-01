@@ -277,6 +277,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
+  margin-top: 48px;
 }
 
 .value-card {
@@ -286,8 +287,31 @@
   border-radius: 24px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 92, 185, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.dark-theme .value-card::before {
+  background: linear-gradient(135deg, rgba(77, 184, 255, 0.05), transparent);
+}
+
+.value-card:hover::before {
+  opacity: 1;
 }
 
 .value-card:hover {
@@ -296,41 +320,76 @@
   box-shadow: var(--shadow-glow);
 }
 
-.dark-theme .value-card {
-  background: rgba(255, 255, 255, 0.03);
-}
-
 .dark-theme .value-card:hover {
   border-color: var(--sky);
 }
 
+.value-card-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 92, 185, 0.08);
+  border: 1px solid rgba(0, 92, 185, 0.15);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark-theme .value-card-icon-wrapper {
+  background: rgba(77, 184, 255, 0.08);
+  border: 1px solid rgba(77, 184, 255, 0.15);
+}
+
 .value-card-icon {
-  width: 48px;
-  height: 48px;
+  width: 28px;
+  height: 28px;
   color: var(--royal);
-  stroke-width: 1.5;
-  transition: color 0.3s ease;
+  stroke-width: 1.75;
+  transition: all 0.3s ease;
 }
 
 .dark-theme .value-card-icon {
   color: var(--sky);
 }
 
+.value-card:hover .value-card-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--royal);
+  border-color: var(--royal);
+}
+
+.value-card:hover .value-card-icon {
+  color: var(--white);
+}
+
+.dark-theme .value-card:hover .value-card-icon-wrapper {
+  background: var(--sky);
+  border-color: var(--sky);
+}
+
+.dark-theme .value-card:hover .value-card-icon {
+  color: #0A1628;
+}
+
 .value-card h3 {
   font-family: 'Manrope', sans-serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--text);
+  letter-spacing: -0.5px;
+  margin-top: 4px;
 }
 
 .value-card p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-muted);
   line-height: 1.6;
+  margin: 0;
 }
 
 .dark-theme .value-card p {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 /* Feature Highlights (Organizational Pillars) */

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Shield, Cpu, Target, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import "./About.css";
 
 // Import local assets
@@ -7,15 +7,10 @@ import techImg from "../../assets/images/technology.jpg";
 import manufacturingImg from "../../assets/images/manufacturing.jpg";
 import healthcareImg from "../../assets/images/healthcare.jpg";
 import ceoPradeep from "../../assets/images/ceo-pradeep.jpg";
+import SEO from "../../components/Common/SEO";
 
 function About() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const [activeFaq, setActiveFaq] = useState(null);
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-  };
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -42,6 +37,11 @@ function About() {
 
   return (
     <div className="about-page">
+      <SEO 
+        title="About Us" 
+        description="Learn about Horizon Digital Core Management Associates (HDC MA), our mission, values, leaders, and enterprise engineering capabilities." 
+        path="/about" 
+      />
       {/* HERO SECTION */}
       <section className="about-hero">
         <div className="about-hero-content">
@@ -73,11 +73,10 @@ function About() {
           </div>
           <div className="brand-story-content">
             <p>
-              Founded in 2012 by a visionary group of systems architects and cybersecurity practitioners, HDCMA was established to address a critical vulnerability in the enterprise landscape: the fragile digital infrastructure supporting core global services. What began as a specialized consultancy securing defense-grade telemetry grids has evolved into a global leader in enterprise digital transformation. Our journey is defined by milestones that pushed the boundaries of technology: engineering sub-millisecond real-time ledger verification systems for central banks in 2015, pioneering the first fully isolated Edge-to-Cloud middleware platforms for smart factories in 2018, and developing active-active HIPAA-compliant data routing pipelines for global healthcare networks in 2021.
+              Founded in 2026, HDC MA (Horizon Digital Core Management Associates) was established with a vision to empower businesses through intelligent technology and innovative digital solutions. Created by a team of software engineers, cloud specialists, AI practitioners, and technology leaders, the company was built to bridge the gap between complex business challenges and modern technology. From its inception, HDC MA has focused on delivering enterprise-grade software, AI-powered solutions, cloud infrastructure, digital transformation services, and scalable platforms that help organizations innovate with confidence.
             </p>
             <p>
-              At the heart of HDCMA is a simple, unchanging core philosophy: we believe that in a hyper-connected world, digital resilience is a fundamental human need. We engineer platforms with the understanding that behind every millisecond of latency or minute of downtime, there is a real-world impact. This philosophy shapes how we build, how we test, and how we partner with our clients. We do not just build systems to function; we build them to endure, ensuring absolute dependability where failures are simply not an option.
-            </p>
+              At the heart of HDC MA is a simple belief: technology should create lasting business value. Every solution we design is built on the principles of performance, scalability, security, and reliability. We believe that successful digital transformation goes beyond writing code—it requires understanding business goals, solving real-world problems, and building systems that continue to perform as organizations grow. Through innovation, transparency, and a commitment to quality, HDC MA strives to become a trusted technology partner for businesses worldwide, delivering solutions that are built to perform, delivered on time, and trusted every time.            </p>
           </div>
         </div>
       </section>
@@ -109,6 +108,7 @@ function About() {
                 <img 
                   src={ceoPradeep} 
                   alt="Pradeep Kumar Majji, Founder and CEO" 
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -182,39 +182,6 @@ function About() {
         </div>
       </section>
 
-      {/* CORE VALUES SECTION */}
-      <section className="about-section border-t">
-        <div className="about-container">
-          <div className="about-section-header">
-            <span className="eyebrow">Core Values</span>
-            <h2>What Drives Our Mission</h2>
-            <p>Our fundamental values shape how we build platforms, advise clients, and pioneer new technology solutions.</p>
-          </div>
-          <div className="values-grid">
-            <div className="value-card">
-              <Shield className="value-card-icon" />
-              <h3>Resolute Integrity</h3>
-              <p>
-                We hold ourselves to the highest standards of transparency and trust, ensuring that critical data is governed with absolute safety and compliance.
-              </p>
-            </div>
-            <div className="value-card">
-              <Cpu className="value-card-icon" />
-              <h3>Relentless Innovation</h3>
-              <p>
-                We stay at the vanguard of technology, incorporating cutting-edge edge translation, cloud architectures, and machine learning into the digital core.
-              </p>
-            </div>
-            <div className="value-card">
-              <Target className="value-card-icon" />
-              <h3>Absolute Precision</h3>
-              <p>
-                In transaction systems, milliseconds are a lifetime. We engineer our software with surgical precision to ensure unparalleled response times and reliability.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* METHODOLOGY SECTION */}
       <section className="about-section border-t">
@@ -274,7 +241,7 @@ function About() {
               </p>
             </div>
             <div className="pillar-visual">
-              <img src={manufacturingImg} alt="Industrial Edge System Integration" />
+              <img src={manufacturingImg} alt="Industrial Edge System Integration" loading="lazy" />
             </div>
           </div>
 
@@ -286,7 +253,7 @@ function About() {
               </p>
             </div>
             <div className="pillar-visual">
-              <img src={healthcareImg} alt="Healthcare and Secure Systems Integration" />
+              <img src={healthcareImg} alt="Healthcare and Secure Systems Integration" loading="lazy" />
             </div>
           </div>
         </div>
@@ -312,67 +279,6 @@ function About() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT / CTA SECTION */}
-      <section id="contact" className="about-section dark-bg">
-        <div className="about-container">
-          <div className="about-contact-wrapper">
-            <div className="contact-card">
-              <h2>Partner with HDCMA</h2>
-              <p>
-                Let's build a resilient, secure, and modern digital core for your enterprise. Reach out to our consultants today.
-              </p>
-              {formSubmitted ? (
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px", padding: "40px 0" }}>
-                  <h3 style={{ color: "#4DB8FF", fontSize: "24px" }}>Thank You!</h3>
-                  <p style={{ color: "#fff", opacity: 0.9 }}>
-                    Your message has been sent successfully. An HDCMA core consultant will get in touch with you shortly.
-                  </p>
-                  <button className="submit-btn" onClick={() => setFormSubmitted(false)} style={{ maxWidth: "240px", marginTop: "10px" }}>
-                    Send Another Message
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleFormSubmit} className="contact-form">
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label htmlFor="firstName">First Name</label>
-                      <input type="text" id="firstName" name="firstName" placeholder="John" required />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="lastName">Last Name</label>
-                      <input type="text" id="lastName" name="lastName" placeholder="Doe" required />
-                    </div>
-                  </div>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label htmlFor="email">Work Email</label>
-                      <input type="email" id="email" name="email" placeholder="john.doe@company.com" required />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="organization">Organization</label>
-                      <input type="text" id="organization" name="organization" placeholder="Enterprise Corp" required />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="message">Message</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows="5"
-                      placeholder="Tell us about your digital core requirements..."
-                      required
-                    ></textarea>
-                  </div>
-                  <button type="submit" className="submit-btn">
-                    Send Message
-                  </button>
-                </form>
-              )}
-            </div>
           </div>
         </div>
       </section>

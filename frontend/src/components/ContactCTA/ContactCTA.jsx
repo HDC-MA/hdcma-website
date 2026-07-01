@@ -14,6 +14,7 @@ import {
 function ContactCTA({ darkMode }) {
   return (
     <section
+      id="contact"
       className={`contact-section ${darkMode ? "dark" : ""}`}
     >
       <div className="contact-container">
@@ -67,13 +68,13 @@ function ContactCTA({ darkMode }) {
             <div className="contact-card">
 
               <div className="contact-icon">
-                <Mail size={26} />
+                <Mail size={20} />
               </div>
 
               <div>
                 <h4>Email</h4>
                 <p>
-                  info@horizondigitalcore.com
+                  support@horizondigitalcore.com
                 </p>
               </div>
 
@@ -82,7 +83,7 @@ function ContactCTA({ darkMode }) {
             <div className="contact-card">
 
               <div className="contact-icon">
-                <Phone size={26} />
+                <Phone size={20} />
               </div>
 
               <div>
@@ -97,7 +98,7 @@ function ContactCTA({ darkMode }) {
             <div className="contact-card">
 
               <div className="contact-icon">
-                <MapPin size={26} />
+                <MapPin size={20} />
               </div>
 
               <div>
@@ -117,7 +118,7 @@ function ContactCTA({ darkMode }) {
             >
 
               <div className="contact-icon">
-                <MessageCircle size={26} />
+                <MessageCircle size={20} />
               </div>
 
               <div>
