@@ -47,10 +47,7 @@ function Experience({ darkMode }) {
           </h2>
 
           <p>
-            HDCMA combines industry expertise, innovation and
-            customer-focused delivery to build secure, scalable
-            and future-ready digital solutions that help
-            organizations achieve measurable business outcomes.
+            At HDCMA, we deliver secure, scalable, and future-ready digital solutions designed to help startups, SMEs, and large enterprises accelerate their digital transformation. By combining deep technical expertise across Cloud architectures, SAP integrations, Artificial Intelligence, Cybersecurity, DevOps, and Custom Software Development, we maintain a customer-first approach focused on innovation, quality, and operational reliability. Our engineering team bridges the gap between complex operational requirements and strategic objectives, delivering high-performance solutions that drive measurable business outcomes and long-term value.
           </p>
 
         </div>

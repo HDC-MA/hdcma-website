@@ -80,12 +80,14 @@ function Apply({ darkMode, setDarkMode }) {
     data.append('file', file);
     data.append('upload_preset', 'hdcma_resumes');
     data.append('cloud_name', 'vwfaldev');
+    data.append('access_mode', 'public');
 
     const res = await fetch(
       'https://api.cloudinary.com/v1_1/vwfaldev/raw/upload',
       { method: 'POST', body: data }
     );
     const result = await res.json();
+    console.log('Cloudinary result:', result);
     return result.secure_url;
   };
 
@@ -99,17 +101,16 @@ function Apply({ darkMode, setDarkMode }) {
       const resumeLink = await uploadToCloudinary(resumeFile);
 
       const templateParams = {
-        to_name: 'HDC MA Team',
-        from_name: formData.fullName,
-        from_email: formData.email,
-        phone: formData.phone,
+        position: role,                             
+        name: formData.fullName,                   
+        email: formData.email,                       
+        phone: formData.phone,                    
         location: formData.location,
-        role: role,
         linkedin: formData.linkedin || 'Not provided',
         experience: formData.experience,
         source: formData.source || 'Not provided',
         cover_letter: formData.coverLetter || 'Not provided',
-        resume_link: resumeLink,
+        resume_link: resumeLink, 
       };
 
       await emailjs.send(

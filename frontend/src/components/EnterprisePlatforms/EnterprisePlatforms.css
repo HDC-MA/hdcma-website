@@ -1,0 +1,216 @@
+/* ==========================================================================
+   ENTERPRISE PLATFORMS SECTION
+   ========================================================================== */
+
+.platforms-section {
+  padding: 120px 80px;
+  background: var(--bg);
+  transition: background 0.4s ease, color 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.platforms-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Background elements for premium aesthetic */
+.platforms-section::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 50%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(0, 92, 185, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.platforms-section.dark::before {
+  background: radial-gradient(circle, rgba(77, 184, 255, 0.02) 0%, transparent 70%);
+}
+
+/* Header Styling */
+.platforms-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 65px auto;
+}
+
+.platforms-header .eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.platforms-header h2 {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.platforms-header p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-weight: 450;
+}
+
+/* Grid Layout */
+.platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+/* Card Styling */
+.platform-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effects */
+.platform-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--brand-color, var(--accent)) 0%, transparent 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.platform-card:hover {
+  transform: translateY(-6px);
+  background: var(--bg);
+  border-color: transparent;
+  box-shadow: 0 20px 40px -15px var(--brand-glow, rgba(0, 92, 185, 0.12)), var(--shadow-soft);
+}
+
+.platform-card:hover::after {
+  opacity: 1;
+}
+
+/* Logo Icon Styling */
+.platform-logo-wrapper {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.platform-card:hover .platform-logo-wrapper {
+  transform: scale(1.1);
+}
+
+.platform-logo-icon {
+  width: auto;
+  height: auto;
+  color: var(--brand-color); /* Cohesive official brand color by default */
+  opacity: 1;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Platform Name Styling */
+.platform-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+/* Dark Mode Overrides */
+.platforms-section.dark {
+  background: var(--bg);
+}
+
+.platforms-section.dark .platform-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+}
+
+.platforms-section.dark .platform-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 20px 40px -15px var(--brand-glow, rgba(77, 184, 255, 0.15)), 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLET)
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .platforms-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .platforms-section {
+    padding: 100px 50px;
+  }
+
+  .platforms-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  
+  .platforms-header {
+    margin-bottom: 45px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MOBILE)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .platforms-section {
+    padding: 80px 24px;
+  }
+
+  .platforms-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .platform-card {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+  
+  .platform-logo-wrapper {
+    height: 40px;
+    margin-bottom: 12px;
+  }
+  
+  .platform-name {
+    font-size: 0.95rem;
+  }
+}

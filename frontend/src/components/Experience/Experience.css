@@ -40,6 +40,10 @@
   color: var(--text-muted);
 }
 
+.experience-left p + p {
+  margin-top: 20px;
+}
+
 .experience-right {
   display: grid;
   gap: 20px;
