@@ -1,6 +1,7 @@
 import Hero from "../../components/Hero/Hero";
 import TrustedTechnologies from "../../components/TrustedTechnologies/TrustedTechnologies";
 import Services from "../../components/Services/Services";
+import EnterprisePlatforms from "../../components/EnterprisePlatforms/EnterprisePlatforms";
 import Industries from "../../components/Industries/Industries";
 import Products from "../../components/Products/Products";
 import WhyHDCMA from "../../components/WhyHDCMA/WhyHDCMA";
@@ -21,6 +22,7 @@ function Home({ darkMode, setDarkMode }) {
 
       {/* OTHER SECTIONS */}
       <Services darkMode={darkMode} />
+      <EnterprisePlatforms darkMode={darkMode} />
       <Industries darkMode={darkMode} />
       <Products darkMode={darkMode} />
       <WhyHDCMA darkMode={darkMode} />
