@@ -1,89 +1,109 @@
 import { motion } from "framer-motion";
-import { BsMicrosoft, BsBriefcaseFill } from "react-icons/bs";
-import { SiGooglecloud, SiSap, SiAccenture, SiPaloaltonetworks, SiSplunk, SiQualys } from "react-icons/si";
-import { FaAws, FaServer, FaLaptopCode, FaShieldHalved } from "react-icons/fa6";
-import { GrOracle } from "react-icons/gr";
+import deloitteLogo from "../../assets/logos/deloitte.svg";
+import capgeminiLogo from "../../assets/logos/capgemini.svg";
+import accentureLogo from "../../assets/logos/accenture.svg";
+import ibmLogo from "../../assets/logos/ibm.svg";
+import oracleLogo from "../../assets/logos/oracle.svg";
+import microsoftLogo from "../../assets/logos/microsoft.svg";
+import googlecloudLogo from "../../assets/logos/googlecloud.svg";
+import amazonwebservicesLogo from "../../assets/logos/amazonwebservices.svg";
+import sapLogo from "../../assets/logos/sap.svg";
+import qualysLogo from "../../assets/logos/qualys.svg";
+import crowdstrikeLogo from "../../assets/logos/crowdstrike.svg";
+import splunkLogo from "../../assets/logos/splunk.svg";
+import paloaltonetworksLogo from "../../assets/logos/paloaltonetworks.svg";
+import cybersealLogo from "../../assets/logos/cyberseal.png";
 import "./EnterprisePlatforms.css";
 
 function EnterprisePlatforms({ darkMode }) {
   const companies = [
+    // Enterprise & Consulting
+    {
+      name: "Deloitte",
+      logo: deloitteLogo,
+      color: "#86BC25",
+      glow: "rgba(134, 188, 37, 0.18)"
+    },
+    {
+      name: "Capgemini",
+      logo: capgeminiLogo,
+      color: "#0070AD",
+      glow: "rgba(0, 112, 173, 0.18)"
+    },
+    {
+      name: "Accenture",
+      logo: accentureLogo,
+      color: "#A100FF",
+      glow: "rgba(161, 0, 255, 0.18)"
+    },
+    {
+      name: "IBM",
+      logo: ibmLogo,
+      color: "#0062FF",
+      glow: "rgba(0, 98, 255, 0.18)"
+    },
+    {
+      name: "Oracle",
+      logo: oracleLogo,
+      color: "#F80000",
+      glow: "rgba(248, 0, 0, 0.18)"
+    },
+    // Cloud & Infrastructure
     {
       name: "Microsoft",
-      icon: BsMicrosoft,
+      logo: microsoftLogo,
       color: "#00A4EF",
       glow: "rgba(0, 164, 239, 0.18)"
     },
     {
       name: "Google Cloud",
-      icon: SiGooglecloud,
+      logo: googlecloudLogo,
       color: "#4285F4",
       glow: "rgba(66, 133, 244, 0.18)"
     },
     {
-      name: "AWS",
-      icon: FaAws,
+      name: "Amazon Web Services (AWS)",
+      logo: amazonwebservicesLogo,
       color: "#FF9900",
       glow: "rgba(255, 153, 0, 0.18)"
     },
     {
       name: "SAP",
-      icon: SiSap,
+      logo: sapLogo,
       color: "#008FD3",
       glow: "rgba(0, 143, 211, 0.18)"
     },
+    // Cybersecurity
     {
-      name: "Oracle",
-      icon: GrOracle,
-      color: "#F80000",
-      glow: "rgba(248, 0, 0, 0.18)"
-    },
-    {
-      name: "IBM",
-      icon: FaServer,
-      color: "#0062FF",
-      glow: "rgba(0, 98, 255, 0.18)"
-    },
-    {
-      name: "Deloitte",
-      icon: BsBriefcaseFill,
-      color: "#86BC25",
-      glow: "rgba(134, 188, 37, 0.18)"
-    },
-    {
-      name: "Accenture",
-      icon: SiAccenture,
-      color: "#A100FF",
-      glow: "rgba(161, 0, 255, 0.18)"
-    },
-    {
-      name: "Capgemini",
-      icon: FaLaptopCode,
-      color: "#0070AD",
-      glow: "rgba(0, 112, 173, 0.18)"
+      name: "Qualys",
+      logo: qualysLogo,
+      color: "#ED1C24",
+      glow: "rgba(237, 28, 36, 0.18)"
     },
     {
       name: "CrowdStrike",
-      icon: FaShieldHalved,
+      logo: crowdstrikeLogo,
       color: "#FC0000",
       glow: "rgba(252, 0, 0, 0.18)"
     },
     {
-      name: "Palo Alto Networks",
-      icon: SiPaloaltonetworks,
-      color: "#F04E23",
-      glow: "rgba(240, 78, 35, 0.18)"
-    },
-    {
       name: "Splunk",
-      icon: SiSplunk,
+      logo: splunkLogo,
       color: "#F25A24",
       glow: "rgba(242, 90, 36, 0.18)"
     },
     {
-      name: "Qualys",
-      icon: SiQualys,
-      color: "#ED1C24",
-      glow: "rgba(237, 28, 36, 0.18)"
+      name: "Palo Alto Networks",
+      logo: paloaltonetworksLogo,
+      color: "#F04E23",
+      glow: "rgba(240, 78, 35, 0.18)"
+    },
+    // Additional Company
+    {
+      name: "Cyberseal Infosec Solutions Private Limited",
+      logo: cybersealLogo,
+      color: "#2563EB",
+      glow: "rgba(37, 99, 235, 0.18)"
     }
   ];
 
@@ -117,11 +137,10 @@ function EnterprisePlatforms({ darkMode }) {
         
         {/* Section Header */}
         <div className="platforms-header">
-          <span className="eyebrow">Expertise & Ecosystem</span>
+          <span className="eyebrow">EXPERTISE & ECOSYSTEM</span>
           <h2>Technologies & Enterprise Platforms</h2>
           <p>
-            We build solutions and deliver expertise across globally recognized
-            enterprise technologies and cloud platforms.
+            We build solutions and deliver expertise across globally recognized enterprise technologies, cybersecurity platforms, and cloud ecosystems.
           </p>
         </div>
 
@@ -134,7 +153,6 @@ function EnterprisePlatforms({ darkMode }) {
           viewport={{ once: true, margin: "-80px" }}
         >
           {companies.map((tech) => {
-            const IconComponent = tech.icon;
             return (
               <motion.div
                 key={tech.name}
@@ -146,9 +164,12 @@ function EnterprisePlatforms({ darkMode }) {
                 }}
               >
                 <div className="platform-logo-wrapper">
-                  <IconComponent className="platform-logo-icon" size={54} />
+                  <img 
+                    src={tech.logo} 
+                    alt={`${tech.name} logo`} 
+                    className="platform-logo-img" 
+                  />
                 </div>
-                <span className="platform-name">{tech.name}</span>
               </motion.div>
             );
           })}

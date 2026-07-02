@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Helmet } from 'react-helmet-async';
 
 const DEFAULT_TITLE = "HDC MA | Horizon Digital Core Management Associates";
@@ -38,7 +38,7 @@ function SEO({
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-800-555-0199",
+      "telephone": "+919160897498",
       "contactType": "customer service",
       "availableLanguage": "en"
     }

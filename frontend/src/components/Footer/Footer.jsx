@@ -9,7 +9,6 @@ import {
   FaWhatsapp,
   FaTwitter,
   FaEnvelope,
-  FaPhoneAlt,
   FaMapMarkerAlt
 } from "react-icons/fa";
 
@@ -87,8 +86,10 @@ function Footer({ darkMode }) {
           <ul className="contact-list">
 
             <li>
-              <FaEnvelope />
-              support@horizondigitalcore.com
+              <a href="mailto:info@horizondigitalcore.com">
+                <FaEnvelope />
+                info@horizondigitalcore.com
+              </a>
             </li>
 
           

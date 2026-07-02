@@ -131,6 +131,13 @@
   box-shadow:0 20px 45px rgba(77,184,255,.18);
 }
 
+.contact-card:focus-visible{
+  outline:2px solid #0f6fff;
+  outline-offset:2px;
+  transform:translateY(-8px);
+  box-shadow:0 20px 45px rgba(77,184,255,.18);
+}
+
 .contact-icon{
   width:48px;
   height:48px;
@@ -348,6 +355,13 @@
 }
 
 .contact-section.dark .contact-card:hover{
+  background:rgba(255,255,255,.08);
+  box-shadow:0 20px 45px rgba(77,184,255,.1);
+}
+
+.contact-section.dark .contact-card:focus-visible{
+  outline:2px solid #4db8ff;
+  outline-offset:2px;
   background:rgba(255,255,255,.08);
   box-shadow:0 20px 45px rgba(77,184,255,.1);
 }

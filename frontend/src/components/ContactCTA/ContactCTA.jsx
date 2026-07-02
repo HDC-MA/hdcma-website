@@ -4,7 +4,6 @@ import {
   Mail,
   Phone,
   MapPin,
-  MessageCircle,
   ArrowRight,
   Clock3,
   Building2,
@@ -68,19 +67,40 @@ function ContactCTA({ darkMode }) {
             <div className="contact-card">
 
               <div className="contact-icon">
+                <Building2 size={20} />
+              </div>
+
+              <div>
+                <h4>Company</h4>
+                <p>
+                  Horizon Digital Core Management Associates
+                </p>
+              </div>
+
+            </div>
+
+            <a
+              href="mailto:info@horizondigitalcore.com"
+              className="contact-card"
+            >
+
+              <div className="contact-icon">
                 <Mail size={20} />
               </div>
 
               <div>
                 <h4>Email</h4>
                 <p>
-                  support@horizondigitalcore.com
+                  info@horizondigitalcore.com
                 </p>
               </div>
 
-            </div>
+            </a>
 
-            <div className="contact-card">
+            <a
+              href="tel:+919160897498"
+              className="contact-card"
+            >
 
               <div className="contact-icon">
                 <Phone size={20} />
@@ -93,7 +113,7 @@ function ContactCTA({ darkMode }) {
                 </p>
               </div>
 
-            </div>
+            </a>
 
             <div className="contact-card">
 
@@ -109,26 +129,6 @@ function ContactCTA({ darkMode }) {
               </div>
 
             </div>
-
-            <a
-              href="https://wa.me/919160897498"
-              target="_blank"
-              rel="noreferrer"
-              className="contact-card whatsapp-card"
-            >
-
-              <div className="contact-icon">
-                <MessageCircle size={20} />
-              </div>
-
-              <div>
-                <h4>WhatsApp</h4>
-                <p>
-                  Chat With Our Team
-                </p>
-              </div>
-
-            </a>
 
           </div>
 
