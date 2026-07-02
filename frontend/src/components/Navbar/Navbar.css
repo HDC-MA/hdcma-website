@@ -1,0 +1,448 @@
+/* ====================================
+   NAVBAR
+==================================== */
+
+.navbar {
+  height: 80px;
+  width: 100%;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+
+  background: var(--glass-bg);
+
+  backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid var(--glass-border);
+
+  transition: all 0.35s ease;
+
+  box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+}
+
+/* ====================================
+   LEFT SECTION
+==================================== */
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 55px;
+  width: auto;
+
+  transition: all 0.4s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* ====================================
+   DIVIDER
+==================================== */
+
+.logo-divider {
+  width: 2px;
+  height: 40px;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    180deg,
+    #002d72,
+    #005cb9,
+    #4db8ff
+  );
+}
+
+/* ====================================
+   COMPANY INFO
+==================================== */
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    margin-left: -4px;
+}
+
+.company-info h3 {
+  margin: 0;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  background: linear-gradient(
+    135deg,
+    #002d72,
+    #005cb9,
+    #4db8ff
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.company-info p {
+  margin-top: 2px;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  color: #666666;
+}
+
+/* ====================================
+   NAVIGATION
+==================================== */
+
+.nav-links {
+  display: flex;
+  gap: 34px;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  color: var(--text);
+
+  transition: all 0.3s ease;
+}
+
+.nav-links li::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 3px;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    90deg,
+    #005cb9,
+    #4db8ff
+  );
+
+  transition: all 0.3s ease;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+.nav-links li:hover {
+  color: #4db8ff;
+}
+
+/* ====================================
+   RIGHT SECTION
+==================================== */
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ====================================
+   ICON BUTTONS
+==================================== */
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+
+  transition: all 0.35s ease;
+}
+
+.light-navbar .icon-btn {
+  background: #f5f7fa;
+  color: #005cb9;
+}
+
+.dark-navbar .icon-btn {
+  background: rgba(255,255,255,0.08);
+  color: #4db8ff;
+}
+
+.icon-btn:hover {
+  background: #4db8ff;
+  color: white;
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 10px 25px rgba(77,184,255,0.35);
+}
+
+/* ====================================
+   CONTACT BUTTON
+==================================== */
+
+.contact-btn {
+  border: none;
+
+  padding: 10px 20px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  background: linear-gradient(
+    135deg,
+    #002d72,
+    #005cb9,
+    #4db8ff
+  );
+
+  transition: all 0.35s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(77,184,255,0.4);
+}
+
+/* ====================================
+   DARK MODE
+==================================== */
+
+.dark-navbar {
+  background: rgba(10,22,40,0.90);
+}
+
+.dark-navbar .company-info p {
+  color: rgba(255,255,255,0.8);
+}
+
+.dark-navbar .logo-divider {
+  background: linear-gradient(
+    180deg,
+    #4db8ff,
+    #ffffff
+  );
+}
+
+/* ====================================
+   MOBILE TOGGLE BUTTON
+==================================== */
+.menu-toggle {
+  display: none;
+}
+
+/* ====================================
+   RESPONSIVE
+==================================== */
+
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 30px 40px;
+    gap: 24px;
+    z-index: 998;
+    box-shadow: var(--shadow-soft);
+    animation: mobileMenuSlide 0.22s ease-out forwards;
+  }
+
+  .nav-links.active li {
+    font-size: 17px;
+    width: 100%;
+    padding: 4px 0;
+  }
+
+  .nav-links.active li::after {
+    display: none;
+  }
+
+  @keyframes mobileMenuSlide {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .navbar {
+    height: 70px;
+    padding: 0 25px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .company-info h3 {
+    font-size: 20px;
+  }
+
+  .company-info p {
+    font-size: 9px;
+  }
+
+  .logo-divider {
+    height: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-btn {
+    display: none;
+  }
+
+  .company-info p {
+    display: none;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  .logo-divider {
+    height: 30px;
+  }
+}
+/* ====================================
+   INDUSTRIES MEGA DROPDOWN
+==================================== */
+
+.nav-item-dropdown {
+  position: relative;
+}
+
+.mega-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+
+  padding: 24px;
+  gap: 12px;
+
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  min-width: 520px;
+}
+
+.nav-item-dropdown:hover .mega-dropdown {
+  display: grid;
+}
+
+.mega-dropdown-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dropdown-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.light-navbar .dropdown-item:hover {
+  background: #F0F6FF;
+}
+
+.dark-navbar .dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.dropdown-item-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.dropdown-item-sub {
+  font-size: 12px;
+  color: #5A7CAE;
+  line-height: 1.4;
+}
+
+.dark-navbar .dropdown-item-sub {
+  color: rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,4 @@
+- [x] Add Industries mega-dropdown to `Navbar.jsx`
+- [x] Add styling for mega-dropdown in `Navbar.css`
+- [x] Normalize typography in `IndustryPage.css` to match `index.css` variables exactly
+- [x] Verify build by running `npm run build`
