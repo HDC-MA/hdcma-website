@@ -4,7 +4,7 @@ import Services from "../../components/Services/Services";
 import EnterprisePlatforms from "../../components/EnterprisePlatforms/EnterprisePlatforms";
 import Industries from "../../components/Industries/Industries";
 import Products from "../../components/Products/Products";
-import WhyHDCMA from "../../components/Whyhdcma/WhyHDCMA";
+import WhyHDCMA from "../../components/WhyHDCMA/WhyHDCMA";
 import CaseStudies from "../../components/Case Studies/CaseStudies";
 import Insights from "../../components/Insights/Insights";
 import Careers from "../../components/Careers CTA/Careers";
