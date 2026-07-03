@@ -1,7 +1,7 @@
 import "./whyHDCMA.css";
 import { Link } from "react-router-dom";
 
-function WhyHDCMA({ darkMode }) {
+function whyHDCMA({ darkMode }) {
 
 
   return (
