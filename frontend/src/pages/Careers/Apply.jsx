@@ -24,6 +24,7 @@ function Apply({ darkMode, setDarkMode }) {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const coverLetterWordCount = formData.coverLetter
     .trim()
@@ -76,42 +77,61 @@ function Apply({ darkMode, setDarkMode }) {
     return Object.keys(newErrors).length === 0;
   };
 
+  // FIX #3: throws + logs a clear error instead of silently returning undefined
   const uploadToCloudinary = async (file) => {
     const data = new FormData();
     data.append('file', file);
     data.append('upload_preset', 'hdcma_resumes');
     data.append('cloud_name', 'vwfaldev');
-    data.append('access_mode', 'public');
 
-    const res = await fetch(
-      'https://api.cloudinary.com/v1_1/vwfaldev/raw/upload',
-      { method: 'POST', body: data }
-    );
+    let res;
+    try {
+      res = await fetch(
+        'https://api.cloudinary.com/v1_1/vwfaldev/raw/upload',
+        { method: 'POST', body: data }
+      );
+    } catch (networkErr) {
+      console.error('Cloudinary network error:', networkErr);
+      throw new Error('Could not reach the upload server. Please check your connection and try again.');
+    }
+
     const result = await res.json();
-    console.log('Cloudinary result:', result);
+
+    if (!res.ok || !result.secure_url) {
+      console.error('Cloudinary upload failed:', result);
+      throw new Error(
+        result?.error?.message ||
+        'Resume upload failed. Please try again or use a different PDF.'
+      );
+    }
+
     return result.secure_url;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitError("");
     if (!validate()) return;
 
     setLoading(true);
 
     try {
-      const resumeLink = await uploadToCloudinary(resumeFile);
+      // Upload always completes (or throws) BEFORE we touch EmailJS
+      const resumeUrl = await uploadToCloudinary(resumeFile);
 
+      // FIX #1: keys now match the template exactly (resume_url + resume_name)
       const templateParams = {
-        position: role,                             
-        name: formData.fullName,                   
-        email: formData.email,                       
-        phone: formData.phone,                    
+        position: role,
+        name: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
         location: formData.location,
         linkedin: formData.linkedin || 'Not provided',
         experience: formData.experience,
         source: formData.source || 'Not provided',
         cover_letter: formData.coverLetter || 'Not provided',
-        resume_link: resumeLink, 
+        resume_url: resumeUrl,
+        resume_name: resumeFile.name,
       };
 
       await emailjs.send(
@@ -126,19 +146,24 @@ function Apply({ darkMode, setDarkMode }) {
 
     } catch (error) {
       setLoading(false);
-      console.error('Error:', error);
-      alert('Something went wrong. Please try again.');
+      console.error('Application submission error:', error);
+      // FIX #4: show the real reason instead of a generic alert,
+      // so the applicant knows to retry or email the resume directly
+      setSubmitError(
+        error.message ||
+        'Something went wrong while submitting your application. Please try again, or email your resume directly to careers@hdcma.com.'
+      );
     }
   };
 
   if (submitted) {
     return (
       <div className={`apply-page ${darkMode ? "dark" : "light"}`}>
-        <SEO 
-          title={`Application Received - ${role}`} 
-          description="Your application has been successfully submitted to HDC MA." 
-          path="/careers/apply" 
-          robots="noindex, nofollow" 
+        <SEO
+          title={`Application Received - ${role}`}
+          description="Your application has been successfully submitted to HDC MA."
+          path="/careers/apply"
+          robots="noindex, nofollow"
         />
         <div className="apply-success">
           <h1>Application Received! 🎉</h1>
@@ -156,10 +181,10 @@ function Apply({ darkMode, setDarkMode }) {
 
   return (
     <div className={`apply-page ${darkMode ? "dark" : "light"}`}>
-      <SEO 
-        title={`Apply for ${role}`} 
-        description={`Submit your application for the ${role} position at Horizon Digital Core Management Associates.`} 
-        path="/careers/apply" 
+      <SEO
+        title={`Apply for ${role}`}
+        description={`Submit your application for the ${role} position at Horizon Digital Core Management Associates.`}
+        path="/careers/apply"
       />
       <div className="apply-container">
         <Link to="/careers" className="back-link">
@@ -170,6 +195,12 @@ function Apply({ darkMode, setDarkMode }) {
         <p className="apply-subtitle">
           Fill out the form below — fields marked * are required.
         </p>
+
+        {submitError && (
+          <div className="form-error-banner" role="alert">
+            ⚠️ {submitError}
+          </div>
+        )}
 
         <form className="apply-form" onSubmit={handleSubmit} noValidate>
 
