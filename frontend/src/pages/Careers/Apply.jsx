@@ -92,7 +92,7 @@ function Apply({ darkMode, setDarkMode }) {
       );
     } catch (networkErr) {
       console.error('Cloudinary network error:', networkErr);
-      throw new Error('Could not reach the upload server. Please check your connection and try again.');
+      throw new Error('Could not reach the upload server. Please check your connection and try again.', { cause: networkErr });
     }
 
     const result = await res.json();

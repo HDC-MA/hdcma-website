@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { services } from '../../data/servicesData';
 import SEO from '../../components/Common/SEO';
 import './ServiceDetail.css';

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Search, X, CornerDownLeft, ArrowRight } from "lucide-react";
 import { services } from "../../data/servicesData";
@@ -29,23 +29,40 @@ const staticItems = [
   { title: "Technology & SaaS", path: "/industries/technology", category: "Industry", description: "Cloud native development, microservices, containerization, and enterprise scaling solutions." }
 ];
 
+// Combine static and dynamic items
+const searchIndex = [
+  ...staticItems,
+  ...services.map(s => ({
+    title: s.title,
+    path: `/services/${s.slug}`,
+    category: "Service",
+    description: `${s.shortDesc} ${s.overview || ""}`
+  }))
+];
+
 const SearchOverlay = ({ onClose }) => {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef(null);
   const navigate = useNavigate();
 
-  // Combine static and dynamic items
-  const searchIndex = [
-    ...staticItems,
-    ...services.map(s => ({
-      title: s.title,
-      path: `/services/${s.slug}`,
-      category: "Service",
-      description: `${s.shortDesc} ${s.overview || ""}`
-    }))
-  ];
+  // Filter items as query changes (memoized to prevent triggering useEffect dependencies on every render)
+  const results = useMemo(() => {
+    if (!query.trim()) return [];
+    return searchIndex.filter(item => {
+      const q = query.toLowerCase();
+      return (
+        item.title.toLowerCase().includes(q) ||
+        item.category.toLowerCase().includes(q) ||
+        item.description.toLowerCase().includes(q)
+      );
+    });
+  }, [query]);
+
+  const handleNavigate = useCallback((path) => {
+    navigate(path);
+    onClose();
+  }, [navigate, onClose]);
 
   // Auto focus input on mount
   useEffect(() => {
@@ -56,25 +73,6 @@ const SearchOverlay = ({ onClose }) => {
       document.body.style.overflow = "unset";
     };
   }, []);
-
-  // Filter items as query changes
-  useEffect(() => {
-    if (!query.trim()) {
-      setResults([]);
-      return;
-    }
-
-    const filtered = searchIndex.filter(item => {
-      const q = query.toLowerCase();
-      return (
-        item.title.toLowerCase().includes(q) ||
-        item.category.toLowerCase().includes(q) ||
-        item.description.toLowerCase().includes(q)
-      );
-    });
-    setResults(filtered);
-    setSelectedIndex(0);
-  }, [query]);
 
   // Handle Keyboard navigation
   useEffect(() => {
@@ -97,12 +95,7 @@ const SearchOverlay = ({ onClose }) => {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [results, selectedIndex]);
-
-  const handleNavigate = (path) => {
-    navigate(path);
-    onClose();
-  };
+  }, [results, selectedIndex, handleNavigate, onClose]);
 
   return (
     <div className="search-overlay" onClick={onClose}>
@@ -115,7 +108,10 @@ const SearchOverlay = ({ onClose }) => {
             type="text"
             placeholder="Search services, products, industries, pages..."
             value={query}
-            onChange={e => setQuery(e.target.value)}
+            onChange={e => {
+              setQuery(e.target.value);
+              setSelectedIndex(0);
+            }}
           />
           <button className="search-close-btn" onClick={onClose}>
             <X size={20} />
@@ -129,15 +125,15 @@ const SearchOverlay = ({ onClose }) => {
               <p>Type to search our services, products, and articles...</p>
               <div className="search-suggestions">
                 <span>Try:</span>
-                <button onClick={() => setQuery("AI")}>AI & ML</button>
-                <button onClick={() => setQuery("SAP")}>SAP</button>
-                <button onClick={() => setQuery("Careers")}>Careers</button>
-                <button onClick={() => setQuery("PCAP")}>PCAP</button>
+                <button onClick={() => { setQuery("AI"); setSelectedIndex(0); }}>AI & ML</button>
+                <button onClick={() => { setQuery("SAP"); setSelectedIndex(0); }}>SAP</button>
+                <button onClick={() => { setQuery("Careers"); setSelectedIndex(0); }}>Careers</button>
+                <button onClick={() => { setQuery("PCAP"); setSelectedIndex(0); }}>PCAP</button>
               </div>
             </div>
           ) : results.length === 0 ? (
             <div className="search-no-results">
-              <p>No results found for "<strong>{query}</strong>"</p>
+              <p>No results found for &quot;<strong>{query}</strong>&quot;</p>
               <span>Please check the spelling or try searching for another topic.</span>
             </div>
           ) : (
