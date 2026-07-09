@@ -7,11 +7,13 @@ import darkLogo from "../../assets/logos/dark theme (1).svg";
 import lightLogo from "../../assets/logos/light theme.svg";
 import ServicesDropdown from "../ServicesDropdown/ServicesDropdown";
 import IndustriesDropdown from "../IndustriesDropdown/IndustriesDropdown";
+import SearchOverlay from "../SearchOverlay/SearchOverlay";
 
 function Navbar({ darkMode, setDarkMode }) {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const timeoutRef = useRef(null);
   const indTimeoutRef = useRef(null);
 
@@ -124,7 +126,7 @@ function Navbar({ darkMode, setDarkMode }) {
 
       <div className="navbar-right">
 
-        <button className="icon-btn">
+        <button className="icon-btn" onClick={() => setIsSearchOpen(true)}>
           <FaSearch />
         </button>
 
@@ -152,6 +154,7 @@ function Navbar({ darkMode, setDarkMode }) {
 
       </div>
 
+      {isSearchOpen && <SearchOverlay onClose={() => setIsSearchOpen(false)} />}
     </nav>
   );
 }
