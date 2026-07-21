@@ -441,3 +441,19 @@
     padding:30px;
   }
 }
+.form-errors {
+  margin-top: 15px;
+}
+
+.form-error-text {
+  color: #dc2626;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.form-success-text {
+  color: #16a34a;
+  font-size: 14px;
+  margin: 15px 0;
+  font-weight: 600;
+}
