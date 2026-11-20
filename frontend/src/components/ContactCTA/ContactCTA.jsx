@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import "./ContactCTA.css";
+import { productsData } from "../Products/productsData";
 
 import {
   Mail,
@@ -13,15 +15,27 @@ import {
 } from "lucide-react";
 
 function ContactCTA({ darkMode }) {
-  const [formData, setFormData] = useState({
+  const { search } = useLocation();
+  const requestedService = new URLSearchParams(search).get("service") || "";
+  const serviceOptions = [
+    "Custom Software Development",
+    "AI & Machine Learning",
+    "Cloud Services",
+    "Cybersecurity",
+    "SAP Solutions",
+    "Digital Marketing",
+    ...productsData.map((product) => product.contactService || product.name)
+  ];
+  const initialService = serviceOptions.includes(requestedService) ? requestedService : "";
+  const [formData, setFormData] = useState(() => ({
     company_name: "",
     business_email: "",
     phone_number: "",
     contact_person: "",
-    service: "",
+    service: initialService,
     budget: "",
     project_description: ""
-  });
+  }));
 
   const [errors, setErrors] = useState({});
   const [isSending, setIsSending] = useState(false);
@@ -34,6 +48,12 @@ function ContactCTA({ darkMode }) {
       ...prev,
       [name]: value
     }));
+    setErrors((prev) => {
+      if (!prev[name]) return prev;
+      const next = { ...prev };
+      delete next[name];
+      return next;
+    });
   };
 
   const validateForm = () => {
@@ -271,126 +291,140 @@ function ContactCTA({ darkMode }) {
             <form onSubmit={handleSubmit} noValidate>
 
               <div className="form-row">
-
-                <input
-                  type="text"
-                  name="company_name"
-                  placeholder="Company Name *"
-                  value={formData.company_name}
-                  onChange={handleChange}
-                  required
-                />
-
-                <input
-                  type="email"
-                  name="business_email"
-                  placeholder="Business Email *"
-                  value={formData.business_email}
-                  onChange={handleChange}
-                  required
-                />
-
+                <div className="form-field">
+                  <label htmlFor="company_name">Company Name *</label>
+                  <input
+                    id="company_name"
+                    type="text"
+                    name="company_name"
+                    placeholder="Enter your company name"
+                    value={formData.company_name}
+                    onChange={handleChange}
+                    required
+                    aria-invalid={Boolean(errors.company_name)}
+                    aria-describedby={errors.company_name ? "company_name-error" : undefined}
+                  />
+                  {errors.company_name && <p className="field-error" id="company_name-error">{errors.company_name}</p>}
+                </div>
+                <div className="form-field">
+                  <label htmlFor="business_email">Business Email *</label>
+                  <input
+                    id="business_email"
+                    type="email"
+                    name="business_email"
+                    placeholder="name@company.com"
+                    value={formData.business_email}
+                    onChange={handleChange}
+                    required
+                    aria-invalid={Boolean(errors.business_email)}
+                    aria-describedby={errors.business_email ? "business_email-error" : undefined}
+                  />
+                  {errors.business_email && <p className="field-error" id="business_email-error">{errors.business_email}</p>}
+                </div>
               </div>
 
               <div className="form-row">
-
-                <input
-                  type="tel"
-                  name="phone_number"
-                  placeholder="Phone Number *"
-                  value={formData.phone_number}
-                  onChange={handleChange}
-                  required
-                />
-
-                <input
-                  type="text"
-                  name="contact_person"
-                  placeholder="Contact Person"
-                  value={formData.contact_person}
-                  onChange={handleChange}
-                />
-
+                <div className="form-field">
+                  <label htmlFor="phone_number">Phone Number *</label>
+                  <input
+                    id="phone_number"
+                    type="tel"
+                    name="phone_number"
+                    placeholder="Include country code"
+                    value={formData.phone_number}
+                    onChange={handleChange}
+                    required
+                    aria-invalid={Boolean(errors.phone_number)}
+                    aria-describedby={errors.phone_number ? "phone_number-error" : undefined}
+                  />
+                  {errors.phone_number && <p className="field-error" id="phone_number-error">{errors.phone_number}</p>}
+                </div>
+                <div className="form-field">
+                  <label htmlFor="contact_person">Contact Person *</label>
+                  <input
+                    id="contact_person"
+                    type="text"
+                    name="contact_person"
+                    placeholder="Your name"
+                    value={formData.contact_person}
+                    onChange={handleChange}
+                    required
+                    aria-invalid={Boolean(errors.contact_person)}
+                    aria-describedby={errors.contact_person ? "contact_person-error" : undefined}
+                  />
+                  {errors.contact_person && <p className="field-error" id="contact_person-error">{errors.contact_person}</p>}
+                </div>
               </div>
 
               <div className="form-row">
-
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                >
-
-                  <option value="">
-                    Select Service
-                  </option>
-
-                  <option value="Custom Software Development">
-                    Custom Software Development
-                  </option>
-
-                  <option value="AI & Machine Learning">
-                    AI & Machine Learning
-                  </option>
-
-                  <option value="Cloud Services">
-                    Cloud Services
-                  </option>
-
-                  <option value="Cybersecurity">
-                    Cybersecurity
-                  </option>
-
-                  <option value="SAP Solutions">
-                    SAP Solutions
-                  </option>
-
-                  <option value="Digital Marketing">
-                    Digital Marketing
-                  </option>
-
-                </select>
-
-                <select
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                >
-
-                  <option value="">
-                    Project Budget
-                  </option>
-
-                  <option value="Below ₹50K">
-                    Below ₹50K
-                  </option>
-
-                  <option value="₹50K - ₹2L">
-                    ₹50K - ₹2L
-                  </option>
-
-                  <option value="₹2L - ₹10L">
-                    ₹2L - ₹10L
-                  </option>
-
-                  <option value="Above ₹10L">
-                    Above ₹10L
-                  </option>
-
-                </select>
-
+                <div className="form-field">
+                  <label htmlFor="service">Select Service *</label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    aria-invalid={Boolean(errors.service)}
+                    aria-describedby={errors.service ? "service-error" : undefined}
+                  >
+                    <option value="">Select a service</option>
+                    <optgroup label="Services">
+                      <option value="Custom Software Development">Custom Software Development</option>
+                      <option value="AI & Machine Learning">AI & Machine Learning</option>
+                      <option value="Cloud Services">Cloud Services</option>
+                      <option value="Cybersecurity">Cybersecurity</option>
+                      <option value="SAP Solutions">SAP Solutions</option>
+                      <option value="Digital Marketing">Digital Marketing</option>
+                    </optgroup>
+                    <optgroup label="Product solutions">
+                      {productsData.map((product) => {
+                        const service = product.contactService || product.name;
+                        return <option key={product.id} value={service}>{service}</option>;
+                      })}
+                    </optgroup>
+                  </select>
+                  {errors.service && <p className="field-error" id="service-error">{errors.service}</p>}
+                </div>
+                <div className="form-field">
+                  <label htmlFor="budget">Project Budget *</label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    required
+                    aria-invalid={Boolean(errors.budget)}
+                    aria-describedby={errors.budget ? "budget-error" : undefined}
+                  >
+                    <option value="">Select a budget range</option>
+                    <option value="Below ₹50K">Below ₹50K</option>
+                    <option value="₹50K - ₹2L">₹50K - ₹2L</option>
+                    <option value="₹2L - ₹10L">₹2L - ₹10L</option>
+                    <option value="Above ₹10L">Above ₹10L</option>
+                  </select>
+                  {errors.budget && <p className="field-error" id="budget-error">{errors.budget}</p>}
+                </div>
               </div>
 
-              <textarea
-                name="project_description"
-                rows="5"
-                placeholder="Briefly describe your project..."
-                value={formData.project_description}
-                onChange={handleChange}
-              />
+              <div className="form-field">
+                <label htmlFor="project_description">Project Description *</label>
+                <textarea
+                  id="project_description"
+                  name="project_description"
+                  rows="5"
+                  placeholder="Briefly describe your project and goals"
+                  value={formData.project_description}
+                  onChange={handleChange}
+                  required
+                  aria-invalid={Boolean(errors.project_description)}
+                  aria-describedby={errors.project_description ? "project_description-error" : undefined}
+                />
+                {errors.project_description && <p className="field-error" id="project_description-error">{errors.project_description}</p>}
+              </div>
 
               {Object.keys(errors).length > 0 && (
-                <div className="form-errors">
+                <div className="form-errors" role="alert" aria-live="polite">
                   {Object.values(errors).map((errMsg, index) => (
                     <p key={index} className="form-error-text">
                       {errMsg}
@@ -401,6 +435,8 @@ function ContactCTA({ darkMode }) {
 
               {statusMessage && (
                 <p
+                  role={statusType === "error" ? "alert" : "status"}
+                  aria-live="polite"
                   className={
                     statusType === "success"
                       ? "form-success-text"

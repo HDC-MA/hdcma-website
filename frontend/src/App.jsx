@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import InsightsPage from "./pages/Insights/Insights";
 import InsightDetail from "./pages/InsightDetail/InsightDetail";
 import ProductsPage from "./pages/Products/Products";
+import ProductDetailsPage from "./pages/Products/ProductDetails";
 import About from "./pages/About/About";
 import Careers from "./pages/Careers/Careers";
 import Apply from "./pages/Careers/Apply";
@@ -20,12 +21,20 @@ import ManufacturingPage from "./pages/Industries/ManufacturingPage";
 import RetailPage from "./pages/Industries/RetailPage";
 import TechnologyPage from "./pages/Industries/TechnologyPage";
 
+const THEME_STORAGE_KEY = "hdcma-dark-mode";
+
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(
+    () => localStorage.getItem(THEME_STORAGE_KEY) === "true"
+  );
 
   useEffect(() => {
     client.ping().then(() => console.log("Appwrite pinged successfully!")).catch(console.error);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem(THEME_STORAGE_KEY, String(darkMode));
+  }, [darkMode]);
 
   const location = useLocation();
 
@@ -51,6 +60,7 @@ function App() {
         <Route path="/insights" element={<InsightsPage darkMode={darkMode} />} />
         <Route path="/insights/:id" element={<InsightDetail darkMode={darkMode} />} />
         <Route path="/products" element={<ProductsPage darkMode={darkMode} />} />
+        <Route path="/products/:slug" element={<ProductDetailsPage darkMode={darkMode} />} />
         <Route path="/about" element={<About darkMode={darkMode} />} />
         <Route path="/careers" element={<Careers darkMode={darkMode} setDarkMode={setDarkMode} />} />
         <Route path="/careers/apply" element={<Apply darkMode={darkMode} setDarkMode={setDarkMode} />} />

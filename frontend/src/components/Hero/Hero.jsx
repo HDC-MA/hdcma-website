@@ -29,12 +29,10 @@ Digital Engineering
   </span>
 </h1>
         <p>
-    <p>
-  HDCMA helps organizations accelerate growth through
-AI-powered solutions, Cloud Engineering, Cybersecurity,
-SAP Integration and Digital Engineering services that
-drive innovation and business transformation.
-</p>
+          HDCMA helps organizations accelerate growth through AI-powered
+          solutions, Cloud Engineering, Cybersecurity, SAP Integration and
+          Digital Engineering services that drive innovation and business
+          transformation.
         </p>
 
         <div className="hero-buttons">

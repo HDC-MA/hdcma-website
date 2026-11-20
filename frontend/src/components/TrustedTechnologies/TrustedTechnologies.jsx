@@ -89,13 +89,20 @@ function TrustedTechnologies({ darkMode }) {
       <div className="tech-slider">
         <div className="tech-track">
           {[...technologies, ...technologies].map((tech, index) => (
-            <div className="tech-card" key={index}>
+            <div className="tech-card" key={`${tech.name}-${index}`} aria-hidden={index >= technologies.length}>
               <div className="tech-icon">
                 <img
                   src={tech.image}
                   alt={tech.name}
                   loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.hidden = true;
+                    event.currentTarget.parentElement?.classList.add("icon-unavailable");
+                  }}
                 />
+                <span className="tech-icon-fallback" aria-hidden="true">
+                  {tech.name.slice(0, 2).toUpperCase()}
+                </span>
               </div>
 
               <span>{tech.name}</span>

@@ -3,13 +3,13 @@
 =================================== */
 
 .services-section {
-  padding: 120px 80px;
+  padding: 78px 80px 120px;
   background: var(--bg);
 }
 
 .services-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 46px;
 }
 
 .services-header span {
@@ -20,10 +20,23 @@
 }
 
 .services-header h2 {
-  margin-top: 15px;
-  font-size: 56px;
+  margin: 12px 0 15px;
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
   font-weight: 800;
   color: var(--text);
+  line-height: 1.12;
+}
+
+.services-header p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.services-section.dark .services-header p {
+  color: #c1d0e5;
 }
 
 /* ===================================
@@ -359,11 +372,11 @@
 @media (max-width: 768px) {
 
   .services-section {
-    padding: 80px 25px;
+    padding: 58px 25px 80px;
   }
 
   .services-header h2 {
-    font-size: 38px;
+    font-size: 2rem;
   }
 
   .service-details {

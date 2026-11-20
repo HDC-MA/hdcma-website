@@ -2,7 +2,8 @@ import "./Products.css";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-import { productsData } from "./productsData";
+import { getThemeAwareProductImage, productsData } from "./productsData";
+import { ProductPreviewImage } from "./ProductCard";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -38,46 +39,44 @@ function Products({ darkMode }) {
         className="products-swiper"
       >
 
-        {productsData.map((product, index) => (
+        {productsData.map((product, index) => {
+          const image = getThemeAwareProductImage(product, darkMode);
 
-          <SwiperSlide key={product.id || index}>
+          return (
+            <SwiperSlide key={product.id || index}>
+              <div className="product-slide">
+                <div className="product-image">
+                  <ProductPreviewImage
+                    key={image}
+                    src={image}
+                    fallbackSrc={product.image}
+                    alt={`${product.name} application preview`}
+                    loading="lazy"
+                    onUnavailable={(event) => {
+                      event.currentTarget.parentElement?.classList.add("has-no-preview");
+                    }}
+                    onAvailable={(event) => {
+                      event.currentTarget.parentElement?.classList.remove("has-no-preview");
+                    }}
+                  />
+                  <div className="product-image-placeholder" aria-hidden="true">
+                    <span>Product preview</span>
+                    <strong>{product.name}</strong>
+                  </div>
+                </div>
 
-            <div className="product-slide">
-
-              <div className="product-image">
-
-                <img
-                  src={product.image}
-                  alt={product.name}
-                />
-
+                <div className="product-content">
+                  <span>{product.category.toUpperCase()}</span>
+                  <h3>{product.name}</h3>
+                  <p>{product.description}</p>
+                  <Link to="/products" className="product-home-link">
+                    Explore Solution <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
               </div>
-
-              <div className="product-content">
-
-                <span>{product.category.toUpperCase()}</span>
-
-                <h3>
-                  {product.name}
-                </h3>
-
-                <p>
-                  {product.description}
-                </p>
-
-                <Link to="/products" style={{ textDecoration: "none" }}>
-                  <button>
-                    Explore Solution →
-                  </button>
-                </Link>
-
-              </div>
-
-            </div>
-
-          </SwiperSlide>
-
-        ))}
+            </SwiperSlide>
+          );
+        })}
 
       </Swiper>
 

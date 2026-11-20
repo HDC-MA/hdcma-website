@@ -171,6 +171,18 @@
   color: #4db8ff;
 }
 
+.nav-links a.active {
+  color: #00519e !important;
+}
+
+.dark-navbar .nav-links a.active {
+  color: #56bcf8 !important;
+}
+
+.nav-links li:has(a.active)::after {
+  width: 100%;
+}
+
 /* ====================================
    RIGHT SECTION
 ==================================== */
@@ -373,6 +385,30 @@
     height: 30px;
   }
 }
+
+@media (max-width: 420px) {
+  .navbar {
+    padding: 0 12px;
+  }
+
+  .navbar-left {
+    gap: 8px;
+  }
+
+  .logo {
+    height: 38px;
+  }
+
+  .navbar-right {
+    gap: 8px;
+  }
+
+  .navbar-right > .icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
+
 /* ====================================
    INDUSTRIES MEGA DROPDOWN
 ==================================== */

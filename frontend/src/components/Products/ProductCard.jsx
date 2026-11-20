@@ -1,89 +1,120 @@
-
-import { CheckCircle2 } from "lucide-react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowUpRight, CheckCircle2, Image as ImageIcon, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
+import { getThemeAwareProductImage } from "./productsData";
 import "./ProductCard.css";
 
-function ProductCard({ product, index }) {
-  const { isFlagship, name, category, description, keyFeatures, techStack, image } = product;
+export function ProductPreviewImage({
+  src,
+  fallbackSrc,
+  alt,
+  loading,
+  onUnavailable,
+  onAvailable
+}) {
+  const [imageSource, setImageSource] = useState(src);
+  const [unavailable, setUnavailable] = useState(false);
 
-  // For non-flagship, alternate layout based on index
-  const isImageRight = !isFlagship && index % 2 !== 0;
+  if (unavailable) return null;
 
-  if (isFlagship) {
-    return (
-      <div className="product-card flagship-card">
-        <div className="flagship-badge">FLAGSHIP PRODUCT</div>
-        <div className="flagship-layout">
-          <div className="flagship-content">
-            <span className="product-category">{category}</span>
-            <h2 className="product-name flagship-title">{name}</h2>
-            <p className="product-desc flagship-desc">{description}</p>
-            
-            <div className="features-grid">
-              {keyFeatures.map((feature, i) => (
-                <div key={i} className="feature-item">
-                  <CheckCircle2 size={20} className="feature-icon" />
-                  <span>{feature}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="tech-stack">
-              <span className="tech-label">Powered by:</span>
-              <div className="chips-container">
-                {techStack.map((tech, i) => (
-                  <span key={i} className="tech-chip">{tech}</span>
-                ))}
-              </div>
-            </div>
-
-
-          </div>
-          
-          <div className="flagship-visual">
-            <div className="image-wrapper">
-              <img src={image} alt={name} />
-              <div className="visual-glow"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // Standard Alternating Layout
   return (
-    <div className={`product-card standard-card ${isImageRight ? "image-right" : "image-left"}`}>
-      <div className="standard-visual">
-        <div className="image-wrapper">
-          <img src={image} alt={name} />
-        </div>
+    <img
+      src={imageSource}
+      alt={alt}
+      loading={loading}
+      onLoad={onAvailable}
+      onError={(event) => {
+        if (imageSource !== fallbackSrc) {
+          setImageSource(fallbackSrc);
+          return;
+        }
+        setUnavailable(true);
+        onUnavailable?.(event);
+      }}
+    />
+  );
+}
+
+function ProductCard({ product, darkMode, reduceMotion }) {
+  const image = getThemeAwareProductImage(product, darkMode);
+  const [unavailableImage, setUnavailableImage] = useState(null);
+  const hasPreview = unavailableImage !== image;
+
+  const {
+    name,
+    category,
+    description,
+    shortDescription,
+    features,
+    tags = [],
+    isConcept
+  } = product;
+
+  return (
+    <motion.article
+      className="product-card"
+      layout
+      initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={reduceMotion ? undefined : { opacity: 0, y: 10 }}
+      transition={{ duration: reduceMotion ? 0 : 0.25 }}
+    >
+      <div className="product-card__preview">
+        {hasPreview ? (
+          <ProductPreviewImage
+            key={image}
+            src={image}
+            fallbackSrc={product.image}
+            alt={`${name} application preview`}
+            loading="lazy"
+            onUnavailable={() => setUnavailableImage(image)}
+          />
+        ) : (
+          <div className="product-card__placeholder" role="img" aria-label={`${name} preview not uploaded`}>
+            <div className="product-card__placeholder-mark">
+              <ImageIcon size={28} aria-hidden="true" />
+              <Sparkles size={14} aria-hidden="true" />
+            </div>
+            <span>Product preview</span>
+            <strong>{name}</strong>
+            <small>Screenshot coming soon</small>
+          </div>
+        )}
+        {isConcept && <span className="product-card__concept">Concept</span>}
       </div>
 
-      <div className="standard-content">
-        <span className="product-category">{category}</span>
-        <h3 className="product-name">{name}</h3>
-        <p className="product-desc">{description}</p>
-        
-        <div className="features-list">
-          {keyFeatures.map((feature, i) => (
-            <div key={i} className="feature-item">
-              <CheckCircle2 size={18} className="feature-icon" />
-              <span>{feature}</span>
-            </div>
-          ))}
-        </div>
+      <div className="product-card__body">
+        <span className="product-card__category">{category}</span>
+        <h2 className="product-card__title">{name}</h2>
+        <p className="product-card__description">{shortDescription || description}</p>
 
-        <div className="tech-stack">
-          <div className="chips-container">
-            {techStack.map((tech, i) => (
-              <span key={i} className="tech-chip">{tech}</span>
+        <ul className="product-card__features" aria-label="Key capabilities">
+          {features.map((feature) => (
+            <li className="product-card__feature" key={feature}>
+              <CheckCircle2 size={16} strokeWidth={1.8} aria-hidden="true" />
+              {feature}
+            </li>
+          ))}
+        </ul>
+
+        {tags.length > 0 && (
+          <div className="product-card__tags" aria-label="Product tags">
+            {tags.map((tag) => (
+              <span className="product-card__tag" key={tag}>
+                {tag}
+              </span>
             ))}
           </div>
+        )}
+
+        <div className="product-card__actions">
+          <Link className="product-card__button product-card__button--primary" to={`/products/${product.slug}`}>
+            Explore Solution <ArrowUpRight size={17} aria-hidden="true" />
+          </Link>
         </div>
-
-
       </div>
-    </div>
+    </motion.article>
   );
 }
 

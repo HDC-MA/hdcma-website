@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import "./Navbar.css";
 import { FaMoon, FaSun, FaSearch, FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import darkLogo from "../../assets/logos/dark theme (1).svg";
 import lightLogo from "../../assets/logos/light theme.svg";
@@ -115,7 +115,7 @@ function Navbar({ darkMode, setDarkMode }) {
             setIsMobileMenuOpen(false);
           }} />}
         </li>
-        <li><Link to="/products" onClick={() => setIsMobileMenuOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>Products</Link></li>
+        <li><NavLink to="/products" onClick={() => setIsMobileMenuOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>Products</NavLink></li>
         <li><Link to="/insights" onClick={() => setIsMobileMenuOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>Insights</Link></li>
         <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>About Us</Link></li>
         <li><Link to="/careers" onClick={() => setIsMobileMenuOpen(false)} style={{ textDecoration: 'none', color: 'inherit' }}>Careers</Link></li>
