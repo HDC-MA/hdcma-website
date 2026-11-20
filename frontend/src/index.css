@@ -8,18 +8,24 @@
 
 :root {
     /* Brand Colors */
-    --navy: #002D72;
-    --royal: #005CB9;
-    --sky: #4DB8FF;
+    --navy: #022662;
+    --royal: #00519E;
+    --sky: #56BCF8;
     --white: #FFFFFF;
-    --surface: #F5F7FA;
+    --surface: #F5F8FC;
     --ink: #0A1628;
 
     /* Theme mappings - Light Mode */
     --bg: var(--white);
     --section-bg: var(--surface);
     --text: var(--navy);
-    --text-muted: #555555;
+    --text-muted: #52647E;
+    --text-secondary: #52647E;
+    --surface-strong: #FFFFFF;
+    --surface-hover: #EAF5FF;
+    --input-bg: #F9FBFF;
+    --input-border: #D7E1EC;
+    --focus-ring: #00519E;
     
     --primary: var(--navy);
     --secondary: var(--royal);
@@ -42,12 +48,18 @@
     --bg: var(--ink);
     --section-bg: #101F38; /* Slightly lighter than ink for contrast */
     --text: var(--white);
-    --text-muted: rgba(255, 255, 255, 0.85);
+    --text-muted: #C1D0E5;
+    --text-secondary: #C1D0E5;
+    --surface-strong: #12233D;
+    --surface-hover: #183453;
+    --input-bg: #0B1930;
+    --input-border: rgba(193, 208, 229, 0.28);
+    --focus-ring: #56BCF8;
     
     --button-bg: var(--royal);
     --button-hover: var(--sky);
     --accent: var(--sky);
-    --border: rgba(255, 255, 255, 0.08);
+    --border: rgba(193, 208, 229, 0.16);
     --card-bg: rgba(255, 255, 255, 0.05);
 
     --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);

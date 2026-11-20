@@ -25,9 +25,14 @@
 
 .insights-wrapper {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
   gap: 60px;
   align-items: center;
+}
+
+.insights-image,
+.insights-content {
+  min-width: 0;
 }
 
 .insights-image {
